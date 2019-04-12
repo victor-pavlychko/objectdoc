@@ -10,8 +10,12 @@
 #import "PLClangSourceLocationPrivate.h"
 #import "PLClangSourceRangePrivate.h"
 #import "PLClangTypePrivate.h"
+#import "PLClangIndexDeclarationPrivate.h"
 #import "PLAdditions.h"
 #import "PLClangNSString.h"
+
+static void PLIndexDeclaration(void *client_data, const CXIdxDeclInfo * info);
+static int PLAbortQuery(void *client_data, void *reserved);
 
 /**
  * A cursor representing an element in the abstract syntax tree.
@@ -50,8 +54,6 @@
     PLClangCursor *_lexicalParent;
     PLClangCursor *_referencedCursor;
     PLClangCursor *_definition;
-    PLClangCursor *_propertyGetter;
-    PLClangCursor *_propertySetter;
 
     /* Related types */
     PLClangType *_type;
@@ -71,6 +73,10 @@
      * deprecated, and unavailable attributes.
      */
     PLClangAvailability *_availability;
+    
+    /** Index declaration, matching `CXIdxDeclInfo` */
+    @public
+    PLClangIndexDeclaration *_indexDeclaration;
 
     /** The parsed comment associated with the cursor, if any. */
     PLClangComment *_comment;
@@ -925,8 +931,7 @@
  * compiler rather than explicitly written in the source code.
  */
 - (BOOL) isImplicit {
-    return NO; //DreamPiggy
-//    return clang_Cursor_isImplicit(_cursor);
+    return self.indexDeclaration.isImplicit;
 }
 
 /**
@@ -1152,8 +1157,8 @@
 - (PLClangObjCPropertyAttributes) objCPropertyAttributes {
     PLClangObjCPropertyAttributes attrs = 0;
     unsigned int clangAttributes = clang_Cursor_getObjCPropertyAttributes(_cursor, 0);
-    CXType propertyType = clang_getCursorType(_cursor);
-    enum CXTypeNullabilityKind nullability = clang_Type_getNullability(propertyType);
+    CXType type = clang_getCursorType(_cursor);
+    enum CXTypeNullabilityKind nullability = clang_Type_getNullability(type);
 
     if (clangAttributes & CXObjCPropertyAttr_readonly)
         attrs |= PLClangObjCPropertyAttributeReadOnly;
@@ -1190,6 +1195,9 @@
 
     if (clangAttributes & CXObjCPropertyAttr_unsafe_unretained)
         attrs |= PLClangObjCPropertyAttributeUnsafeUnretained;
+    
+    if (clangAttributes & CXObjCPropertyAttr_class)
+        attrs |= PLClangObjCPropertyAttributeClass;
 
     if (nullability == CXTypeNullability_NonNull)
         attrs |= PLClangObjCPropertyAttributeNonnull;
@@ -1197,14 +1205,8 @@
     if (nullability == CXTypeNullability_Nullable)
         attrs |= PLClangObjCPropertyAttributeNullable;
 
-//    if (nullability & CXObjCPropertyAttr_null_resettable) // DreamPiggy
-//        attrs |= PLClangObjCPropertyAttributeNullResettable;
-
     if (nullability == CXTypeNullability_Unspecified)
         attrs |= PLClangObjCPropertyAttributeNullUnspecified;
-
-    if (clangAttributes & CXObjCPropertyAttr_class)
-        attrs |= PLClangObjCPropertyAttributeClass;
 
     return attrs;
 }
@@ -1250,6 +1252,24 @@
  */
 - (PLClangAvailability *) availability {
     return _availability ?: (_availability = [[PLClangAvailability alloc] initWithCXCursor: _cursor]);
+}
+
+- (PLClangIndexDeclaration *)indexDeclaration {
+    if (_indexDeclaration != nil) {
+        return _indexDeclaration;
+    }
+    // Search the index
+    CXTranslationUnit unit = clang_Cursor_getTranslationUnit(_cursor);
+    CXIndex index = clang_createIndex(1, 0);
+    IndexerCallbacks *callbacks = calloc((unsigned int)1, sizeof(IndexerCallbacks));
+    CXIndexAction action = clang_IndexAction_create(index);
+    callbacks->indexDeclaration = PLIndexDeclaration;
+    callbacks->abortQuery = PLAbortQuery;
+    clang_indexTranslationUnit(action, (__bridge void *)self, callbacks, sizeof(IndexerCallbacks), 0, unit);
+    clang_disposeIndex(index);
+    clang_IndexAction_dispose(action);
+    free(callbacks);
+    return _indexDeclaration;
 }
 
 /**
@@ -1354,3 +1374,20 @@
 }
 
 @end
+
+static void PLIndexDeclaration(void *client_data, const CXIdxDeclInfo * info) {
+    PLClangCursor *self = (__bridge PLClangCursor *)client_data;
+    if (clang_equalCursors(info->cursor, [self cxCursor])) {
+        CXIdxDeclInfo declInfo = *info;
+        self->_indexDeclaration = [[PLClangIndexDeclaration alloc] initWithCXIdxDeclInfo:declInfo];
+    }
+}
+
+static int PLAbortQuery(void *client_data, void *reserved) {
+    PLClangCursor *self = (__bridge PLClangCursor *)client_data;
+    if (self->_indexDeclaration != nil) {
+        return 1;
+    } else {
+        return 0;
+    }
+}

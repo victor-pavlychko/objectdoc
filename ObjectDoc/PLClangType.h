@@ -260,17 +260,17 @@ typedef NS_ENUM(NSUInteger, PLClangTypeKind) {
  * The nullability of a PLClangType.
  */
 typedef NS_ENUM(NSUInteger, PLClangNullability) {
-    /** No nullability information is available for the type. */
-    PLClangNullabilityNone = 0,
-
     /** Values of this type can never be null. */
-    PLClangNullabilityNonnull = 1,
+    PLClangNullabilityNonnull = 0,
 
     /** Values of this type can be null. */
-    PLClangNullabilityNullable = 2,
+    PLClangNullabilityNullable = 1,
 
     /** Whether values of this type can be null is explicitly unspecified. */
-    PLClangNullabilityExplicitlyUnspecified = 3
+    PLClangNullabilityExplicitlyUnspecified = 2,
+    
+    /** No nullability information is available for the type. */
+    PLClangNullabilityInvalid = 3
 };
 
 @interface PLClangType : NSObject

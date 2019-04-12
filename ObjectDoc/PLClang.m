@@ -12,6 +12,11 @@
 NSString * const PLClangErrorDomain = @"PLClangErrorDomain";
 
 /**
+ * The `CXErrorCode` sub error domain.
+ */
+NSString * const PLClangCXErrorDomain = @"PLClangCXErrorDomain";
+
+/**
  * Returns the Clang version as a string.
  *
  * @return The Clang version as a string suitable for displaying to the user. The string

@@ -422,8 +422,6 @@
 
 - (PLClangNullability) nullability {
     switch (clang_Type_getNullability(_type)) {
-        case CXTypeNullability_Invalid:
-            return PLClangNullabilityNone;
 
         case CXTypeNullability_NonNull:
             return PLClangNullabilityNonnull;
@@ -433,6 +431,9 @@
 
         case CXTypeNullability_Unspecified:
             return PLClangNullabilityExplicitlyUnspecified;
+        
+        case CXTypeNullability_Invalid:
+        return PLClangNullabilityInvalid;
     }
 
     // Nullability kind is unknown

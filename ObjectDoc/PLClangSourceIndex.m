@@ -143,14 +143,33 @@
 
     if (options & PLClangTranslationUnitCreationIncludeBriefCommentsInCodeCompletion)
         creationOptions |= CXTranslationUnit_IncludeBriefCommentsInCodeCompletion;
+    
+    if (options & PLClangTranslationUnitCreationCreatePreambleOnFirstParse)
+        creationOptions |= CXTranslationUnit_CreatePreambleOnFirstParse;
+    
+    if (options & PLClangTranslationUnitCreationKeepGoing)
+        creationOptions |= CXTranslationUnit_KeepGoing;
+    
+    if (options & PLClangTranslationUnitCreationSingleFileParse)
+        creationOptions |= CXTranslationUnit_SingleFileParse;
+    
+    if (options & PLClangTranslationUnitCreationLimitSkipFunctionBodiesToPreamble)
+        creationOptions |= CXTranslationUnit_LimitSkipFunctionBodiesToPreamble;
+    
+    if (options & PLClangTranslationUnitCreationIncludeAttributedTypes)
+        creationOptions |= CXTranslationUnit_IncludeAttributedTypes;
+    
+    if (options & PLClangTranslationUnitCreationVisitImplicitAttributes)
+        creationOptions |= CXTranslationUnit_VisitImplicitAttributes;
 
-    tu = clang_parseTranslationUnit(_cIndex,
+    enum CXErrorCode code = clang_parseTranslationUnit2(_cIndex,
             [path fileSystemRepresentation],
             (const char **) argv,
             (int)[arguments count],
             unsavedFiles,
             unsavedFileCount,
-            creationOptions);
+            creationOptions,
+            &tu);
 
     free(argv);
     free(unsavedFiles);
@@ -160,7 +179,8 @@
         // access to the associated diagnostics, so for now we can only return a generic failure.
         if (error) {
             *error = [NSError errorWithDomain: PLClangErrorDomain code: PLClangErrorCompiler userInfo: @{
-                NSLocalizedDescriptionKey: NSLocalizedString(@"An unrecoverable compiler error occurred.", nil)
+                NSLocalizedDescriptionKey: NSLocalizedString(@"An unrecoverable compiler error occurred.", nil),
+                PLClangCXErrorDomain: @(code)
             }];
         }
         return nil;

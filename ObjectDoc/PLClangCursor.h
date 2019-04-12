@@ -8,6 +8,7 @@
 #import "PLClangComment.h"
 #import "PLClangSourceRange.h"
 #import "PLClangType.h"
+#import "PLClangIndexDeclaration.h"
 @class PLClangCursor;
 
 /**
@@ -1441,14 +1442,11 @@ typedef NS_OPTIONS(NSUInteger, PLClangObjCPropertyAttributes) {
     /** The property's value can be null. */
     PLClangObjCPropertyAttributeNullable         = 1UL << 13,
 
-    /** The property is reset to a default value when null is assigned. */
-    PLClangObjCPropertyAttributeNullResettable   = 1UL << 14,
-
     /** Whether the property's value can be null is explicitly unspecified. */
-    PLClangObjCPropertyAttributeNullUnspecified  = 1UL << 15,
+    PLClangObjCPropertyAttributeNullUnspecified  = 1UL << 14,
 
     /** The property is a class property. */
-    PLClangObjCPropertyAttributeClass            = 1UL << 16,
+    PLClangObjCPropertyAttributeClass            = 1UL << 15,
 };
 
 /**
@@ -1561,6 +1559,7 @@ typedef PLClangCursorVisitResult (^PLClangCursorVisitorBlock)(PLClangCursor *cur
 @property(nonatomic, readonly) NSString *objCTypeEncoding;
 
 @property(nonatomic, readonly) PLClangAvailability *availability;
+@property(nonatomic, readonly) PLClangIndexDeclaration *indexDeclaration;
 
 @property(nonatomic, readonly) PLClangComment *comment;
 @property(nonatomic, readonly) NSString *briefComment;

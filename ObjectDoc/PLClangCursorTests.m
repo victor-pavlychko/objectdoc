@@ -291,7 +291,6 @@
     [self verifyObjCPropertyWithAttributes: @"setter=setProp:" expectedResults: PLClangObjCPropertyAttributeSetter];
     [self verifyObjCPropertyWithAttributes: @"nullable" expectedResults: PLClangObjCPropertyAttributeNullable];
     [self verifyObjCPropertyWithAttributes: @"nonnull" expectedResults: PLClangObjCPropertyAttributeNonnull];
-    [self verifyObjCPropertyWithAttributes: @"null_resettable" expectedResults: PLClangObjCPropertyAttributeNullResettable];
     [self verifyObjCPropertyWithAttributes: @"null_unspecified" expectedResults: PLClangObjCPropertyAttributeNullUnspecified];
     [self verifyObjCPropertyWithAttributes: @"class" expectedResults: PLClangObjCPropertyAttributeClass];
     [self verifyObjCPropertyWithAttributes: @"nonatomic, copy, getter=prop, setter=setProp:" expectedResults:
@@ -389,7 +388,7 @@
  * Tests that cursors for implicit declarations are correctly identified.
  */
 - (void) testImplicit {
-    PLClangTranslationUnit *tu = [self translationUnitWithSource: @"@interface T @property (getter=t1Getter) int t1; - (void)t2; @end"];
+    PLClangTranslationUnit *tu = [self translationUnitWithSource: @"@interface T @property (getter=t1Getter) int t1; - (void)t2; @end" path:@"test.m" options:PLClangTranslationUnitCreationVisitImplicitAttributes];
     PLClangCursor *cursor = [tu cursorWithSpelling: @"T"];
     XCTAssertNotNil(cursor);
     XCTAssertFalse(cursor.isImplicit);
@@ -405,6 +404,28 @@
     cursor = [tu cursorWithSpelling: @"t2"];
     XCTAssertNotNil(cursor);
     XCTAssertFalse(cursor.isImplicit);
+}
+
+- (void) testIBOutlet {
+    PLClangTranslationUnit *tu = [self translationUnitWithSource: @"@interface T @property id IBOutlet t1; - (IBAction)t2:(id)sender; @end" path:@"test.m" options:PLClangTranslationUnitCreationVisitImplicitAttributes];
+    PLClangCursor *cursor = [tu cursorWithSpelling: @"T"];
+    XCTAssertNotNil(cursor);
+    
+    cursor = [tu cursorWithSpelling: @"t1"];
+    XCTAssertNotNil(cursor);
+    PLClangIndexDeclaration *declaration = cursor.indexDeclaration;
+    XCTAssertNotNil(declaration);
+    PLClangIndexAttribute *attribute = declaration.attributes.firstObject;
+    XCTAssertNotNil(attribute);
+    XCTAssertEqual(attribute.kind, PLClangIndexAttributeKindIBOutlet);
+    
+    cursor = [tu cursorWithSpelling: @"t2:"];
+    XCTAssertNotNil(cursor);
+    declaration = cursor.indexDeclaration;
+    XCTAssertNotNil(declaration);
+    attribute = declaration.attributes.firstObject;
+    XCTAssertNotNil(attribute);
+    XCTAssertEqual(attribute.kind, PLClangIndexAttributeKindIBAction);
 }
 
 /**

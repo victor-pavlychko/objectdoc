@@ -31,6 +31,13 @@
 		05BE068716B4424900DF46D5 /* ObjectDoc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05BE063F16B43ECE00DF46D5 /* ObjectDoc.framework */; };
 		05BE068D16B4474100DF46D5 /* ObjectDoc.h in Headers */ = {isa = PBXBuildFile; fileRef = 05BE064F16B43ECE00DF46D5 /* ObjectDoc.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05BE068E16B4494200DF46D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05BE064716B43ECE00DF46D5 /* Foundation.framework */; };
+		3231E55D2260F4B80007FC5D /* PLClangIndexDeclaration.h in Headers */ = {isa = PBXBuildFile; fileRef = 3231E55B2260F4B80007FC5D /* PLClangIndexDeclaration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3231E55E2260F4B80007FC5D /* PLClangIndexDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3231E55C2260F4B80007FC5D /* PLClangIndexDeclaration.m */; };
+		3231E5612260F5E10007FC5D /* PLClangIndexDeclarationPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3231E55F2260F5E10007FC5D /* PLClangIndexDeclarationPrivate.h */; };
+		3231E5652260F7E70007FC5D /* PLClangIndexAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 3231E5632260F7E70007FC5D /* PLClangIndexAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3231E5662260F7E70007FC5D /* PLClangIndexAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 3231E5642260F7E70007FC5D /* PLClangIndexAttribute.m */; };
+		3231E5692260F8300007FC5D /* PLClangIndexAttributePrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3231E5672260F8300007FC5D /* PLClangIndexAttributePrivate.h */; };
+		323FA9772260B41600274FAB /* PLClangPlatformAvailabilityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 323FA9762260B41600274FAB /* PLClangPlatformAvailabilityTests.m */; };
 		C930081617C5C31C00FA8AB7 /* PLClangComment.h in Headers */ = {isa = PBXBuildFile; fileRef = C930081417C5C31C00FA8AB7 /* PLClangComment.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C930081717C5C31C00FA8AB7 /* PLClangComment.m in Sources */ = {isa = PBXBuildFile; fileRef = C930081517C5C31C00FA8AB7 /* PLClangComment.m */; };
 		C930081917C5C34600FA8AB7 /* PLClangCommentPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = C930081817C5C34600FA8AB7 /* PLClangCommentPrivate.h */; };
@@ -212,8 +219,15 @@
 		05BE067716B4422C00DF46D5 /* doctool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = doctool; sourceTree = BUILT_PRODUCTS_DIR; };
 		05BE067916B4422C00DF46D5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		05BE067C16B4422C00DF46D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3231E55B2260F4B80007FC5D /* PLClangIndexDeclaration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLClangIndexDeclaration.h; sourceTree = "<group>"; };
+		3231E55C2260F4B80007FC5D /* PLClangIndexDeclaration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PLClangIndexDeclaration.m; sourceTree = "<group>"; };
+		3231E55F2260F5E10007FC5D /* PLClangIndexDeclarationPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLClangIndexDeclarationPrivate.h; sourceTree = "<group>"; };
+		3231E5632260F7E70007FC5D /* PLClangIndexAttribute.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLClangIndexAttribute.h; sourceTree = "<group>"; };
+		3231E5642260F7E70007FC5D /* PLClangIndexAttribute.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PLClangIndexAttribute.m; sourceTree = "<group>"; };
+		3231E5672260F8300007FC5D /* PLClangIndexAttributePrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLClangIndexAttributePrivate.h; sourceTree = "<group>"; };
 		323FA973226056E000274FAB /* GRMustacheSafeKeyAccess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRMustacheSafeKeyAccess.h; sourceTree = "<group>"; };
 		323FA974226056E000274FAB /* GRMustacheContentType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRMustacheContentType.h; sourceTree = "<group>"; };
+		323FA9762260B41600274FAB /* PLClangPlatformAvailabilityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PLClangPlatformAvailabilityTests.m; sourceTree = "<group>"; };
 		3264CFCF225F4623009EBB9A /* llvm-8.0.0.src.tar.xz.sig */ = {isa = PBXFileReference; lastKnownFileType = file; path = "llvm-8.0.0.src.tar.xz.sig"; sourceTree = "<group>"; };
 		3264CFD0225F4623009EBB9A /* llvm-8.0.0.src.tar.xz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "llvm-8.0.0.src.tar.xz"; sourceTree = "<group>"; };
 		3264CFD1225F4623009EBB9A /* cfe-8.0.0.src.tar.xz.sig */ = {isa = PBXFileReference; lastKnownFileType = file; path = "cfe-8.0.0.src.tar.xz.sig"; sourceTree = "<group>"; };
@@ -602,11 +616,18 @@
 				FCE4576CFA89A9EA19B558F9 /* PLClangDiagnostic.h */,
 				FCE455207D161C04C0735E9F /* PLClangDiagnostic.m */,
 				FCE451013882A66295B6A523 /* PLClangDiagnosticPrivate.h */,
+				3231E55B2260F4B80007FC5D /* PLClangIndexDeclaration.h */,
+				3231E55C2260F4B80007FC5D /* PLClangIndexDeclaration.m */,
+				3231E55F2260F5E10007FC5D /* PLClangIndexDeclarationPrivate.h */,
+				3231E5632260F7E70007FC5D /* PLClangIndexAttribute.h */,
+				3231E5642260F7E70007FC5D /* PLClangIndexAttribute.m */,
+				3231E5672260F8300007FC5D /* PLClangIndexAttributePrivate.h */,
 				C9F243BC17C08E75005E01BF /* PLClangNSString.h */,
 				C9F243BD17C08E75005E01BF /* PLClangNSString.m */,
 				C9A9220817C3A7290052CB64 /* PLClangPlatformAvailability.h */,
 				C9A9220917C3A7290052CB64 /* PLClangPlatformAvailability.m */,
 				C9A9221117C3A9350052CB64 /* PLClangPlatformAvailabilityPrivate.h */,
+				323FA9762260B41600274FAB /* PLClangPlatformAvailabilityTests.m */,
 				FCE4500562CD408DEE335EAC /* PLClangSourceIndex.h */,
 				FCE45E244C142558C5D4C756 /* PLClangSourceIndex.m */,
 				FCE45EBF5B5ECF9D0C09F313 /* PLClangSourceIndexTests.m */,
@@ -660,6 +681,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3231E5612260F5E10007FC5D /* PLClangIndexDeclarationPrivate.h in Headers */,
 				05BE068D16B4474100DF46D5 /* ObjectDoc.h in Headers */,
 				C9A9220617C3A7180052CB64 /* PLClangAvailability.h in Headers */,
 				FCE4575C39A4106D000DF0D4 /* PLClangSourceIndex.h in Headers */,
@@ -672,6 +694,7 @@
 				C9A9220A17C3A7290052CB64 /* PLClangPlatformAvailability.h in Headers */,
 				C9A921FC17C313510052CB64 /* PLClangType.h in Headers */,
 				C9A9221817C3A9F90052CB64 /* PLClangVersionPrivate.h in Headers */,
+				3231E55D2260F4B80007FC5D /* PLClangIndexDeclaration.h in Headers */,
 				C9594E8117BFBDA400CD7816 /* PLClangCursorPrivate.h in Headers */,
 				FCE45EA2F91E94E0FE73EDCB /* PLClangTranslationUnitPrivate.h in Headers */,
 				FCE4508CD72B9C5BAAF6F603 /* PLClangDiagnostic.h in Headers */,
@@ -681,8 +704,10 @@
 				C95EA26817C9032C0038F8E4 /* PLClangToken.h in Headers */,
 				C930081617C5C31C00FA8AB7 /* PLClangComment.h in Headers */,
 				C95EA26F17C9036C0038F8E4 /* PLClangTokenSet.h in Headers */,
+				3231E5652260F7E70007FC5D /* PLClangIndexAttribute.h in Headers */,
 				FCE45A9FBF8CE57D471E862C /* PLClangDiagnosticPrivate.h in Headers */,
 				FCE45AA53B7B32357124F65E /* PLClangSourceLocation.h in Headers */,
+				3231E5692260F8300007FC5D /* PLClangIndexAttributePrivate.h in Headers */,
 				C95EA27517C9AA2F0038F8E4 /* PLClangSourceRange.h in Headers */,
 				C9A9221517C3A9DA0052CB64 /* PLClangVersion.h in Headers */,
 				FCE451617D97D37E53EE138F /* PLClangSourceLocationPrivate.h in Headers */,
@@ -824,7 +849,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "BUILDDIR=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}/llvm-build\"\nLLVM_SRC_DIR=\"${BUILDDIR}/llvm-${LLVM_VERSION}.src\"\nCLANG_SRC_DIR=\"${LLVM_SRC_DIR}/tools/clang\"\nLOG=${BUILDDIR}/log\n\nPATH=${PATH}:/usr/local/bin:/opt/local/bin\nCMAKE_PATH=`which cmake`\n\n# We use env to clean any conflicting environmental variables\n# set by Xcode\nENV_CLEAN=\"env -i \\\"PATH=${PATH}\\\"\"\n\n# Set up the build directory\nmkdir -p \"${BUILDDIR}\"\npushd \"${BUILDDIR}\" >/dev/null\n\n# Extract LLVM + Clang\nif [ ! -d \"${LLVM_SRC_DIR}\" ]; then\ntar -C \"${BUILDDIR}\" -zxf \"${LLVM_SRC}\"\nfi\n\nif [ ! -d \"${CLANG_SRC_DIR}\" ]; then\ntar -C \"${LLVM_SRC_DIR}/tools\" -zxf \"${CLANG_SRC}\"\n\npushd \"${LLVM_SRC_DIR}/tools\" >/dev/null\nmv \"cfe-${LLVM_VERSION}.src\" \"clang\"\npopd >/dev/null\nfi\n\n# Initialize the build log\necho -n \"\" > \"${LOG}\"\necho \"Clang build log available at ${LOG}\"\n\n# Configure the compiler\n$ENV_CLEAN \"${CMAKE_PATH}\" -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_LIBCXX=1 -DLIBCLANG_BUILD_STATIC=1 -DCMAKE_OSX_DEPLOYMENT_TARGET=${MACOSX_DEPLOYMENT_TARGET} -DCMAKE_INSTALL_PREFIX=\"${LLVM_INSTALL_DIR}\" \"${LLVM_SRC_DIR}\" >\"${LOG}\" 2>&1\nif [ $? != 0 ]; then\necho \"A configure error occured. See the build log for more details\" >/dev/stderr\nexit 1\nfi\n\n# Run the build\n$ENV_CLEAN \"make\" -j `sysctl -n hw.ncpu` >>\"${LOG}\" 2>&1\nif [ $? != 0 ]; then\necho \"Failed to build clang. See the build log for more details\" >/dev/stderr\nexit 1\nfi\n\n# Install the build\n$ENV_CLEAN \"make\" install >>\"${LOG}\" 2>&1\nif [ $? != 0 ]; then\necho \"Failed to build clang. See the build log for more details\" >/dev/stderr\nexit 1\nfi\n\n# Install libclang.a, Clang's CMake configuration doesn't\ncp lib/libclang.a \"${LLVM_INSTALL_DIR}/lib/\"\n\npopd >/dev/null\n\ntouch \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}/build.stamp\"\n";
+			shellScript = "BUILDDIR=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}/llvm-build\"\nLLVM_SRC_DIR=\"${BUILDDIR}/llvm-${LLVM_VERSION}.src\"\nCLANG_SRC_DIR=\"${LLVM_SRC_DIR}/tools/clang\"\nLOG=${BUILDDIR}/log\n\nPATH=${PATH}:/usr/local/bin:/opt/local/bin\nCMAKE_PATH=`which cmake`\n\n# We use env to clean any conflicting environmental variables\n# set by Xcode\nENV_CLEAN=\"env -i \\\"PATH=${PATH}\\\"\"\n\n# Set up the build directory\nmkdir -p \"${BUILDDIR}\"\npushd \"${BUILDDIR}\" >/dev/null\n\n# Extract LLVM + Clang\nif [ ! -d \"${LLVM_SRC_DIR}\" ]; then\ntar -C \"${BUILDDIR}\" -zxf \"${LLVM_SRC}\"\nfi\n\nif [ ! -d \"${CLANG_SRC_DIR}\" ]; then\ntar -C \"${LLVM_SRC_DIR}/tools\" -zxf \"${CLANG_SRC}\"\n\npushd \"${LLVM_SRC_DIR}/tools\" >/dev/null\nmv \"cfe-${LLVM_VERSION}.src\" \"clang\"\npopd >/dev/null\nfi\n\n# Initialize the build log\necho -n \"\" > \"${LOG}\"\necho \"Clang build log available at ${LOG}\"\n\n# Configure the compiler\n$ENV_CLEAN \"${CMAKE_PATH}\" -DCMAKE_BUILD_TYPE=${CONFIGURATION} -DLLVM_ENABLE_LIBCXX=1 -DLIBCLANG_BUILD_STATIC=1 -DCMAKE_OSX_DEPLOYMENT_TARGET=${MACOSX_DEPLOYMENT_TARGET} -DCMAKE_INSTALL_PREFIX=\"${LLVM_INSTALL_DIR}\" \"${LLVM_SRC_DIR}\" >\"${LOG}\" 2>&1\nif [ $? != 0 ]; then\necho \"A configure error occured. See the build log for more details\" >/dev/stderr\nexit 1\nfi\n\n# Run the build\n$ENV_CLEAN \"make\" -j `sysctl -n hw.ncpu` >>\"${LOG}\" 2>&1\nif [ $? != 0 ]; then\necho \"Failed to build clang. See the build log for more details\" >/dev/stderr\nexit 1\nfi\n\n# Install the build\n$ENV_CLEAN \"make\" install >>\"${LOG}\" 2>&1\nif [ $? != 0 ]; then\necho \"Failed to build clang. See the build log for more details\" >/dev/stderr\nexit 1\nfi\n\n# Install libclang.a, Clang's CMake configuration doesn't\ncp lib/libclang.a \"${LLVM_INSTALL_DIR}/lib/\"\n\npopd >/dev/null\n\ntouch \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}/build.stamp\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -836,6 +861,7 @@
 				05BE065116B43ECE00DF46D5 /* ObjectDoc.mm in Sources */,
 				FCE451D5799804E72BFF018E /* PLClangSourceIndex.m in Sources */,
 				C9594E7F17BFBC9A00CD7816 /* PLClangCursor.m in Sources */,
+				3231E55E2260F4B80007FC5D /* PLClangIndexDeclaration.m in Sources */,
 				FCE45D20C14785B61BEA641E /* PLClangTranslationUnit.m in Sources */,
 				C9A9220717C3A7180052CB64 /* PLClangAvailability.m in Sources */,
 				FCE456467CC2F46BDC9B91CD /* PLClangDiagnostic.m in Sources */,
@@ -847,6 +873,7 @@
 				C95EA26917C9032C0038F8E4 /* PLClangToken.m in Sources */,
 				C9594E7717BF06F100CD7816 /* PLClang.m in Sources */,
 				C95EA27017C9036C0038F8E4 /* PLClangTokenSet.m in Sources */,
+				3231E5662260F7E70007FC5D /* PLClangIndexAttribute.m in Sources */,
 				C9F243BF17C08E75005E01BF /* PLClangNSString.m in Sources */,
 				C9A921FD17C313510052CB64 /* PLClangType.m in Sources */,
 				C95EA27617C9AA2F0038F8E4 /* PLClangSourceRange.m in Sources */,
@@ -864,6 +891,7 @@
 				C95EA27A17C9B7B30038F8E4 /* PLClangSourceLocationTests.m in Sources */,
 				C95EA27217C903780038F8E4 /* PLClangTokenTests.m in Sources */,
 				FCE4537F110EF2EFC316238D /* PLClangSourceIndexTests.m in Sources */,
+				323FA9772260B41600274FAB /* PLClangPlatformAvailabilityTests.m in Sources */,
 				FCE4594BDFF1B22B945C8BF8 /* PLClangTranslationUnitTests.m in Sources */,
 				C9A9221017C3A7FD0052CB64 /* PLClangAvailabilityTests.m in Sources */,
 				C95EA27C17C9C4CB0038F8E4 /* PLClangSourceRangeTests.m in Sources */,

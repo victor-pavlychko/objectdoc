@@ -162,7 +162,7 @@
     PLClangTranslationUnit *tu = [self translationUnitWithSource: @"id t;" path: @"test.m"];
     PLClangCursor *cursor = [tu cursorWithSpelling: @"t"];
     XCTAssertNotNil(cursor);
-    XCTAssertEqual(cursor.type.nullability, PLClangNullabilityNone);
+    XCTAssertEqual(cursor.type.nullability, PLClangNullabilityInvalid);
 
     tu = [self translationUnitWithSource: @"id _Nonnull t;" path: @"test.m"];
     cursor = [tu cursorWithSpelling: @"t"];

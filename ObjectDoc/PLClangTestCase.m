@@ -23,7 +23,7 @@
  * options suitable for typical unit testing.
  */
 - (PLClangTranslationUnit *) translationUnitWithSource: (NSString *) source path: (NSString *) path {
-    return [self translationUnitWithSource: source path: path options: 0];
+    return [self translationUnitWithSource: source path: path options: PLClangTranslationUnitCreationIncludeAttributedTypes];
 }
 
 /**
