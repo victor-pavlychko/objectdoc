@@ -50,6 +50,8 @@
     PLClangCursor *_lexicalParent;
     PLClangCursor *_referencedCursor;
     PLClangCursor *_definition;
+    PLClangCursor *_propertyGetter;
+    PLClangCursor *_propertySetter;
 
     /* Related types */
     PLClangType *_type;
@@ -919,6 +921,14 @@
 }
 
 /**
+ * A Boolean value indicating whether the cursor represents an entity that was implicitly created by the
+ * compiler rather than explicitly written in the source code.
+ */
+- (BOOL) isImplicit {
+    return clang_Cursor_isImplicit(_cursor);
+}
+
+/**
  * The canonical cursor corresponding to this cursor.
  *
  * In the C family of languages, many kinds of entities can be declared several
@@ -1178,7 +1188,36 @@
     if (clangAttributes & CXObjCPropertyAttr_unsafe_unretained)
         attrs |= PLClangObjCPropertyAttributeUnsafeUnretained;
 
+    if (clangAttributes & CXObjCPropertyAttr_nonnull)
+        attrs |= PLClangObjCPropertyAttributeNonnull;
+
+    if (clangAttributes & CXObjCPropertyAttr_nullable)
+        attrs |= PLClangObjCPropertyAttributeNullable;
+
+    if (clangAttributes & CXObjCPropertyAttr_null_resettable)
+        attrs |= PLClangObjCPropertyAttributeNullResettable;
+
+    if (clangAttributes & CXObjCPropertyAttr_null_unspecified)
+        attrs |= PLClangObjCPropertyAttributeNullUnspecified;
+
+    if (clangAttributes & CXObjCPropertyAttr_class)
+        attrs |= PLClangObjCPropertyAttributeClass;
+
     return attrs;
+}
+
+/**
+ * A cursor representing the getter method for an Objective-C property declaration.
+ */
+- (PLClangCursor *) objCPropertyGetter {
+    return _propertyGetter ?: (_propertyGetter = [[PLClangCursor alloc] initWithOwner: _owner cxCursor: clang_Cursor_getObjCPropertyGetter(_cursor)]);
+}
+
+/**
+ * A cursor representing the setter method for an Objective-C property declaration.
+ */
+- (PLClangCursor *) objCPropertySetter {
+    return _propertySetter ?: (_propertySetter = [[PLClangCursor alloc] initWithOwner: _owner cxCursor: clang_Cursor_getObjCPropertySetter(_cursor)]);
 }
 
 /**

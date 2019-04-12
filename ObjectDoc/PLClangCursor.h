@@ -1433,7 +1433,22 @@ typedef NS_OPTIONS(NSUInteger, PLClangObjCPropertyAttributes) {
     PLClangObjCPropertyAttributeGetter           = 1UL << 10,
 
     /** The property has an explicit setter method. */
-    PLClangObjCPropertyAttributeSetter           = 1UL << 11
+    PLClangObjCPropertyAttributeSetter           = 1UL << 11,
+
+    /** The property's value can never be null. */
+    PLClangObjCPropertyAttributeNonnull          = 1UL << 12,
+
+    /** The property's value can be null. */
+    PLClangObjCPropertyAttributeNullable         = 1UL << 13,
+
+    /** The property is reset to a default value when null is assigned. */
+    PLClangObjCPropertyAttributeNullResettable   = 1UL << 14,
+
+    /** Whether the property's value can be null is explicitly unspecified. */
+    PLClangObjCPropertyAttributeNullUnspecified  = 1UL << 15,
+
+    /** The property is a class property. */
+    PLClangObjCPropertyAttributeClass            = 1UL << 16,
 };
 
 /**
@@ -1510,6 +1525,7 @@ typedef PLClangCursorVisitResult (^PLClangCursorVisitorBlock)(PLClangCursor *cur
 @property(nonatomic, readonly) BOOL isUnexposed;
 @property(nonatomic, readonly) BOOL isObjCOptional;
 @property(nonatomic, readonly) BOOL isVariadic;
+@property(nonatomic, readonly) BOOL isImplicit;
 
 @property(nonatomic, readonly) PLClangCursor *canonicalCursor;
 @property(nonatomic, readonly) PLClangCursor *semanticParent;
@@ -1539,6 +1555,8 @@ typedef PLClangCursorVisitResult (^PLClangCursorVisitorBlock)(PLClangCursor *cur
 @property(nonatomic, readonly) int bitFieldWidth;
 
 @property(nonatomic, readonly) PLClangObjCPropertyAttributes objCPropertyAttributes;
+@property(nonatomic, readonly) PLClangCursor *objCPropertyGetter;
+@property(nonatomic, readonly) PLClangCursor *objCPropertySetter;
 @property(nonatomic, readonly) int objCSelectorIndex;
 @property(nonatomic, readonly) NSString *objCTypeEncoding;
 
