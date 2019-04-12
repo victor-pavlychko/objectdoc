@@ -715,6 +715,63 @@
         case CXCursor_InvalidCode:
             // Unreachable, invalid cursors return nil from initWithOwner:cxCursor:
             break;
+        case CXCursor_FixedPointLiteral:
+        return PLClangCursorKindFixedPointLiteral;
+        break;
+        case CXCursor_NSReturnsRetained:
+        return PLClangCursorKindNSReturnsRetained;
+        break;
+        case CXCursor_NSReturnsNotRetained:
+        return PLClangCursorKindNSReturnsNotRetained;
+        break;
+        case CXCursor_NSReturnsAutoreleased:
+        return PLClangCursorKindNSReturnsAutoreleased;
+        break;
+        case CXCursor_NSConsumesSelf:
+        return PLClangCursorKindNSConsumesSelf;
+        break;
+        case CXCursor_NSConsumed:
+        return PLClangCursorKindNSConsumed;
+        break;
+        case CXCursor_ObjCException:
+        return PLClangCursorKindObjCException;
+        break;
+        case CXCursor_ObjCNSObject:
+        return PLClangCursorKindObjCNSObject;
+        break;
+        case CXCursor_ObjCIndependentClass:
+        return PLClangCursorKindObjCIndependentClass;
+        break;
+        case CXCursor_ObjCPreciseLifetime:
+        return PLClangCursorKindObjCPreciseLifetime;
+        break;
+        case CXCursor_ObjCReturnsInnerPointer:
+        return PLClangCursorKindObjCReturnsInnerPointer;
+        break;
+        case CXCursor_ObjCRequiresSuper:
+        return PLClangCursorKindObjCRequiresSuper;
+        break;
+        case CXCursor_ObjCRootClass:
+        return PLClangCursorKindObjCRootClass;
+        break;
+        case CXCursor_ObjCSubclassingRestricted:
+        return PLClangCursorKindObjCSubclassingRestricted;
+        break;
+        case CXCursor_ObjCExplicitProtocolImpl:
+        return PLClangCursorKindObjCExplicitProtocolImpl;
+        break;
+        case CXCursor_ObjCDesignatedInitializer:
+        return PLClangCursorKindObjCDesignatedInitializer;
+        break;
+        case CXCursor_ObjCRuntimeVisible:
+        return PLClangCursorKindObjCRuntimeVisible;
+        break;
+        case CXCursor_ObjCBoxable:
+        return PLClangCursorKindObjCBoxable;
+        break;
+        case CXCursor_FlagEnum:
+        return PLClangCursorKindFlagEnum;
+        break;
     }
 
     // Cursor has an unknown kind

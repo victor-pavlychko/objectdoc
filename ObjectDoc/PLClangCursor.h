@@ -1235,6 +1235,27 @@ typedef NS_ENUM(NSUInteger, PLClangCursorKind) {
      * A code completion overload candidate.
      */
     PLClangCursorKindOverloadCandidate                        = 700,
+    PLClangCursorKindFixedPointLiteral,
+    PLClangCursorKindLastExpr = PLClangCursorKindFixedPointLiteral,
+    PLClangCursorKindNSReturnsRetained,
+    PLClangCursorKindNSReturnsNotRetained,
+    PLClangCursorKindNSReturnsAutoreleased,
+    PLClangCursorKindNSConsumesSelf,
+    PLClangCursorKindNSConsumed,
+    PLClangCursorKindObjCException,
+    PLClangCursorKindObjCNSObject,
+    PLClangCursorKindObjCIndependentClass,
+    PLClangCursorKindObjCPreciseLifetime,
+    PLClangCursorKindObjCReturnsInnerPointer,
+    PLClangCursorKindObjCRequiresSuper,
+    PLClangCursorKindObjCRootClass,
+    PLClangCursorKindObjCSubclassingRestricted,
+    PLClangCursorKindObjCExplicitProtocolImpl,
+    PLClangCursorKindObjCDesignatedInitializer,
+    PLClangCursorKindObjCRuntimeVisible,
+    PLClangCursorKindObjCBoxable,
+    PLClangCursorKindFlagEnum,
+    PLClangCursorKindLastAttr = PLClangCursorKindFlagEnum,
 };
 
 /**
