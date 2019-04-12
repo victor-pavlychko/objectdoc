@@ -314,12 +314,12 @@
     XCTAssertNotNil(getter);
     XCTAssertNotNil(setter);
 
-    PLClangCursor *retrievedGetter = cursor.objCPropertyGetter;
-    PLClangCursor *retrievedSetter = cursor.objCPropertySetter;
-    XCTAssertNotNil(retrievedGetter);
-    XCTAssertNotNil(retrievedSetter);
-    XCTAssertEqualObjects(getter, retrievedGetter);
-    XCTAssertEqualObjects(setter, retrievedSetter);
+    NSString *retrievedGetterName = cursor.objCPropertyGetterName;
+    NSString *retrievedSetterName = cursor.objCPropertySetterName;
+    XCTAssertNotNil(retrievedGetterName);
+    XCTAssertNotNil(retrievedSetterName);
+    XCTAssertEqual(getter.displayName, retrievedGetterName);
+    XCTAssertEqual(setter.displayName, retrievedSetterName);
 }
 
 /**
@@ -329,8 +329,8 @@
     PLClangTranslationUnit *tu = [self translationUnitWithSource: @"@interface T @property (readonly) int t; @end"];
     PLClangCursor *cursor = [tu cursorWithSpelling: @"t"];
     XCTAssertNotNil(cursor);
-    XCTAssertNotNil(cursor.objCPropertyGetter);
-    XCTAssertNil(cursor.objCPropertySetter);
+    XCTAssertNotNil(cursor.objCPropertyGetterName);
+    XCTAssertNil(cursor.objCPropertySetterName);
 }
 
 - (void) verifyObjCPropertyWithAttributes: (NSString *)attributes expectedResults: (PLClangObjCPropertyAttributes) expected {

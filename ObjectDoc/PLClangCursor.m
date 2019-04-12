@@ -925,7 +925,8 @@
  * compiler rather than explicitly written in the source code.
  */
 - (BOOL) isImplicit {
-    return clang_Cursor_isImplicit(_cursor);
+    return NO; //DreamPiggy
+//    return clang_Cursor_isImplicit(_cursor);
 }
 
 /**
@@ -1151,6 +1152,8 @@
 - (PLClangObjCPropertyAttributes) objCPropertyAttributes {
     PLClangObjCPropertyAttributes attrs = 0;
     unsigned int clangAttributes = clang_Cursor_getObjCPropertyAttributes(_cursor, 0);
+    CXType propertyType = clang_getCursorType(_cursor);
+    enum CXTypeNullabilityKind nullability = clang_Type_getNullability(propertyType);
 
     if (clangAttributes & CXObjCPropertyAttr_readonly)
         attrs |= PLClangObjCPropertyAttributeReadOnly;
@@ -1188,16 +1191,16 @@
     if (clangAttributes & CXObjCPropertyAttr_unsafe_unretained)
         attrs |= PLClangObjCPropertyAttributeUnsafeUnretained;
 
-    if (clangAttributes & CXObjCPropertyAttr_nonnull)
+    if (nullability == CXTypeNullability_NonNull)
         attrs |= PLClangObjCPropertyAttributeNonnull;
 
-    if (clangAttributes & CXObjCPropertyAttr_nullable)
+    if (nullability == CXTypeNullability_Nullable)
         attrs |= PLClangObjCPropertyAttributeNullable;
 
-    if (clangAttributes & CXObjCPropertyAttr_null_resettable)
-        attrs |= PLClangObjCPropertyAttributeNullResettable;
+//    if (nullability & CXObjCPropertyAttr_null_resettable) // DreamPiggy
+//        attrs |= PLClangObjCPropertyAttributeNullResettable;
 
-    if (clangAttributes & CXObjCPropertyAttr_null_unspecified)
+    if (nullability == CXTypeNullability_Unspecified)
         attrs |= PLClangObjCPropertyAttributeNullUnspecified;
 
     if (clangAttributes & CXObjCPropertyAttr_class)
@@ -1209,15 +1212,19 @@
 /**
  * A cursor representing the getter method for an Objective-C property declaration.
  */
-- (PLClangCursor *) objCPropertyGetter {
-    return _propertyGetter ?: (_propertyGetter = [[PLClangCursor alloc] initWithOwner: _owner cxCursor: clang_Cursor_getObjCPropertyGetter(_cursor)]);
+- (NSString *) objCPropertyGetterName {
+    return plclang_convert_and_dispose_cxstring(clang_Cursor_getObjCPropertyGetterName(_cursor));
 }
 
 /**
  * A cursor representing the setter method for an Objective-C property declaration.
  */
-- (PLClangCursor *) objCPropertySetter {
-    return _propertySetter ?: (_propertySetter = [[PLClangCursor alloc] initWithOwner: _owner cxCursor: clang_Cursor_getObjCPropertySetter(_cursor)]);
+- (NSString *) objCPropertySetterName {
+    unsigned int clangAttributes = clang_Cursor_getObjCPropertyAttributes(_cursor, 0);
+    if (clangAttributes & CXObjCPropertyAttr_readonly) {
+        return nil;
+    }
+    return plclang_convert_and_dispose_cxstring(clang_Cursor_getObjCPropertySetterName(_cursor));
 }
 
 /**

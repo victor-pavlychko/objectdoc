@@ -185,9 +185,6 @@
     PLClangCursor *cursor = [tu cursorWithSpelling: @"t"];
     XCTAssertNotNil(cursor);
     XCTAssertEqual(cursor.type.nullability, PLClangNullabilityNonnull);
-
-    PLClangType *nullabilityRemovedType = [cursor.type typeByRemovingOuterNullability];
-    XCTAssertEqual(nullabilityRemovedType.nullability, PLClangNullabilityNone);
 }
 
 @end

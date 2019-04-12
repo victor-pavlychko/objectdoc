@@ -1555,8 +1555,8 @@ typedef PLClangCursorVisitResult (^PLClangCursorVisitorBlock)(PLClangCursor *cur
 @property(nonatomic, readonly) int bitFieldWidth;
 
 @property(nonatomic, readonly) PLClangObjCPropertyAttributes objCPropertyAttributes;
-@property(nonatomic, readonly) PLClangCursor *objCPropertyGetter;
-@property(nonatomic, readonly) PLClangCursor *objCPropertySetter;
+@property(nonatomic, readonly) NSString *objCPropertyGetterName;
+@property(nonatomic, readonly) NSString *objCPropertySetterName;
 @property(nonatomic, readonly) int objCSelectorIndex;
 @property(nonatomic, readonly) NSString *objCTypeEncoding;
 

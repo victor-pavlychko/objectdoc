@@ -298,6 +298,4 @@ typedef NS_ENUM(NSUInteger, PLClangNullability) {
 
 @property(nonatomic, readonly) PLClangNullability nullability;
 
-- (instancetype) typeByRemovingOuterNullability;
-
 @end

@@ -422,28 +422,21 @@
 
 - (PLClangNullability) nullability {
     switch (clang_Type_getNullability(_type)) {
-        case CXNullability_None:
+        case CXTypeNullability_Invalid:
             return PLClangNullabilityNone;
 
-        case CXNullability_Nonnull:
+        case CXTypeNullability_NonNull:
             return PLClangNullabilityNonnull;
 
-        case CXNullability_Nullable:
+        case CXTypeNullability_Nullable:
             return PLClangNullabilityNullable;
 
-        case CXNullability_Unspecified:
+        case CXTypeNullability_Unspecified:
             return PLClangNullabilityExplicitlyUnspecified;
     }
 
     // Nullability kind is unknown
     abort();
-}
-
-/**
- * Returns a copy of the type with its outer nullability information removed.
- */
-- (instancetype) typeByRemovingOuterNullability {
-    return [[[self class] alloc] initWithOwner: _owner cxType: clang_Type_removeOuterNullability(_type)];
 }
 
 - (BOOL) isEqual: (id) object {
