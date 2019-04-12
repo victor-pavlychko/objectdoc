@@ -1157,6 +1157,7 @@
 		05BE068316B4422C00DF46D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/";
 				LIBRARY_SEARCH_PATHS = (
@@ -1177,6 +1178,7 @@
 		05BE068416B4422C00DF46D5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/";
 				LIBRARY_SEARCH_PATHS = (
