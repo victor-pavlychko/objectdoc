@@ -197,176 +197,133 @@
         case CXType_Elaborated:
             return PLClangTypeKindElaborated;
         case CXType_Half:
-        return PLClangTypeKindHalf;
+            return PLClangTypeKindHalf;
         case CXType_Float16:
-        return PLClangTypeKindFloat16;
+            return PLClangTypeKindFloat16;
         case CXType_ShortAccum:
-        return PLClangTypeKindShortAccum;
+            return PLClangTypeKindShortAccum;
         case CXType_Accum:
-        return PLClangTypeKindAccum;
+            return PLClangTypeKindAccum;
         case CXType_LongAccum:
-        return PLClangTypeKindLongAccum;
+            return PLClangTypeKindLongAccum;
         case CXType_UShortAccum:
-        return PLClangTypeKindUShortAccum;
+            return PLClangTypeKindUShortAccum;
         case CXType_UAccum:
-        return PLClangTypeKindUAccum;
+            return PLClangTypeKindUAccum;
         case CXType_ULongAccum:
-        return PLClangTypeKindULongAccum;
+            return PLClangTypeKindULongAccum;
         case CXType_Pipe:
-        return PLClangTypeKindPipe;
+            return PLClangTypeKindPipe;
         case CXType_OCLImage1dRO:
-        return PLClangTypeKindOCLImage1dRO;
+            return PLClangTypeKindOCLImage1dRO;
         case CXType_OCLImage1dArrayRO:
-        return PLClangTypeKindOCLImage1dArrayRO;
+            return PLClangTypeKindOCLImage1dArrayRO;
         case CXType_OCLImage1dBufferRO:
-        return PLClangTypeKindOCLImage1dBufferRO;
+            return PLClangTypeKindOCLImage1dBufferRO;
         case CXType_OCLImage2dRO:
-        return PLClangTypeKindOCLImage2dRO;
+            return PLClangTypeKindOCLImage2dRO;
         case CXType_OCLImage2dArrayRO:
-        return PLClangTypeKindOCLImage2dArrayRO;
+            return PLClangTypeKindOCLImage2dArrayRO;
         case CXType_OCLImage2dDepthRO:
-        return PLClangTypeKindOCLImage2dDepthRO;
+            return PLClangTypeKindOCLImage2dDepthRO;
         case CXType_OCLImage2dArrayDepthRO:
-        return PLClangTypeKindOCLImage2dArrayDepthRO;
+            return PLClangTypeKindOCLImage2dArrayDepthRO;
         case CXType_OCLImage2dMSAARO:
-        return PLClangTypeKindOCLImage2dMSAARO;
+            return PLClangTypeKindOCLImage2dMSAARO;
         case CXType_OCLImage2dArrayMSAARO:
-        return PLClangTypeKindOCLImage2dArrayMSAARO;
+            return PLClangTypeKindOCLImage2dArrayMSAARO;
         case CXType_OCLImage2dMSAADepthRO:
-        return PLClangTypeKindOCLImage2dMSAADepthRO;
+            return PLClangTypeKindOCLImage2dMSAADepthRO;
         case CXType_OCLImage2dArrayMSAADepthRO:
-        return PLClangTypeKindOCLImage2dArrayMSAADepthRO;
+            return PLClangTypeKindOCLImage2dArrayMSAADepthRO;
         case CXType_OCLImage3dRO:
-        return PLClangTypeKindOCLImage3dRO;
+            return PLClangTypeKindOCLImage3dRO;
         case CXType_OCLImage1dWO:
-        return PLClangTypeKindOCLImage1dWO;
-        break;
+            return PLClangTypeKindOCLImage1dWO;
         case CXType_OCLImage1dArrayWO:
-        return PLClangTypeKindOCLImage1dArrayWO;
-        break;
+            return PLClangTypeKindOCLImage1dArrayWO;
         case CXType_OCLImage1dBufferWO:
-        return PLClangTypeKindOCLImage1dBufferWO;
-        break;
+            return PLClangTypeKindOCLImage1dBufferWO;
         case CXType_OCLImage2dWO:
-        return PLClangTypeKindOCLImage2dWO;
-        break;
+            return PLClangTypeKindOCLImage2dWO;
         case CXType_OCLImage2dArrayWO:
-        return PLClangTypeKindOCLImage2dArrayWO;
-        break;
+            return PLClangTypeKindOCLImage2dArrayWO;
         case CXType_OCLImage2dDepthWO:
-        return PLClangTypeKindOCLImage2dDepthWO;
-        break;
+            return PLClangTypeKindOCLImage2dDepthWO;
         case CXType_OCLImage2dArrayDepthWO:
-        return PLClangTypeKindOCLImage2dArrayDepthWO;
-        break;
+            return PLClangTypeKindOCLImage2dArrayDepthWO;
         case CXType_OCLImage2dMSAAWO:
-        return PLClangTypeKindOCLImage2dMSAAWO;
-        break;
+            return PLClangTypeKindOCLImage2dMSAAWO;
         case CXType_OCLImage2dArrayMSAAWO:
-        return PLClangTypeKindOCLImage2dArrayMSAAWO;
-        break;
+            return PLClangTypeKindOCLImage2dArrayMSAAWO;
         case CXType_OCLImage2dMSAADepthWO:
-        return PLClangTypeKindOCLImage2dMSAADepthWO;
-        break;
+            return PLClangTypeKindOCLImage2dMSAADepthWO;
         case CXType_OCLImage2dArrayMSAADepthWO:
-        return PLClangTypeKindOCLImage2dArrayMSAADepthWO;
-        break;
+            return PLClangTypeKindOCLImage2dArrayMSAADepthWO;
         case CXType_OCLImage3dWO:
-        return PLClangTypeKindOCLImage3dWO;
-        break;
+            return PLClangTypeKindOCLImage3dWO;
         case CXType_OCLImage1dRW:
-        return PLClangTypeKindOCLImage1dRW;
-        break;
+            return PLClangTypeKindOCLImage1dRW;
         case CXType_OCLImage1dArrayRW:
-        return PLClangTypeKindOCLImage1dArrayRW;
-        break;
+            return PLClangTypeKindOCLImage1dArrayRW;
         case CXType_OCLImage1dBufferRW:
-        return PLClangTypeKindOCLImage1dBufferRW;
-        break;
+            return PLClangTypeKindOCLImage1dBufferRW;
         case CXType_OCLImage2dRW:
-        return PLClangTypeKindOCLImage2dRW;
-        break;
+            return PLClangTypeKindOCLImage2dRW;
         case CXType_OCLImage2dArrayRW:
-        return PLClangTypeKindOCLImage2dArrayRW;
-        break;
+            return PLClangTypeKindOCLImage2dArrayRW;
         case CXType_OCLImage2dDepthRW:
-        return PLClangTypeKindOCLImage2dDepthRW;
-        break;
+            return PLClangTypeKindOCLImage2dDepthRW;
         case CXType_OCLImage2dArrayDepthRW:
-        return PLClangTypeKindOCLImage2dArrayDepthRW;
-        break;
+            return PLClangTypeKindOCLImage2dArrayDepthRW;
         case CXType_OCLImage2dMSAARW:
-        return PLClangTypeKindOCLImage2dMSAARW;
-        break;
+            return PLClangTypeKindOCLImage2dMSAARW;
         case CXType_OCLImage2dArrayMSAARW:
-        return PLClangTypeKindOCLImage2dArrayMSAARW;
-        break;
+            return PLClangTypeKindOCLImage2dArrayMSAARW;
         case CXType_OCLImage2dMSAADepthRW:
-        return PLClangTypeKindOCLImage2dMSAADepthRW;
-        break;
+            return PLClangTypeKindOCLImage2dMSAADepthRW;
         case CXType_OCLImage2dArrayMSAADepthRW:
-        return PLClangTypeKindOCLImage2dArrayMSAADepthRW;
-        break;
+            return PLClangTypeKindOCLImage2dArrayMSAADepthRW;
         case CXType_OCLImage3dRW:
-        return PLClangTypeKindOCLImage3dRW;
-        break;
+            return PLClangTypeKindOCLImage3dRW;
         case CXType_OCLSampler:
-        return PLClangTypeKindOCLSampler;
-        break;
+            return PLClangTypeKindOCLSampler;
         case CXType_OCLEvent:
-        return PLClangTypeKindOCLEvent;
-        break;
+            return PLClangTypeKindOCLEvent;
         case CXType_OCLQueue:
-        return PLClangTypeKindOCLQueue;
-        break;
+            return PLClangTypeKindOCLQueue;
         case CXType_OCLReserveID:
-        return PLClangTypeKindOCLReserveID;
-        break;
+            return PLClangTypeKindOCLReserveID;
         case CXType_ObjCObject:
-        return PLClangTypeKindObjCObject;
-        break;
+            return PLClangTypeKindObjCObject;
         case CXType_ObjCTypeParam:
-        return PLClangTypeKindObjCTypeParam;
-        break;
+            return PLClangTypeKindObjCTypeParam;
         case CXType_Attributed:
-        return PLClangTypeKindAttributed;
-        break;
+            return PLClangTypeKindAttributed;
         case CXType_OCLIntelSubgroupAVCMcePayload:
-        return PLClangTypeKindOCLIntelSubgroupAVCMcePayload;
-        break;
+            return PLClangTypeKindOCLIntelSubgroupAVCMcePayload;
         case CXType_OCLIntelSubgroupAVCImePayload:
-        return PLClangTypeKindOCLIntelSubgroupAVCImePayload;
-        break;
+            return PLClangTypeKindOCLIntelSubgroupAVCImePayload;
         case CXType_OCLIntelSubgroupAVCRefPayload:
-        return PLClangTypeKindOCLIntelSubgroupAVCRefPayload;
-        break;
+            return PLClangTypeKindOCLIntelSubgroupAVCRefPayload;
         case CXType_OCLIntelSubgroupAVCSicPayload:
-        return PLClangTypeKindOCLIntelSubgroupAVCSicPayload;
-        break;
+            return PLClangTypeKindOCLIntelSubgroupAVCSicPayload;
         case CXType_OCLIntelSubgroupAVCMceResult:
-        return PLClangTypeKindOCLIntelSubgroupAVCMceResult;
-        break;
+            return PLClangTypeKindOCLIntelSubgroupAVCMceResult;
         case CXType_OCLIntelSubgroupAVCImeResult:
-        return PLClangTypeKindOCLIntelSubgroupAVCImeResult;
-        break;
+            return PLClangTypeKindOCLIntelSubgroupAVCImeResult;
         case CXType_OCLIntelSubgroupAVCRefResult:
-        return PLClangTypeKindOCLIntelSubgroupAVCRefResult;
-        break;
+            return PLClangTypeKindOCLIntelSubgroupAVCRefResult;
         case CXType_OCLIntelSubgroupAVCSicResult:
-        return PLClangTypeKindOCLIntelSubgroupAVCSicResult;
-        break;
+            return PLClangTypeKindOCLIntelSubgroupAVCSicResult;
         case CXType_OCLIntelSubgroupAVCImeResultSingleRefStreamout:
-        return PLClangTypeKindOCLIntelSubgroupAVCImeResultSingleRefStreamout;
-        break;
+            return PLClangTypeKindOCLIntelSubgroupAVCImeResultSingleRefStreamout;
         case CXType_OCLIntelSubgroupAVCImeResultDualRefStreamout:
-        return PLClangTypeKindOCLIntelSubgroupAVCImeResultDualRefStreamout;
-        break;
+            return PLClangTypeKindOCLIntelSubgroupAVCImeResultDualRefStreamout;
         case CXType_OCLIntelSubgroupAVCImeSingleRefStreamin:
-        return PLClangTypeKindOCLIntelSubgroupAVCImeSingleRefStreamin;
-        break;
+            return PLClangTypeKindOCLIntelSubgroupAVCImeSingleRefStreamin;
         case CXType_OCLIntelSubgroupAVCImeDualRefStreamin:
-        return PLClangTypeKindOCLIntelSubgroupAVCImeDualRefStreamin;
-        break;
+            return PLClangTypeKindOCLIntelSubgroupAVCImeDualRefStreamin;
     }
 
     // Type is unknown
