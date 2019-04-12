@@ -1,8 +1,8 @@
 # objectdoc
 
-Generates a HTML report or docset of the API of an Objective-C library.
+Parse and generates a HTML report or docset for API of an Objective-C/C library. Works as a framework as well as command line.
 
-It based on [LLVM](https://llvm.org/) and [clang](https://clang.llvm.org/), to parse all your Objective-C library headers' AST, to generate the correct representation of APIs.
+It based on [LLVM](https://llvm.org/) and [clang](https://clang.llvm.org/), to parse all your Objective-C library headers' AST, to generate the correct representation of APIs. And make it easy to travel the AST to get the detail syntax information.
 
 ## Supported Syntax
 
@@ -23,7 +23,7 @@ It based on [LLVM](https://llvm.org/) and [clang](https://clang.llvm.org/), to p
 
 The framework has been tested against the system frameworks and a number of third-party libraries, and have each of syntax with test cases. It's already used by [objc-diff](http://codeworkshop.net/objc-diff/).
 
-The CLI part is not under maintained. It's recommaned to use [jazzy](https://github.com/realm/jazzy) or [appledoc](https://github.com/tomaz/appledoc) instead.
+The CLI part is not under maintained. It's recommended to use [jazzy](https://github.com/realm/jazzy) or [appledoc](https://github.com/tomaz/appledoc) instead.
 
 ## Framework Usage
 
@@ -55,7 +55,7 @@ PLClangTranslationUnit *translationUnit = [index addTranslationUnitWithSourcePat
 [translationUnit visitChildrenUsingBlock:^PLClangCursorVisitResult(PLClangCursor *cursor) {
     // Switch the cursor type
     switch (cursor.type) {
-        // @property (nonatomic, strong) id t;
+        // @property (strong, atomic) id t;
         case PLClangCursorKindObjCPropertyDeclaration: {
             PLClangObjCPropertyAttributes attributes = cursor.objCPropertyAttributes;
             NSString *name = cursor.displayName;
@@ -105,4 +105,9 @@ See the [template page](doctool/templates/index.html) for expanded usage informa
 - LLVM 8.0.0
 - clang 8.0.0
 - GRMustache 7.3.2
+
+## Author
+
+- landonf (Original Author)
+- DreamPiggy
 
