@@ -824,7 +824,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "BUILDDIR=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}/llvm-build\"\nLLVM_SRC_DIR=\"${BUILDDIR}/llvm-${LLVM_VERSION}.src\"\nCLANG_SRC_DIR=\"${LLVM_SRC_DIR}/tools/clang\"\nLOG=${BUILDDIR}/log\n\nPATH=${PATH}:/usr/local/bin:/opt/local/bin\nCMAKE_PATH=`which cmake`\n\n# We use env to clean any conflicting environmental variables\n# set by Xcode\nENV_CLEAN=\"env -i \\\"PATH=${PATH}\\\"\"\n\n# Set up the build directory\nmkdir -p \"${BUILDDIR}\"\npushd \"${BUILDDIR}\" >/dev/null\n\n# Extract LLVM + Clang\nif [ ! -d \"${LLVM_SRC_DIR}\" ]; then\ntar -C \"${BUILDDIR}\" -zxf \"${LLVM_SRC}\"\nfi\n\nif [ ! -d \"${CLANG_SRC_DIR}\" ]; then\ntar -C \"${LLVM_SRC_DIR}/tools\" -zxf \"${CLANG_SRC}\"\n\npushd \"${LLVM_SRC_DIR}/tools\" >/dev/null\nmv \"cfe-${LLVM_VERSION}.src\" \"clang\"\npopd >/dev/null\nfi\n\n# Initialize the build log\necho -n \"\" > \"${LOG}\"\necho \"Clang build log available at ${LOG}\"\n\n# Configure the compiler\n$ENV_CLEAN \"${CMAKE_PATH}\" -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_LIBCXX=1 -DLIBCLANG_BUILD_STATIC=1 -DCMAKE_INSTALL_PREFIX=\"${LLVM_INSTALL_DIR}\" \"${LLVM_SRC_DIR}\" >\"${LOG}\" 2>&1\nif [ $? != 0 ]; then\necho \"A configure error occured. See the build log for more details\" >/dev/stderr\nexit 1\nfi\n\n# Run the build\n$ENV_CLEAN \"make\" -j `sysctl -n hw.ncpu` >>\"${LOG}\" 2>&1\nif [ $? != 0 ]; then\necho \"Failed to build clang. See the build log for more details\" >/dev/stderr\nexit 1\nfi\n\n# Install the build\n$ENV_CLEAN \"make\" install >>\"${LOG}\" 2>&1\nif [ $? != 0 ]; then\necho \"Failed to build clang. See the build log for more details\" >/dev/stderr\nexit 1\nfi\n\npopd >/dev/null\n\ntouch \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}/build.stamp\"\n";
+			shellScript = "BUILDDIR=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}/llvm-build\"\nLLVM_SRC_DIR=\"${BUILDDIR}/llvm-${LLVM_VERSION}.src\"\nCLANG_SRC_DIR=\"${LLVM_SRC_DIR}/tools/clang\"\nLOG=${BUILDDIR}/log\n\nPATH=${PATH}:/usr/local/bin:/opt/local/bin\nCMAKE_PATH=`which cmake`\n\n# We use env to clean any conflicting environmental variables\n# set by Xcode\nENV_CLEAN=\"env -i \\\"PATH=${PATH}\\\"\"\n\n# Set up the build directory\nmkdir -p \"${BUILDDIR}\"\npushd \"${BUILDDIR}\" >/dev/null\n\n# Extract LLVM + Clang\nif [ ! -d \"${LLVM_SRC_DIR}\" ]; then\ntar -C \"${BUILDDIR}\" -zxf \"${LLVM_SRC}\"\nfi\n\nif [ ! -d \"${CLANG_SRC_DIR}\" ]; then\ntar -C \"${LLVM_SRC_DIR}/tools\" -zxf \"${CLANG_SRC}\"\n\npushd \"${LLVM_SRC_DIR}/tools\" >/dev/null\nmv \"cfe-${LLVM_VERSION}.src\" \"clang\"\npopd >/dev/null\nfi\n\n# Initialize the build log\necho -n \"\" > \"${LOG}\"\necho \"Clang build log available at ${LOG}\"\n\n# Configure the compiler\n$ENV_CLEAN \"${CMAKE_PATH}\" -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_LIBCXX=1 -DLIBCLANG_BUILD_STATIC=1 -DCMAKE_OSX_DEPLOYMENT_TARGET=${MACOSX_DEPLOYMENT_TARGET} -DCMAKE_INSTALL_PREFIX=\"${LLVM_INSTALL_DIR}\" \"${LLVM_SRC_DIR}\" >\"${LOG}\" 2>&1\nif [ $? != 0 ]; then\necho \"A configure error occured. See the build log for more details\" >/dev/stderr\nexit 1\nfi\n\n# Run the build\n$ENV_CLEAN \"make\" -j `sysctl -n hw.ncpu` >>\"${LOG}\" 2>&1\nif [ $? != 0 ]; then\necho \"Failed to build clang. See the build log for more details\" >/dev/stderr\nexit 1\nfi\n\n# Install the build\n$ENV_CLEAN \"make\" install >>\"${LOG}\" 2>&1\nif [ $? != 0 ]; then\necho \"Failed to build clang. See the build log for more details\" >/dev/stderr\nexit 1\nfi\n\n# Install libclang.a, Clang's CMake configuration doesn't\ncp lib/libclang.a \"${LLVM_INSTALL_DIR}/lib/\"\n\npopd >/dev/null\n\ntouch \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}/build.stamp\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -948,7 +948,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_CONFIG_LDFLAGS = "$(LLVM_INSTALL_DIR)/lib/libclang.dylib -lclangARCMigrate -lclangAST -lclangASTMatchers -lclangAnalysis -lclangBasic -lclangCodeGen -lclangDriver -lclangEdit -lclangFormat -lclangFrontend -lclangFrontendTool -lclangIndex -lclangLex -lclangParse -lclangRewrite -lclangRewriteFrontend -lclangSema -lclangSerialization -lclangStaticAnalyzerCheckers -lclangStaticAnalyzerCore -lclangStaticAnalyzerFrontend -lclangTooling -lclangToolingCore";
+				CLANG_CONFIG_LDFLAGS = "$(LLVM_INSTALL_DIR)/lib/libclang.a -lclangAST -lclangBasic -lclangFrontend -lclangIndex -lclangLex -lclangSema -lclangSerialization -lclangTooling -lclangARCMigrate -ldl -lclangStaticAnalyzerCheckers -lclangStaticAnalyzerCore -lclangCrossTU -lclangIndex -lclangFrontend -lclangDriver -lclangParse -lclangSerialization -lclangSema -lclangEdit -lclangAnalysis -lclangASTMatchers -lclangFormat -lclangToolingInclusions -lclangToolingCore -lclangAST -lclangRewrite -lclangLex -lclangBasic";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -987,7 +987,7 @@
 				LLVM_INSTALL_DIR = "${SYMROOT}/clang-install";
 				LLVM_SRC = "$(SRCROOT)/Dependencies/LLVM/llvm-8.0.0.src.tar.xz";
 				LLVM_VERSION = 8.0.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				WARNING_CFLAGS = (
@@ -1004,7 +1004,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_CONFIG_LDFLAGS = "$(LLVM_INSTALL_DIR)/lib/libclang.dylib -lclangARCMigrate -lclangAST -lclangASTMatchers -lclangAnalysis -lclangBasic -lclangCodeGen -lclangDriver -lclangEdit -lclangFormat -lclangFrontend -lclangFrontendTool -lclangIndex -lclangLex -lclangParse -lclangRewrite -lclangRewriteFrontend -lclangSema -lclangSerialization -lclangStaticAnalyzerCheckers -lclangStaticAnalyzerCore -lclangStaticAnalyzerFrontend -lclangTooling -lclangToolingCore";
+				CLANG_CONFIG_LDFLAGS = "$(LLVM_INSTALL_DIR)/lib/libclang.a -lclangAST -lclangBasic -lclangFrontend -lclangIndex -lclangLex -lclangSema -lclangSerialization -lclangTooling -lclangARCMigrate -ldl -lclangStaticAnalyzerCheckers -lclangStaticAnalyzerCore -lclangCrossTU -lclangIndex -lclangFrontend -lclangDriver -lclangParse -lclangSerialization -lclangSema -lclangEdit -lclangAnalysis -lclangASTMatchers -lclangFormat -lclangToolingInclusions -lclangToolingCore -lclangAST -lclangRewrite -lclangLex -lclangBasic";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1037,7 +1037,7 @@
 				LLVM_INSTALL_DIR = "${SYMROOT}/clang-install";
 				LLVM_SRC = "$(SRCROOT)/Dependencies/LLVM/llvm-8.0.0.src.tar.xz";
 				LLVM_VERSION = 8.0.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				SDKROOT = macosx;
 				WARNING_CFLAGS = (
 					"-Wall",
