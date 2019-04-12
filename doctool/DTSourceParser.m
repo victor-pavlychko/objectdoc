@@ -182,9 +182,9 @@ BOOL PLClangSourceRangeContainsRange(PLClangSourceRange *range1, PLClangSourceRa
         DTNode *node = nil;
         switch (cursor.kind) {
             case PLClangCursorKindObjCSuperclassReference:
-                class.superclass = _nodes[cursor.referencedCursor.USR];
-                if (!class.superclass) {
-                    class.superclass = [self parseObjCObjectAtCursor: cursor.referencedCursor];
+                class.superNode = _nodes[cursor.referencedCursor.USR];
+                if (!class.superNode) {
+                    class.superNode = [self parseObjCObjectAtCursor: cursor.referencedCursor];
                 }
                 break;
 

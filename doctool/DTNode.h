@@ -23,7 +23,7 @@
 @property(nonatomic, copy) NSString *deprecationComment;
 @property(nonatomic, copy) NSString *path;
 
-@property(nonatomic) DTNode *superclass;
+@property(nonatomic) DTNode *superNode;
 @property(nonatomic, copy) NSArray *tasks;
 @property(nonatomic, copy) NSArray *protocols;
 @property(nonatomic, copy) NSArray *properties;

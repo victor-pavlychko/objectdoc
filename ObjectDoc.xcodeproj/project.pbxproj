@@ -37,6 +37,7 @@
 		3231E5652260F7E70007FC5D /* PLClangIndexAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 3231E5632260F7E70007FC5D /* PLClangIndexAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3231E5662260F7E70007FC5D /* PLClangIndexAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 3231E5642260F7E70007FC5D /* PLClangIndexAttribute.m */; };
 		3231E5692260F8300007FC5D /* PLClangIndexAttributePrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3231E5672260F8300007FC5D /* PLClangIndexAttributePrivate.h */; };
+		3231E56C2261048E0007FC5D /* libGRMustache7-MacOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3231E56B2261048E0007FC5D /* libGRMustache7-MacOS.a */; };
 		323FA9772260B41600274FAB /* PLClangPlatformAvailabilityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 323FA9762260B41600274FAB /* PLClangPlatformAvailabilityTests.m */; };
 		C930081617C5C31C00FA8AB7 /* PLClangComment.h in Headers */ = {isa = PBXBuildFile; fileRef = C930081417C5C31C00FA8AB7 /* PLClangComment.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C930081717C5C31C00FA8AB7 /* PLClangComment.m in Sources */ = {isa = PBXBuildFile; fileRef = C930081517C5C31C00FA8AB7 /* PLClangComment.m */; };
@@ -92,7 +93,6 @@
 		C9E8B30917D930D000D7526D /* DTDocSetGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B30817D930D000D7526D /* DTDocSetGenerator.m */; };
 		C9E8B30A17D935DC00D7526D /* index.html in Copy Templates */ = {isa = PBXBuildFile; fileRef = C9E8B2EB17D9260F00D7526D /* index.html */; };
 		C9E8B30D17D978D200D7526D /* DTDoxygenCommands.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E8B30C17D978D200D7526D /* DTDoxygenCommands.m */; };
-		C9E8B32417D97DC700D7526D /* libGRMustache6-MacOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E8B32317D97DB800D7526D /* libGRMustache6-MacOS.a */; };
 		C9F243BE17C08E75005E01BF /* PLClangNSString.h in Headers */ = {isa = PBXBuildFile; fileRef = C9F243BC17C08E75005E01BF /* PLClangNSString.h */; };
 		C9F243BF17C08E75005E01BF /* PLClangNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F243BD17C08E75005E01BF /* PLClangNSString.m */; };
 		C9F243C117C11090005E01BF /* PLClangCursorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F243C017C11090005E01BF /* PLClangCursorTests.m */; };
@@ -225,6 +225,7 @@
 		3231E5632260F7E70007FC5D /* PLClangIndexAttribute.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLClangIndexAttribute.h; sourceTree = "<group>"; };
 		3231E5642260F7E70007FC5D /* PLClangIndexAttribute.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PLClangIndexAttribute.m; sourceTree = "<group>"; };
 		3231E5672260F8300007FC5D /* PLClangIndexAttributePrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLClangIndexAttributePrivate.h; sourceTree = "<group>"; };
+		3231E56B2261048E0007FC5D /* libGRMustache7-MacOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libGRMustache7-MacOS.a"; sourceTree = "<group>"; };
 		323FA973226056E000274FAB /* GRMustacheSafeKeyAccess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRMustacheSafeKeyAccess.h; sourceTree = "<group>"; };
 		323FA974226056E000274FAB /* GRMustacheContentType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRMustacheContentType.h; sourceTree = "<group>"; };
 		323FA9762260B41600274FAB /* PLClangPlatformAvailabilityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PLClangPlatformAvailabilityTests.m; sourceTree = "<group>"; };
@@ -313,7 +314,6 @@
 		C9E8B31E17D97DB800D7526D /* GRMustacheVersion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRMustacheVersion.h; sourceTree = "<group>"; };
 		C9E8B31F17D97DB800D7526D /* NSFormatter+GRMustache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSFormatter+GRMustache.h"; sourceTree = "<group>"; };
 		C9E8B32017D97DB800D7526D /* NSValueTransformer+GRMustache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSValueTransformer+GRMustache.h"; sourceTree = "<group>"; };
-		C9E8B32317D97DB800D7526D /* libGRMustache6-MacOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libGRMustache6-MacOS.a"; sourceTree = "<group>"; };
 		C9F243BC17C08E75005E01BF /* PLClangNSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLClangNSString.h; sourceTree = "<group>"; };
 		C9F243BD17C08E75005E01BF /* PLClangNSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLClangNSString.m; sourceTree = "<group>"; };
 		C9F243C017C11090005E01BF /* PLClangCursorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLClangCursorTests.m; sourceTree = "<group>"; };
@@ -362,7 +362,7 @@
 			files = (
 				05BE067A16B4422C00DF46D5 /* Foundation.framework in Frameworks */,
 				05BE068716B4424900DF46D5 /* ObjectDoc.framework in Frameworks */,
-				C9E8B32417D97DC700D7526D /* libGRMustache6-MacOS.a in Frameworks */,
+				3231E56C2261048E0007FC5D /* libGRMustache7-MacOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,7 +591,7 @@
 		C9E8B32117D97DB800D7526D /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				C9E8B32317D97DB800D7526D /* libGRMustache6-MacOS.a */,
+				3231E56B2261048E0007FC5D /* libGRMustache7-MacOS.a */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -1162,6 +1162,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Dependencies/GRMustache/lib",
+					"$(PROJECT_DIR)/Dependencies/GRMustache/lib",
 				);
 				OTHER_LDFLAGS = (
 					"-sectcreate",
@@ -1181,6 +1182,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Dependencies/GRMustache/lib",
+					"$(PROJECT_DIR)/Dependencies/GRMustache/lib",
 				);
 				OTHER_LDFLAGS = (
 					"-sectcreate",

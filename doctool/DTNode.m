@@ -27,7 +27,7 @@
 - (NSOrderedSet *) allSuperclasses {
     NSMutableOrderedSet *superclasses = [NSMutableOrderedSet orderedSet];
     DTNode *class = self;
-    while ((class = class.superclass)) {
+    while ((class = class.superNode)) {
         [superclasses addObject: class];
     }
 
@@ -36,10 +36,10 @@
 
 - (NSOrderedSet *) allProtocols {
     NSMutableOrderedSet *protocols = [NSMutableOrderedSet orderedSet];
-    DTNode *class = self;
-    while (class) {
-        [protocols addObjectsFromArray: class.protocols];
-        class = class.superclass;
+    DTNode *protocol = self;
+    while (protocol) {
+        [protocols addObjectsFromArray: protocol.protocols];
+        protocol = protocol.superNode;
     }
 
     return protocols;
