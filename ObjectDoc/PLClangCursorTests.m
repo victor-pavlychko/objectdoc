@@ -252,10 +252,12 @@
     XCTAssertNotNil(cursor);
     XCTAssertEqual(cursor.linkage, PLClangLinkageExternal);
 
+    // C++03 is UniqueExternal. But C++11 changed to Internal.
+    // See: https://en.cppreference.com/w/cpp/language/namespace#Unnamed_namespaces
     tu = [self translationUnitWithSource: @"namespace { int t; }" path: @"test.cpp"];
     cursor = [tu cursorWithSpelling: @"t"];
     XCTAssertNotNil(cursor);
-    XCTAssertEqual(cursor.linkage, PLClangLinkageUniqueExternal);
+    XCTAssertEqual(cursor.linkage, PLClangLinkageInternal);
 }
 
 - (void) testResultType {
