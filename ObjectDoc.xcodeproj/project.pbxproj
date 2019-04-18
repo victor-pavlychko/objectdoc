@@ -533,13 +533,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		322E010E226707C4002AF56A /* CXX */ = {
+		322E010E226707C4002AF56A /* Clang-CXX */ = {
 			isa = PBXGroup;
 			children = (
 				322E010F226707E7002AF56A /* PLCXX.cpp */,
 				322E0110226707E7002AF56A /* PLCXX.h */,
 			);
-			name = CXX;
+			name = "Clang-CXX";
 			sourceTree = "<group>";
 		};
 		C9E8B2E717D925F700D7526D /* Resources */ = {
@@ -718,7 +718,7 @@
 		FCE45DBA8B77A89587FFFCBD /* Source Tools */ = {
 			isa = PBXGroup;
 			children = (
-				322E010E226707C4002AF56A /* CXX */,
+				322E010E226707C4002AF56A /* Clang-CXX */,
 				FCE45D525275A511EEFA311F /* Clang */,
 			);
 			name = "Source Tools";
@@ -908,7 +908,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "BUILDDIR=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}/llvm-build\"\nLLVM_SRC_DIR=\"${BUILDDIR}/llvm-${LLVM_VERSION}.src\"\nCLANG_SRC_DIR=\"${LLVM_SRC_DIR}/tools/clang\"\nLOG=${BUILDDIR}/log\n\nPATH=${PATH}:/usr/local/bin:/opt/local/bin\nCMAKE_PATH=`which cmake`\n\n# We use env to clean any conflicting environmental variables\n# set by Xcode\nENV_CLEAN=\"env -i \\\"PATH=${PATH}\\\"\"\n\n# Set up the build directory\nmkdir -p \"${BUILDDIR}\"\npushd \"${BUILDDIR}\" >/dev/null\n\n# Extract LLVM + Clang\nif [ ! -d \"${LLVM_SRC_DIR}\" ]; then\ntar -C \"${BUILDDIR}\" -zxf \"${LLVM_SRC}\"\nfi\n\nif [ ! -d \"${CLANG_SRC_DIR}\" ]; then\ntar -C \"${LLVM_SRC_DIR}/tools\" -zxf \"${CLANG_SRC}\"\n\npushd \"${LLVM_SRC_DIR}/tools\" >/dev/null\nmv \"cfe-${LLVM_VERSION}.src\" \"clang\"\npopd >/dev/null\nfi\n\n# Initialize the build log\necho -n \"\" > \"${LOG}\"\necho \"Clang build log available at ${LOG}\"\n\n# Configure the compiler\n$ENV_CLEAN \"${CMAKE_PATH}\" -DCMAKE_BUILD_TYPE=${CONFIGURATION} -DLLVM_ENABLE_LIBCXX=1 -DLIBCLANG_BUILD_STATIC=1 -DCMAKE_OSX_DEPLOYMENT_TARGET=${MACOSX_DEPLOYMENT_TARGET} -DCMAKE_INSTALL_PREFIX=\"${LLVM_INSTALL_DIR}\" \"${LLVM_SRC_DIR}\" >\"${LOG}\" 2>&1\nif [ $? != 0 ]; then\necho \"A configure error occured. See the build log for more details\" >/dev/stderr\nexit 1\nfi\n\n# Run the build\n$ENV_CLEAN \"make\" -j `sysctl -n hw.ncpu` >>\"${LOG}\" 2>&1\nif [ $? != 0 ]; then\necho \"Failed to build clang. See the build log for more details\" >/dev/stderr\nexit 1\nfi\n\n# Install the build\n$ENV_CLEAN \"make\" install >>\"${LOG}\" 2>&1\nif [ $? != 0 ]; then\necho \"Failed to build clang. See the build log for more details\" >/dev/stderr\nexit 1\nfi\n\n# Install libclang.a, Clang's CMake configuration doesn't\ncp lib/libclang.a \"${LLVM_INSTALL_DIR}/lib/\"\n\npopd >/dev/null\n\ntouch \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}/build.stamp\"\n";
+			shellScript = "BUILDDIR=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}/llvm-build\"\nLLVM_SRC_DIR=\"${BUILDDIR}/llvm-${LLVM_VERSION}.src\"\nCLANG_SRC_DIR=\"${LLVM_SRC_DIR}/tools/clang\"\nLOG=${BUILDDIR}/log\n\nPATH=${PATH}:/usr/local/bin:/opt/local/bin\nCMAKE_PATH=`which cmake`\n\n# We use env to clean any conflicting environmental variables\n# set by Xcode\nENV_CLEAN=\"env -i \\\"PATH=${PATH}\\\"\"\n\n# Set up the build directory\nmkdir -p \"${BUILDDIR}\"\npushd \"${BUILDDIR}\" >/dev/null\n\n# Extract LLVM + Clang\nif [ ! -d \"${LLVM_SRC_DIR}\" ]; then\ntar -C \"${BUILDDIR}\" -zxf \"${LLVM_SRC}\"\nfi\n\nif [ ! -d \"${CLANG_SRC_DIR}\" ]; then\ntar -C \"${LLVM_SRC_DIR}/tools\" -zxf \"${CLANG_SRC}\"\n\npushd \"${LLVM_SRC_DIR}/tools\" >/dev/null\nmv \"cfe-${LLVM_VERSION}.src\" \"clang\"\npopd >/dev/null\nfi\n\n# Initialize the build log\necho -n \"\" > \"${LOG}\"\necho \"Clang build log available at ${LOG}\"\n\n# Configure the compiler\n$ENV_CLEAN \"${CMAKE_PATH}\" -DCMAKE_BUILD_TYPE=${CONFIGURATION} -DLLVM_ENABLE_LIBCXX=1 -DLIBCLANG_BUILD_STATIC=1 -DCMAKE_OSX_DEPLOYMENT_TARGET=${MACOSX_DEPLOYMENT_TARGET} -DCMAKE_INSTALL_PREFIX=\"${LLVM_INSTALL_DIR}\" \"${LLVM_SRC_DIR}\" >\"${LOG}\" 2>&1\nif [ $? != 0 ]; then\necho \"A configure error occured. See the build log for more details\" >/dev/stderr\nexit 1\nfi\n\n# Run the build\n$ENV_CLEAN \"make\" -j `sysctl -n hw.ncpu` >>\"${LOG}\" 2>&1\nif [ $? != 0 ]; then\necho \"Failed to build clang. See the build log for more details\" >/dev/stderr\nexit 1\nfi\n\n# Install the build\n$ENV_CLEAN \"make\" install >>\"${LOG}\" 2>&1\nif [ $? != 0 ]; then\necho \"Failed to build clang. See the build log for more details\" >/dev/stderr\nexit 1\nfi\n\n# Install libclang.a, Clang's CMake configuration doesn't\ncp lib/libclang.a \"${LLVM_INSTALL_DIR}/lib/\"\n\n# Install libclang C++ header files for extension\nmkdir -p \"${LLVM_INSTALL_DIR}/include/clang-cxx/\"\ncp ${CLANG_SRC_DIR}/tools/libclang/*.h \"${LLVM_INSTALL_DIR}/include/clang-cxx/\"\n\npopd >/dev/null\n\ntouch \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}/build.stamp\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
