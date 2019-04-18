@@ -88,4 +88,20 @@
     return self;
 }
 
++ (NSArray<PLClangDiagnostic *> *)diagnosticsWithCXDiagnosticSet: (CXDiagnosticSet)diagnosticSet {
+    unsigned int count = clang_getNumDiagnosticsInSet(diagnosticSet);
+    NSMutableArray *diagnostics = [NSMutableArray arrayWithCapacity: count];
+    for (unsigned int i = 0; i < count; i++) {
+        CXDiagnostic diagnostic = clang_getDiagnosticInSet(diagnosticSet, i);
+        if (clang_getDiagnosticSeverity(diagnostic) == CXDiagnostic_Note) {
+            // TODO: Handle note diagnostics.
+            continue;
+        }
+        
+        [diagnostics addObject: [[PLClangDiagnostic alloc] initWithCXDiagnostic: diagnostic]];
+    }
+    
+    return diagnostics;
+}
+
 @end

@@ -50,12 +50,13 @@
  * @param availability The clang availability structure that will provide platform availability information.
  * @return An initialized availability instance.
  */
-- (instancetype) initWithCXPlatformAvailability: (CXPlatformAvailability) availability {
+- (instancetype) initWithCXPlatformAvailability: (CXPlatformAvailability2) availability {
     PLSuperInit();
 
     // The strings in CXPlatformAvailability are disposed via clang_disposeCXPlatformAvailability(), just convert them
     _platformName = plclang_convert_cxstring(availability.Platform);
     _message = plclang_convert_cxstring(availability.Message);
+    _replacement = plclang_convert_cxstring(availability.Replacement);
     _introducedVersion = [[PLClangVersion alloc] initWithCXVersion: availability.Introduced];
     _deprecatedVersion = [[PLClangVersion alloc] initWithCXVersion: availability.Deprecated];
     _obsoletedVersion = [[PLClangVersion alloc] initWithCXVersion: availability.Obsoleted];

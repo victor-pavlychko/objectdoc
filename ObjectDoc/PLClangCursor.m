@@ -13,9 +13,7 @@
 #import "PLClangIndexDeclarationPrivate.h"
 #import "PLAdditions.h"
 #import "PLClangNSString.h"
-
-static void PLIndexDeclaration(void *client_data, const CXIdxDeclInfo * info);
-static int PLAbortQuery(void *client_data, void *reserved);
+#import "PLCXX.h"
 
 /**
  * A cursor representing an element in the abstract syntax tree.
@@ -931,7 +929,7 @@ static int PLAbortQuery(void *client_data, void *reserved);
  * compiler rather than explicitly written in the source code.
  */
 - (BOOL) isImplicit {
-    return self.indexDeclaration.isImplicit;
+    return clang_Cursor_isImplicit(_cursor);
 }
 
 /**
@@ -1254,24 +1252,6 @@ static int PLAbortQuery(void *client_data, void *reserved);
     return _availability ?: (_availability = [[PLClangAvailability alloc] initWithCXCursor: _cursor]);
 }
 
-- (PLClangIndexDeclaration *)indexDeclaration {
-    if (_indexDeclaration != nil) {
-        return _indexDeclaration;
-    }
-    // Search the index
-    CXTranslationUnit unit = clang_Cursor_getTranslationUnit(_cursor);
-    CXIndex index = clang_createIndex(1, 0);
-    IndexerCallbacks *callbacks = calloc((unsigned int)1, sizeof(IndexerCallbacks));
-    CXIndexAction action = clang_IndexAction_create(index);
-    callbacks->indexDeclaration = PLIndexDeclaration;
-    callbacks->abortQuery = PLAbortQuery;
-    clang_indexTranslationUnit(action, (__bridge void *)self, callbacks, sizeof(IndexerCallbacks), 0, unit);
-    clang_disposeIndex(index);
-    clang_IndexAction_dispose(action);
-    free(callbacks);
-    return _indexDeclaration;
-}
-
 /**
  * The parsed comment associated with this cursor, or nil if there is no associated comment.
  */
@@ -1374,20 +1354,3 @@ static int PLAbortQuery(void *client_data, void *reserved);
 }
 
 @end
-
-static void PLIndexDeclaration(void *client_data, const CXIdxDeclInfo * info) {
-    PLClangCursor *self = (__bridge PLClangCursor *)client_data;
-    if (clang_equalCursors(info->cursor, [self cxCursor])) {
-        CXIdxDeclInfo declInfo = *info;
-        self->_indexDeclaration = [[PLClangIndexDeclaration alloc] initWithCXIdxDeclInfo:declInfo];
-    }
-}
-
-static int PLAbortQuery(void *client_data, void *reserved) {
-    PLClangCursor *self = (__bridge PLClangCursor *)client_data;
-    if (self->_indexDeclaration != nil) {
-        return 1;
-    } else {
-        return 0;
-    }
-}

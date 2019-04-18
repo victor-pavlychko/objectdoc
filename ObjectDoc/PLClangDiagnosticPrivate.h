@@ -10,5 +10,6 @@
 @interface PLClangDiagnostic (PackagePrivate)
 
 - (instancetype) initWithCXDiagnostic: (CXDiagnostic) diagnostic;
++ (NSArray<PLClangDiagnostic *> *)diagnosticsWithCXDiagnosticSet: (CXDiagnosticSet)diagnosticSet;
 
 @end

@@ -40,6 +40,7 @@
 #import "PLClangTokenSet.h"
 #import "PLClangNSString.h"
 #import "PLClang.h"
+#import "PLCXX.h"
 
 /**
  * A translation unit.
@@ -212,9 +213,7 @@
     _owner = owner;
     _tu = tu;
     _spelling = plclang_convert_and_dispose_cxstring(clang_getTranslationUnitSpelling(_tu));
-    CXTargetInfo targetInfo = clang_getTranslationUnitTargetInfo(_tu);
-    CXString triple = clang_TargetInfo_getTriple(targetInfo);
-    _targetPlatformName = plclang_convert_and_dispose_cxstring(triple);
+    _targetPlatformName = plclang_convert_and_dispose_cxstring(clang_getTargetPlatformName(_tu));
 
     /* Extract all diagnostics */
     CXDiagnosticSet diagnosticSet = clang_getDiagnosticSetFromTU(tu);
