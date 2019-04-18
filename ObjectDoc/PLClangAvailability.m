@@ -98,6 +98,7 @@
     _isUnconditionallyDeprecated = always_deprecated;
     _isUnconditionallyUnavailable = always_unavailable;
     _unconditionalDeprecationMessage = plclang_convert_and_dispose_cxstring(deprecationString);
+    _unconditionalDeprecationReplacement = plclang_convert_and_dispose_cxstring(replacementString);
     _unconditionalUnavailabilityMessage = plclang_convert_and_dispose_cxstring(unavilableString);
 
     NSMutableArray *entries = [NSMutableArray array];
