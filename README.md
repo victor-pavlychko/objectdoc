@@ -1,5 +1,7 @@
 # objectdoc
 
+![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat) [![Build Status](https://travis-ci.org/dreampiggy/objectdoc.svg?branch=master)](https://travis-ci.org/dreampiggy/objectdoc) 
+
 Parse and generates a HTML report or docset for API of an Objective-C/C library. Works as a framework as well as command line.
 
 It based on [LLVM](https://llvm.org/) and [clang](https://clang.llvm.org/), to parse all your Objective-C library headers' AST, to generate the correct representation of APIs. And make it easy to travel the AST to get the detail syntax information.

@@ -1,0 +1,16 @@
+language: objective-c
+osx_image: xcode10
+script:
+- xcodebuild -project ObjectDoc.xcodeproj -target ObjectDoc
+- mv build/Release/ObjectDoc.framework .
+- zip -r ObjectDoc.framework.zip ObjectDoc.framework
+notifications:
+  email: false
+deploy:
+  provider: releases
+  api_key:
+    secure: Vs0V/t81LaS2Y/8b2xkougq7nBQrRHn2VTE93/rsbc7yMqaTZ/M9igO54i+Xp4crBqaWplhi7lz5ys4vqLVq2+BfMtJjG0YJ9b/5bmNUp7+cTsmOUrOhZ0sQD2+E68Y8OlthqcgmhyrKiMgk09dhKwhylEVn1oaWDGkgrYbrj7hvWSVR8XHZCNBbPVlUzqzGujq7QoNCtxWOjRpzi4DJ5pmmBIyot+8x0vYry6l5lh7pabs4DUe5u3MpjXzLeRiJTajE1NQ5NrbK28kCFqTfEEl/b2vDNLA4HmHLYfMaaAYMCJJEnY7Itb2wBU/jlApN5o8g0CLB0h3qm3Mfi/L1crECStc03OXvq7GOtekaQtIC/SegAdHn+tY9yRiS1zHrYb2NnNbEP0Tj8oRKeo5E5HJMq85GLXZ6X3E8IDO9BPofypFLL42JvqoY9v07m2WY/zqKrD1wEFPPGFoPEyb2kuc4S7D8BRUnZFoMB/6qwyj5mM4Y9eusE9Y+TBQsRNnpQT0ktLdNnVYgWc4FRybOqesbfe1vuQdUZz8uYtuvrTLQ97Q6qoVF2WKfP3rLDQIkFs5x0SyPZU/j+oyCBZ7UmyfXbUVpIsb1hgLzdFjgTEXvtIQNyeJDiQAb2U1Zz2yIG7BPaT1yt633SN8DDrsnalxpsU9AMq9ANqhlBKCUlWY=
+  file: ObjectDoc.framework.zip
+  skip_cleanup: true
+  on:
+    tags: true
