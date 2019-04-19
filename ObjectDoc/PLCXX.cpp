@@ -7,10 +7,14 @@
 //
 
 #include "PLCXX.h"
+#include <clang-cxx/CXType.h>
 #include <clang-cxx/CXCursor.h>
 #include <clang-cxx/CXTranslationUnit.h>
-#include <clang/Tooling/Tooling.h>
+#include <clang/AST/Decl.h>
 #include <clang/AST/DeclObjC.h>
+#include <clang/AST/Expr.h>
+#include <clang/AST/Type.h>
+#include <clang/Frontend/ASTUnit.h>
 
 using namespace clang;
 using namespace clang::cxtu;
@@ -200,4 +204,25 @@ void clang_disposeCXPlatformAvailability2(CXPlatformAvailability2 *availability)
     clang_disposeString(availability->Platform);
     clang_disposeString(availability->Message);
     clang_disposeString(availability->Replacement);
+}
+
+using cxtype::MakeCXType;
+
+static inline QualType GetQualType(CXType CT) {
+    return QualType::getFromOpaquePtr(CT.data[0]);
+}
+
+static inline CXTranslationUnit GetTU(CXType CT) {
+    return static_cast<CXTranslationUnit>(CT.data[1]);
+}
+
+CXType clang_Type_removeOuterNullability(CXType CT) {
+    QualType QT = GetQualType(CT);
+    if (QT.isNull())
+        return CT;
+    
+    if (AttributedType::stripOuterNullability(QT))
+        return MakeCXType(QT, GetTU(CT));
+    
+    return CT;
 }

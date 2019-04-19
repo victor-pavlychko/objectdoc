@@ -8,6 +8,7 @@
 #import "PLClangCursorPrivate.h"
 #import "PLClangNSString.h"
 #import "PLAdditions.h"
+#import "PLCXX.h"
 
 /**
  * The type of an element in the abstract syntax tree.
@@ -438,6 +439,13 @@
 
     // Nullability kind is unknown
     abort();
+}
+
+/**
+ * Returns a copy of the type with its outer nullability information removed.
+ */
+- (instancetype) typeByRemovingOuterNullability {
+    return [[[self class] alloc] initWithOwner: _owner cxType: clang_Type_removeOuterNullability(_type)];
 }
 
 - (BOOL) isEqual: (id) object {
