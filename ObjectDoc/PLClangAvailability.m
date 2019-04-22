@@ -8,7 +8,6 @@
 #import "PLClangPlatformAvailabilityPrivate.h"
 #import "PLClangNSString.h"
 #import "PLAdditions.h"
-#import "PLCXX.h"
 
 /**
  * Availability information for an entity.
@@ -77,7 +76,7 @@
     _kind = [self availabilityKindForCXAvailabilityKind: clang_getCursorAvailability(cursor)];
 
     // Get the number of platform availability entries
-    int platformCount = clang_getCursorPlatformAvailability2(cursor, NULL, NULL, NULL, NULL, NULL, NULL, 0);
+    int platformCount = clang_getCursorPlatformAvailability(cursor, NULL, NULL, NULL, NULL, NULL, NULL, 0);
     NSAssert(platformCount >= 0, @"clang_getCursorPlatformAvailability() returned a negative number of platforms");
 
     int always_deprecated = 0;
@@ -85,8 +84,8 @@
     CXString deprecationString = {};
     CXString replacementString = {};
     CXString unavilableString = {};
-    CXPlatformAvailability2 *platformAvailability = calloc((unsigned int)platformCount, sizeof(CXPlatformAvailability2));
-    clang_getCursorPlatformAvailability2(cursor,
+    CXPlatformAvailability *platformAvailability = calloc((unsigned int)platformCount, sizeof(CXPlatformAvailability));
+    clang_getCursorPlatformAvailability(cursor,
                                          &always_deprecated,
                                          &deprecationString,
                                          &replacementString,
@@ -106,7 +105,7 @@
     for (int i = 0; i < platformCount; i++) {
         PLClangPlatformAvailability *availability = [[PLClangPlatformAvailability alloc] initWithCXPlatformAvailability: platformAvailability[i]];
         [entries addObject: availability];
-        clang_disposeCXPlatformAvailability2(&platformAvailability[i]);
+        clang_disposeCXPlatformAvailability(&platformAvailability[i]);
     }
 
     _platformAvailabilityEntries = [entries copy];

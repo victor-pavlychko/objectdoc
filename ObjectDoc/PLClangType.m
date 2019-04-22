@@ -8,7 +8,6 @@
 #import "PLClangCursorPrivate.h"
 #import "PLClangNSString.h"
 #import "PLAdditions.h"
-#import "PLCXX.h"
 
 /**
  * The type of an element in the abstract syntax tree.

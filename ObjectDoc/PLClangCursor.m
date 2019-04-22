@@ -13,7 +13,6 @@
 #import "PLClangIndexDeclarationPrivate.h"
 #import "PLAdditions.h"
 #import "PLClangNSString.h"
-#import "PLCXX.h"
 
 /**
  * A cursor representing an element in the abstract syntax tree.

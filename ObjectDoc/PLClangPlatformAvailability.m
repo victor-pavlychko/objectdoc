@@ -50,7 +50,7 @@
  * @param availability The clang availability structure that will provide platform availability information.
  * @return An initialized availability instance.
  */
-- (instancetype) initWithCXPlatformAvailability: (CXPlatformAvailability2) availability {
+- (instancetype) initWithCXPlatformAvailability: (CXPlatformAvailability) availability {
     PLSuperInit();
 
     // The strings in CXPlatformAvailability are disposed via clang_disposeCXPlatformAvailability(), just convert them

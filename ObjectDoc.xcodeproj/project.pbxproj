@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		05A2157719008A910050A058 /* clang */ = {
+		05A2157719008A910050A058 /* clang-build */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 05A2157819008A910050A058 /* Build configuration list for PBXAggregateTarget "clang" */;
+			buildConfigurationList = 05A2157819008A910050A058 /* Build configuration list for PBXAggregateTarget "clang-build" */;
 			buildPhases = (
 				05A2157B19008A9F0050A058 /* ShellScript */,
 			);
 			dependencies = (
 			);
-			name = clang;
+			name = "clang-build";
 			productName = clang;
 		};
 /* End PBXAggregateTarget section */
@@ -31,8 +31,6 @@
 		05BE068716B4424900DF46D5 /* ObjectDoc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05BE063F16B43ECE00DF46D5 /* ObjectDoc.framework */; };
 		05BE068D16B4474100DF46D5 /* ObjectDoc.h in Headers */ = {isa = PBXBuildFile; fileRef = 05BE064F16B43ECE00DF46D5 /* ObjectDoc.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05BE068E16B4494200DF46D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05BE064716B43ECE00DF46D5 /* Foundation.framework */; };
-		322E012A22673027002AF56A /* PLCXX.h in Headers */ = {isa = PBXBuildFile; fileRef = 322E0110226707E7002AF56A /* PLCXX.h */; };
-		322E012B22673115002AF56A /* PLCXX.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 322E010F226707E7002AF56A /* PLCXX.cpp */; };
 		3231E55D2260F4B80007FC5D /* PLClangIndexDeclaration.h in Headers */ = {isa = PBXBuildFile; fileRef = 3231E55B2260F4B80007FC5D /* PLClangIndexDeclaration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3231E55E2260F4B80007FC5D /* PLClangIndexDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3231E55C2260F4B80007FC5D /* PLClangIndexDeclaration.m */; };
 		3231E5612260F5E10007FC5D /* PLClangIndexDeclarationPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3231E55F2260F5E10007FC5D /* PLClangIndexDeclarationPrivate.h */; };
@@ -53,6 +51,40 @@
 		32D3000422685EC600A0C315 /* PLClangEntityReferencePrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 32D3000222685EC600A0C315 /* PLClangEntityReferencePrivate.h */; };
 		32D3000822685FA700A0C315 /* PLClangFilePrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 32D3000622685FA700A0C315 /* PLClangFilePrivate.h */; };
 		32D3FFFC22685C2F00A0C315 /* PLClangIndexImportedASTFilePrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 32D3FFFA22685C2F00A0C315 /* PLClangIndexImportedASTFilePrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		32E54B5B226DA24F00244FE2 /* ARCMigrate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32E54AF5226D97BD00244FE2 /* ARCMigrate.cpp */; };
+		32E54B5C226DA24F00244FE2 /* BuildSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32E54B0D226D97BD00244FE2 /* BuildSystem.cpp */; };
+		32E54B5D226DA24F00244FE2 /* CIndex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32E54B0F226D97BD00244FE2 /* CIndex.cpp */; };
+		32E54B5E226DA24F00244FE2 /* CIndexCodeCompletion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32E54B11226D97BD00244FE2 /* CIndexCodeCompletion.cpp */; };
+		32E54B5F226DA24F00244FE2 /* CIndexCXX.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32E54AF8226D97BD00244FE2 /* CIndexCXX.cpp */; };
+		32E54B60226DA24F00244FE2 /* CIndexDiagnostic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32E54B12226D97BD00244FE2 /* CIndexDiagnostic.cpp */; };
+		32E54B61226DA24F00244FE2 /* CIndexDiagnostic.h in Headers */ = {isa = PBXBuildFile; fileRef = 32E54AFB226D97BD00244FE2 /* CIndexDiagnostic.h */; };
+		32E54B62226DA24F00244FE2 /* CIndexer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32E54AF9226D97BD00244FE2 /* CIndexer.cpp */; };
+		32E54B63226DA24F00244FE2 /* CIndexer.h in Headers */ = {isa = PBXBuildFile; fileRef = 32E54B08226D97BD00244FE2 /* CIndexer.h */; };
+		32E54B64226DA24F00244FE2 /* CIndexHigh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32E54B0B226D97BD00244FE2 /* CIndexHigh.cpp */; };
+		32E54B65226DA24F00244FE2 /* CIndexInclusionStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32E54B06226D97BD00244FE2 /* CIndexInclusionStack.cpp */; };
+		32E54B66226DA24F00244FE2 /* CIndexUSRs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32E54B17226D97BD00244FE2 /* CIndexUSRs.cpp */; };
+		32E54B67226DA24F00244FE2 /* CLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 32E54B0A226D97BD00244FE2 /* CLog.h */; };
+		32E54B68226DA24F00244FE2 /* CursorVisitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 32E54AF6226D97BD00244FE2 /* CursorVisitor.h */; };
+		32E54B69226DA24F00244FE2 /* CXComment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32E54B14226D97BD00244FE2 /* CXComment.cpp */; };
+		32E54B6A226DA24F00244FE2 /* CXComment.h in Headers */ = {isa = PBXBuildFile; fileRef = 32E54B15226D97BD00244FE2 /* CXComment.h */; };
+		32E54B6B226DA24F00244FE2 /* CXCompilationDatabase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32E54B04226D97BD00244FE2 /* CXCompilationDatabase.cpp */; };
+		32E54B6C226DA24F00244FE2 /* CXCursor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32E54B00226D97BD00244FE2 /* CXCursor.cpp */; };
+		32E54B6D226DA24F00244FE2 /* CXCursor.h in Headers */ = {isa = PBXBuildFile; fileRef = 32E54AFD226D97BD00244FE2 /* CXCursor.h */; };
+		32E54B6E226DA24F00244FE2 /* CXIndexDataConsumer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32E54B10226D97BD00244FE2 /* CXIndexDataConsumer.cpp */; };
+		32E54B6F226DA24F00244FE2 /* CXIndexDataConsumer.h in Headers */ = {isa = PBXBuildFile; fileRef = 32E54B05226D97BD00244FE2 /* CXIndexDataConsumer.h */; };
+		32E54B70226DA24F00244FE2 /* CXLoadedDiagnostic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32E54AFA226D97BD00244FE2 /* CXLoadedDiagnostic.cpp */; };
+		32E54B71226DA24F00244FE2 /* CXLoadedDiagnostic.h in Headers */ = {isa = PBXBuildFile; fileRef = 32E54B02226D97BD00244FE2 /* CXLoadedDiagnostic.h */; };
+		32E54B72226DA24F00244FE2 /* CXSourceLocation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32E54B16226D97BD00244FE2 /* CXSourceLocation.cpp */; };
+		32E54B73226DA24F00244FE2 /* CXSourceLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 32E54AFC226D97BD00244FE2 /* CXSourceLocation.h */; };
+		32E54B74226DA24F00244FE2 /* CXStoredDiagnostic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32E54B09226D97BD00244FE2 /* CXStoredDiagnostic.cpp */; };
+		32E54B75226DA24F00244FE2 /* CXString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32E54B13226D97BD00244FE2 /* CXString.cpp */; };
+		32E54B76226DA24F00244FE2 /* CXString.h in Headers */ = {isa = PBXBuildFile; fileRef = 32E54B0E226D97BD00244FE2 /* CXString.h */; };
+		32E54B77226DA24F00244FE2 /* CXTranslationUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = 32E54B07226D97BD00244FE2 /* CXTranslationUnit.h */; };
+		32E54B78226DA24F00244FE2 /* CXType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32E54B0C226D97BD00244FE2 /* CXType.cpp */; };
+		32E54B79226DA24F00244FE2 /* CXType.h in Headers */ = {isa = PBXBuildFile; fileRef = 32E54B03226D97BD00244FE2 /* CXType.h */; };
+		32E54B7A226DA24F00244FE2 /* Index_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 32E54AFF226D97BD00244FE2 /* Index_Internal.h */; };
+		32E54B7B226DA24F00244FE2 /* Indexing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32E54AFE226D97BD00244FE2 /* Indexing.cpp */; };
+		32E54B7C226DA2C300244FE2 /* libclang.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E54B50226DA24900244FE2 /* libclang.a */; };
 		C930081617C5C31C00FA8AB7 /* PLClangComment.h in Headers */ = {isa = PBXBuildFile; fileRef = C930081417C5C31C00FA8AB7 /* PLClangComment.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C930081717C5C31C00FA8AB7 /* PLClangComment.m in Sources */ = {isa = PBXBuildFile; fileRef = C930081517C5C31C00FA8AB7 /* PLClangComment.m */; };
 		C930081917C5C34600FA8AB7 /* PLClangCommentPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = C930081817C5C34600FA8AB7 /* PLClangCommentPrivate.h */; };
@@ -111,7 +143,6 @@
 		C9F243BF17C08E75005E01BF /* PLClangNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F243BD17C08E75005E01BF /* PLClangNSString.m */; };
 		C9F243C117C11090005E01BF /* PLClangCursorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F243C017C11090005E01BF /* PLClangCursorTests.m */; };
 		C9F243C617C1119E005E01BF /* PLClangTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F243C317C11196005E01BF /* PLClangTestCase.m */; };
-		C9F6C0331944066400D3011F /* clang in Copy Clang Headers */ = {isa = PBXBuildFile; fileRef = C9F6C030194405F300D3011F /* clang */; };
 		FCE4508CD72B9C5BAAF6F603 /* PLClangDiagnostic.h in Headers */ = {isa = PBXBuildFile; fileRef = FCE4576CFA89A9EA19B558F9 /* PLClangDiagnostic.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FCE4511607B3484B969529F5 /* PLSourceLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = FCE4517E1BB8112F853B6650 /* PLSourceLocation.h */; };
 		FCE451617D97D37E53EE138F /* PLClangSourceLocationPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = FCE45F27005C44A99E4A1F06 /* PLClangSourceLocationPrivate.h */; };
@@ -131,13 +162,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		05A2158219008E430050A058 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 05BE063516B43ECE00DF46D5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 05A2157719008A910050A058;
-			remoteInfo = clang;
-		};
 		05BE065B16B43ECF00DF46D5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 05BE063516B43ECE00DF46D5 /* Project object */;
@@ -203,17 +227,6 @@
 			name = "Copy Template JavaScript";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C9F6C0321944065A00D3011F /* Copy Clang Headers */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 6;
-			files = (
-				C9F6C0331944066400D3011F /* clang in Copy Clang Headers */,
-			);
-			name = "Copy Clang Headers";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -233,8 +246,6 @@
 		05BE067716B4422C00DF46D5 /* doctool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = doctool; sourceTree = BUILT_PRODUCTS_DIR; };
 		05BE067916B4422C00DF46D5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		05BE067C16B4422C00DF46D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		322E010F226707E7002AF56A /* PLCXX.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PLCXX.cpp; sourceTree = "<group>"; };
-		322E0110226707E7002AF56A /* PLCXX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLCXX.h; sourceTree = "<group>"; };
 		3231E55B2260F4B80007FC5D /* PLClangIndexDeclaration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLClangIndexDeclaration.h; sourceTree = "<group>"; };
 		3231E55C2260F4B80007FC5D /* PLClangIndexDeclaration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PLClangIndexDeclaration.m; sourceTree = "<group>"; };
 		3231E55F2260F5E10007FC5D /* PLClangIndexDeclarationPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLClangIndexDeclarationPrivate.h; sourceTree = "<group>"; };
@@ -261,6 +272,40 @@
 		32D3000622685FA700A0C315 /* PLClangFilePrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLClangFilePrivate.h; sourceTree = "<group>"; };
 		32D3FFFA22685C2F00A0C315 /* PLClangIndexImportedASTFilePrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLClangIndexImportedASTFilePrivate.h; sourceTree = "<group>"; };
 		32D3FFFE22685D6D00A0C315 /* PLClangIndexIncludedFilePrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLClangIndexIncludedFilePrivate.h; sourceTree = "<group>"; };
+		32E54AF5226D97BD00244FE2 /* ARCMigrate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ARCMigrate.cpp; sourceTree = "<group>"; };
+		32E54AF6226D97BD00244FE2 /* CursorVisitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CursorVisitor.h; sourceTree = "<group>"; };
+		32E54AF8226D97BD00244FE2 /* CIndexCXX.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CIndexCXX.cpp; sourceTree = "<group>"; };
+		32E54AF9226D97BD00244FE2 /* CIndexer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CIndexer.cpp; sourceTree = "<group>"; };
+		32E54AFA226D97BD00244FE2 /* CXLoadedDiagnostic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CXLoadedDiagnostic.cpp; sourceTree = "<group>"; };
+		32E54AFB226D97BD00244FE2 /* CIndexDiagnostic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIndexDiagnostic.h; sourceTree = "<group>"; };
+		32E54AFC226D97BD00244FE2 /* CXSourceLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXSourceLocation.h; sourceTree = "<group>"; };
+		32E54AFD226D97BD00244FE2 /* CXCursor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXCursor.h; sourceTree = "<group>"; };
+		32E54AFE226D97BD00244FE2 /* Indexing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Indexing.cpp; sourceTree = "<group>"; };
+		32E54AFF226D97BD00244FE2 /* Index_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Index_Internal.h; sourceTree = "<group>"; };
+		32E54B00226D97BD00244FE2 /* CXCursor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CXCursor.cpp; sourceTree = "<group>"; };
+		32E54B02226D97BD00244FE2 /* CXLoadedDiagnostic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXLoadedDiagnostic.h; sourceTree = "<group>"; };
+		32E54B03226D97BD00244FE2 /* CXType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXType.h; sourceTree = "<group>"; };
+		32E54B04226D97BD00244FE2 /* CXCompilationDatabase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CXCompilationDatabase.cpp; sourceTree = "<group>"; };
+		32E54B05226D97BD00244FE2 /* CXIndexDataConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXIndexDataConsumer.h; sourceTree = "<group>"; };
+		32E54B06226D97BD00244FE2 /* CIndexInclusionStack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CIndexInclusionStack.cpp; sourceTree = "<group>"; };
+		32E54B07226D97BD00244FE2 /* CXTranslationUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXTranslationUnit.h; sourceTree = "<group>"; };
+		32E54B08226D97BD00244FE2 /* CIndexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIndexer.h; sourceTree = "<group>"; };
+		32E54B09226D97BD00244FE2 /* CXStoredDiagnostic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CXStoredDiagnostic.cpp; sourceTree = "<group>"; };
+		32E54B0A226D97BD00244FE2 /* CLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLog.h; sourceTree = "<group>"; };
+		32E54B0B226D97BD00244FE2 /* CIndexHigh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CIndexHigh.cpp; sourceTree = "<group>"; };
+		32E54B0C226D97BD00244FE2 /* CXType.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CXType.cpp; sourceTree = "<group>"; };
+		32E54B0D226D97BD00244FE2 /* BuildSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BuildSystem.cpp; sourceTree = "<group>"; };
+		32E54B0E226D97BD00244FE2 /* CXString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXString.h; sourceTree = "<group>"; };
+		32E54B0F226D97BD00244FE2 /* CIndex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CIndex.cpp; sourceTree = "<group>"; };
+		32E54B10226D97BD00244FE2 /* CXIndexDataConsumer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CXIndexDataConsumer.cpp; sourceTree = "<group>"; };
+		32E54B11226D97BD00244FE2 /* CIndexCodeCompletion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CIndexCodeCompletion.cpp; sourceTree = "<group>"; };
+		32E54B12226D97BD00244FE2 /* CIndexDiagnostic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CIndexDiagnostic.cpp; sourceTree = "<group>"; };
+		32E54B13226D97BD00244FE2 /* CXString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CXString.cpp; sourceTree = "<group>"; };
+		32E54B14226D97BD00244FE2 /* CXComment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CXComment.cpp; sourceTree = "<group>"; };
+		32E54B15226D97BD00244FE2 /* CXComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXComment.h; sourceTree = "<group>"; };
+		32E54B16226D97BD00244FE2 /* CXSourceLocation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CXSourceLocation.cpp; sourceTree = "<group>"; };
+		32E54B17226D97BD00244FE2 /* CIndexUSRs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CIndexUSRs.cpp; sourceTree = "<group>"; };
+		32E54B50226DA24900244FE2 /* libclang.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libclang.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C930081417C5C31C00FA8AB7 /* PLClangComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLClangComment.h; sourceTree = "<group>"; };
 		C930081517C5C31C00FA8AB7 /* PLClangComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLClangComment.m; sourceTree = "<group>"; };
 		C930081817C5C34600FA8AB7 /* PLClangCommentPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLClangCommentPrivate.h; sourceTree = "<group>"; };
@@ -371,6 +416,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32E54B7C226DA2C300244FE2 /* libclang.a in Frameworks */,
 				05BE068E16B4494200DF46D5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,6 +437,13 @@
 				05BE067A16B4422C00DF46D5 /* Foundation.framework in Frameworks */,
 				05BE068716B4424900DF46D5 /* ObjectDoc.framework in Frameworks */,
 				3231E56C2261048E0007FC5D /* libGRMustache7-MacOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32E54B4E226DA24900244FE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +469,7 @@
 				05BE064816B43ECE00DF46D5 /* ObjectDoc */,
 				05BE065E16B43ECF00DF46D5 /* ObjectDocTests */,
 				05BE067B16B4422C00DF46D5 /* doctool */,
+				32E54AF4226D97BD00244FE2 /* clang */,
 				05BE064116B43ECE00DF46D5 /* Frameworks */,
 				C9E8B30F17D97D8400D7526D /* Dependencies */,
 				05BE064016B43ECE00DF46D5 /* Products */,
@@ -431,6 +485,7 @@
 				05BE063F16B43ECE00DF46D5 /* ObjectDoc.framework */,
 				05BE065716B43ECF00DF46D5 /* ObjectDocTests.xctest */,
 				05BE067716B4422C00DF46D5 /* doctool */,
+				32E54B50226DA24900244FE2 /* libclang.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -533,13 +588,45 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		322E010E226707C4002AF56A /* Clang-CXX */ = {
+		32E54AF4226D97BD00244FE2 /* clang */ = {
 			isa = PBXGroup;
 			children = (
-				322E010F226707E7002AF56A /* PLCXX.cpp */,
-				322E0110226707E7002AF56A /* PLCXX.h */,
+				32E54AF5226D97BD00244FE2 /* ARCMigrate.cpp */,
+				32E54B0D226D97BD00244FE2 /* BuildSystem.cpp */,
+				32E54B0F226D97BD00244FE2 /* CIndex.cpp */,
+				32E54B11226D97BD00244FE2 /* CIndexCodeCompletion.cpp */,
+				32E54AF8226D97BD00244FE2 /* CIndexCXX.cpp */,
+				32E54B12226D97BD00244FE2 /* CIndexDiagnostic.cpp */,
+				32E54AFB226D97BD00244FE2 /* CIndexDiagnostic.h */,
+				32E54AF9226D97BD00244FE2 /* CIndexer.cpp */,
+				32E54B08226D97BD00244FE2 /* CIndexer.h */,
+				32E54B0B226D97BD00244FE2 /* CIndexHigh.cpp */,
+				32E54B06226D97BD00244FE2 /* CIndexInclusionStack.cpp */,
+				32E54B17226D97BD00244FE2 /* CIndexUSRs.cpp */,
+				32E54B0A226D97BD00244FE2 /* CLog.h */,
+				32E54AF6226D97BD00244FE2 /* CursorVisitor.h */,
+				32E54B14226D97BD00244FE2 /* CXComment.cpp */,
+				32E54B15226D97BD00244FE2 /* CXComment.h */,
+				32E54B04226D97BD00244FE2 /* CXCompilationDatabase.cpp */,
+				32E54B00226D97BD00244FE2 /* CXCursor.cpp */,
+				32E54AFD226D97BD00244FE2 /* CXCursor.h */,
+				32E54B10226D97BD00244FE2 /* CXIndexDataConsumer.cpp */,
+				32E54B05226D97BD00244FE2 /* CXIndexDataConsumer.h */,
+				32E54AFA226D97BD00244FE2 /* CXLoadedDiagnostic.cpp */,
+				32E54B02226D97BD00244FE2 /* CXLoadedDiagnostic.h */,
+				32E54B16226D97BD00244FE2 /* CXSourceLocation.cpp */,
+				32E54AFC226D97BD00244FE2 /* CXSourceLocation.h */,
+				32E54B09226D97BD00244FE2 /* CXStoredDiagnostic.cpp */,
+				32E54B13226D97BD00244FE2 /* CXString.cpp */,
+				32E54B0E226D97BD00244FE2 /* CXString.h */,
+				32E54B07226D97BD00244FE2 /* CXTranslationUnit.h */,
+				32E54B0C226D97BD00244FE2 /* CXType.cpp */,
+				32E54B03226D97BD00244FE2 /* CXType.h */,
+				32E54AFF226D97BD00244FE2 /* Index_Internal.h */,
+				32E54AFE226D97BD00244FE2 /* Indexing.cpp */,
 			);
-			name = "Clang-CXX";
+			name = clang;
+			path = Dependencies/clang;
 			sourceTree = "<group>";
 		};
 		C9E8B2E717D925F700D7526D /* Resources */ = {
@@ -718,7 +805,6 @@
 		FCE45DBA8B77A89587FFFCBD /* Source Tools */ = {
 			isa = PBXGroup;
 			children = (
-				322E010E226707C4002AF56A /* Clang-CXX */,
 				FCE45D525275A511EEFA311F /* Clang */,
 			);
 			name = "Source Tools";
@@ -736,7 +822,6 @@
 				32D3FFFC22685C2F00A0C315 /* PLClangIndexImportedASTFilePrivate.h in Headers */,
 				C9A9220617C3A7180052CB64 /* PLClangAvailability.h in Headers */,
 				32D3000822685FA700A0C315 /* PLClangFilePrivate.h in Headers */,
-				322E012A22673027002AF56A /* PLCXX.h in Headers */,
 				FCE4575C39A4106D000DF0D4 /* PLClangSourceIndex.h in Headers */,
 				32D3000422685EC600A0C315 /* PLClangEntityReferencePrivate.h in Headers */,
 				C9594E7617BF06F100CD7816 /* PLClang.h in Headers */,
@@ -777,6 +862,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		32E54B4C226DA24900244FE2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32E54B67226DA24F00244FE2 /* CLog.h in Headers */,
+				32E54B6D226DA24F00244FE2 /* CXCursor.h in Headers */,
+				32E54B68226DA24F00244FE2 /* CursorVisitor.h in Headers */,
+				32E54B73226DA24F00244FE2 /* CXSourceLocation.h in Headers */,
+				32E54B79226DA24F00244FE2 /* CXType.h in Headers */,
+				32E54B6A226DA24F00244FE2 /* CXComment.h in Headers */,
+				32E54B76226DA24F00244FE2 /* CXString.h in Headers */,
+				32E54B61226DA24F00244FE2 /* CIndexDiagnostic.h in Headers */,
+				32E54B63226DA24F00244FE2 /* CIndexer.h in Headers */,
+				32E54B77226DA24F00244FE2 /* CXTranslationUnit.h in Headers */,
+				32E54B7A226DA24F00244FE2 /* Index_Internal.h in Headers */,
+				32E54B71226DA24F00244FE2 /* CXLoadedDiagnostic.h in Headers */,
+				32E54B6F226DA24F00244FE2 /* CXIndexDataConsumer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -788,12 +893,10 @@
 				05BE063B16B43ECE00DF46D5 /* Frameworks */,
 				05BE063C16B43ECE00DF46D5 /* Headers */,
 				05BE063D16B43ECE00DF46D5 /* Resources */,
-				C9F6C0321944065A00D3011F /* Copy Clang Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				05A2158319008E430050A058 /* PBXTargetDependency */,
 			);
 			name = ObjectDoc;
 			productName = objectdoc;
@@ -839,6 +942,23 @@
 			productReference = 05BE067716B4422C00DF46D5 /* doctool */;
 			productType = "com.apple.product-type.tool";
 		};
+		32E54B4F226DA24900244FE2 /* clang */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32E54B58226DA24900244FE2 /* Build configuration list for PBXNativeTarget "clang" */;
+			buildPhases = (
+				32E54B4C226DA24900244FE2 /* Headers */,
+				32E54B4D226DA24900244FE2 /* Sources */,
+				32E54B4E226DA24900244FE2 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = clang;
+			productName = clang;
+			productReference = 32E54B50226DA24900244FE2 /* libclang.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -850,6 +970,10 @@
 				TargetAttributes = {
 					05BE065616B43ECF00DF46D5 = {
 						TestTargetID = 05BE063E16B43ECE00DF46D5;
+					};
+					32E54B4F226DA24900244FE2 = {
+						CreatedOnToolsVersion = 10.2;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -869,7 +993,8 @@
 				05BE063E16B43ECE00DF46D5 /* ObjectDoc */,
 				05BE065616B43ECF00DF46D5 /* ObjectDocTests */,
 				05BE067616B4422C00DF46D5 /* doctool */,
-				05A2157719008A910050A058 /* clang */,
+				05A2157719008A910050A058 /* clang-build */,
+				32E54B4F226DA24900244FE2 /* clang */,
 			);
 		};
 /* End PBXProject section */
@@ -940,7 +1065,6 @@
 				C9A921FD17C313510052CB64 /* PLClangType.m in Sources */,
 				C95EA27617C9AA2F0038F8E4 /* PLClangSourceRange.m in Sources */,
 				3281CDC82266033E0002FC9C /* PLClangIndexImportedASTFile.m in Sources */,
-				322E012B22673115002AF56A /* PLCXX.cpp in Sources */,
 				C9A9220B17C3A7290052CB64 /* PLClangPlatformAvailability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -981,14 +1105,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		32E54B4D226DA24900244FE2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32E54B70226DA24F00244FE2 /* CXLoadedDiagnostic.cpp in Sources */,
+				32E54B6C226DA24F00244FE2 /* CXCursor.cpp in Sources */,
+				32E54B66226DA24F00244FE2 /* CIndexUSRs.cpp in Sources */,
+				32E54B72226DA24F00244FE2 /* CXSourceLocation.cpp in Sources */,
+				32E54B5E226DA24F00244FE2 /* CIndexCodeCompletion.cpp in Sources */,
+				32E54B75226DA24F00244FE2 /* CXString.cpp in Sources */,
+				32E54B64226DA24F00244FE2 /* CIndexHigh.cpp in Sources */,
+				32E54B60226DA24F00244FE2 /* CIndexDiagnostic.cpp in Sources */,
+				32E54B5C226DA24F00244FE2 /* BuildSystem.cpp in Sources */,
+				32E54B74226DA24F00244FE2 /* CXStoredDiagnostic.cpp in Sources */,
+				32E54B5B226DA24F00244FE2 /* ARCMigrate.cpp in Sources */,
+				32E54B5D226DA24F00244FE2 /* CIndex.cpp in Sources */,
+				32E54B5F226DA24F00244FE2 /* CIndexCXX.cpp in Sources */,
+				32E54B69226DA24F00244FE2 /* CXComment.cpp in Sources */,
+				32E54B65226DA24F00244FE2 /* CIndexInclusionStack.cpp in Sources */,
+				32E54B7B226DA24F00244FE2 /* Indexing.cpp in Sources */,
+				32E54B78226DA24F00244FE2 /* CXType.cpp in Sources */,
+				32E54B62226DA24F00244FE2 /* CIndexer.cpp in Sources */,
+				32E54B6B226DA24F00244FE2 /* CXCompilationDatabase.cpp in Sources */,
+				32E54B6E226DA24F00244FE2 /* CXIndexDataConsumer.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		05A2158319008E430050A058 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 05A2157719008A910050A058 /* clang */;
-			targetProxy = 05A2158219008E430050A058 /* PBXContainerItemProxy */;
-		};
 		05BE065C16B43ECF00DF46D5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 05BE063E16B43ECE00DF46D5 /* ObjectDoc */;
@@ -1040,7 +1186,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_CONFIG_LDFLAGS = "$(LLVM_INSTALL_DIR)/lib/libclang.a -lclangAST -lclangBasic -lclangFrontend -lclangIndex -lclangLex -lclangSema -lclangSerialization -lclangTooling -lclangARCMigrate -ldl -lclangStaticAnalyzerCheckers -lclangStaticAnalyzerCore -lclangCrossTU -lclangIndex -lclangFrontend -lclangDriver -lclangParse -lclangSerialization -lclangSema -lclangEdit -lclangAnalysis -lclangASTMatchers -lclangFormat -lclangToolingInclusions -lclangToolingCore -lclangAST -lclangRewrite -lclangLex -lclangBasic";
+				CLANG_CONFIG_LDFLAGS = "-lclang -lclangAST -lclangBasic -lclangFrontend -lclangIndex -lclangLex -lclangSema -lclangSerialization -lclangTooling -lclangARCMigrate -ldl -lclangStaticAnalyzerCheckers -lclangStaticAnalyzerCore -lclangCrossTU -lclangIndex -lclangFrontend -lclangDriver -lclangParse -lclangSerialization -lclangSema -lclangEdit -lclangAnalysis -lclangASTMatchers -lclangFormat -lclangToolingInclusions -lclangToolingCore -lclangAST -lclangRewrite -lclangLex -lclangBasic";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1068,18 +1214,19 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)/Dependencies/clang/include",
 					"$(LLVM_INSTALL_DIR)/include",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LLVM_INSTALL_DIR)/lib",
 				);
-				LLVM_CONFIG_CFLAGS = "-D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wno-shorten-64-to-32";
+				LLVM_CONFIG_CFLAGS = "-D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS";
 				LLVM_CONFIG_LDFLAGS = "-lLLVMAArch64CodeGen -lLLVMAArch64AsmParser -lLLVMAArch64AsmPrinter -lLLVMAArch64Desc -lLLVMAArch64Disassembler -lLLVMAArch64Info -lLLVMAArch64Utils -lLLVMAMDGPUCodeGen -lLLVMAMDGPUAsmParser -lLLVMAMDGPUAsmPrinter -lLLVMAMDGPUDesc -lLLVMAMDGPUDisassembler -lLLVMAMDGPUInfo -lLLVMAMDGPUUtils -lLLVMARMCodeGen -lLLVMARMAsmParser -lLLVMARMAsmPrinter -lLLVMARMDesc -lLLVMARMDisassembler -lLLVMARMInfo -lLLVMARMUtils -lLLVMBPFCodeGen -lLLVMBPFAsmParser -lLLVMBPFAsmPrinter -lLLVMBPFDesc -lLLVMBPFDisassembler -lLLVMBPFInfo -lLLVMHexagonCodeGen -lLLVMHexagonAsmParser -lLLVMHexagonDesc -lLLVMHexagonDisassembler -lLLVMHexagonInfo -lLLVMLanaiCodeGen -lLLVMLanaiAsmParser -lLLVMLanaiAsmPrinter -lLLVMLanaiDesc -lLLVMLanaiDisassembler -lLLVMLanaiInfo -lLLVMMipsCodeGen -lLLVMMipsAsmParser -lLLVMMipsAsmPrinter -lLLVMMipsDesc -lLLVMMipsDisassembler -lLLVMMipsInfo -lLLVMMSP430CodeGen -lLLVMMSP430AsmParser -lLLVMMSP430AsmPrinter -lLLVMMSP430Desc -lLLVMMSP430Disassembler -lLLVMMSP430Info -lLLVMNVPTXCodeGen -lLLVMNVPTXAsmPrinter -lLLVMNVPTXDesc -lLLVMNVPTXInfo -lLLVMPowerPCCodeGen -lLLVMPowerPCAsmParser -lLLVMPowerPCAsmPrinter -lLLVMPowerPCDesc -lLLVMPowerPCDisassembler -lLLVMPowerPCInfo -lLLVMSparcCodeGen -lLLVMSparcAsmParser -lLLVMSparcAsmPrinter -lLLVMSparcDesc -lLLVMSparcDisassembler -lLLVMSparcInfo -lLLVMSystemZCodeGen -lLLVMSystemZAsmParser -lLLVMSystemZAsmPrinter -lLLVMSystemZDesc -lLLVMSystemZDisassembler -lLLVMSystemZInfo -lLLVMWebAssemblyCodeGen -lLLVMWebAssemblyAsmParser -lLLVMWebAssemblyAsmPrinter -lLLVMWebAssemblyDesc -lLLVMWebAssemblyDisassembler -lLLVMWebAssemblyInfo -lLLVMX86CodeGen -lLLVMX86AsmParser -lLLVMX86AsmPrinter -lLLVMX86Desc -lLLVMX86Disassembler -lLLVMX86Info -lLLVMX86Utils -lLLVMXCoreCodeGen -lLLVMXCoreAsmPrinter -lLLVMXCoreDesc -lLLVMXCoreDisassembler -lLLVMXCoreInfo -lLLVMCore -lLLVMSupport -lLLVMOption -lLLVMAArch64Desc -lLLVMAArch64AsmPrinter -lLLVMAArch64Info -lLLVMAArch64Utils -lLLVMAMDGPUDesc -lLLVMAMDGPUAsmPrinter -lLLVMAMDGPUInfo -lLLVMAMDGPUUtils -lLLVMARMDesc -lLLVMARMAsmPrinter -lLLVMARMInfo -lLLVMARMUtils -lLLVMBPFAsmPrinter -lLLVMHexagonDesc -lLLVMHexagonInfo -lLLVMLanaiDesc -lLLVMLanaiAsmPrinter -lLLVMLanaiInfo -lLLVMMipsAsmPrinter -lLLVMMSP430AsmPrinter -lLLVMNVPTXAsmPrinter -lLLVMipo -lLLVMVectorize -lLLVMIRReader -lLLVMAsmParser -lLLVMInstrumentation -lLLVMLinker -lLLVMPowerPCAsmPrinter -lLLVMSparcAsmPrinter -lLLVMSystemZDesc -lLLVMSystemZAsmPrinter -lLLVMSystemZInfo -lLLVMWebAssemblyAsmPrinter -lLLVMGlobalISel -lLLVMX86AsmPrinter -lLLVMX86Utils -lLLVMXCoreAsmPrinter -lLLVMAsmPrinter -lLLVMSelectionDAG -lLLVMCodeGen -lLLVMScalarOpts -lLLVMAggressiveInstCombine -lLLVMInstCombine -lLLVMBitWriter -lLLVMTarget -lLLVMTransformUtils -lLLVMAnalysis -lLLVMProfileData -lLLVMObject -lLLVMBitReader -lLLVMCore -lLLVMMCParser -lLLVMMCDisassembler -lLLVMMC -lLLVMBinaryFormat -lLLVMDebugInfoCodeView -lLLVMDebugInfoMSF -lLLVMSupport -lz -lcurses -lm -lLLVMDemangle -ltermcap";
-				LLVM_INSTALL_DIR = "${SYMROOT}/clang-install";
+				LLVM_INSTALL_DIR = /usr/local/opt/llvm;
 				LLVM_SRC = "$(SRCROOT)/Dependencies/LLVM/llvm-8.0.0.src.tar.xz";
 				LLVM_VERSION = 8.0.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				WARNING_CFLAGS = (
@@ -1088,6 +1235,8 @@
 					"-Wno-unused-parameter",
 					"-Wno-sign-conversion",
 					"-Wno-shadow",
+					"-Wno-shorten-64-to-32",
+					"-Wno-comma",
 				);
 			};
 			name = Debug;
@@ -1097,7 +1246,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_CONFIG_LDFLAGS = "$(LLVM_INSTALL_DIR)/lib/libclang.a -lclangAST -lclangBasic -lclangFrontend -lclangIndex -lclangLex -lclangSema -lclangSerialization -lclangTooling -lclangARCMigrate -ldl -lclangStaticAnalyzerCheckers -lclangStaticAnalyzerCore -lclangCrossTU -lclangIndex -lclangFrontend -lclangDriver -lclangParse -lclangSerialization -lclangSema -lclangEdit -lclangAnalysis -lclangASTMatchers -lclangFormat -lclangToolingInclusions -lclangToolingCore -lclangAST -lclangRewrite -lclangLex -lclangBasic";
+				CLANG_CONFIG_LDFLAGS = "-lclang -lclangAST -lclangBasic -lclangFrontend -lclangIndex -lclangLex -lclangSema -lclangSerialization -lclangTooling -lclangARCMigrate -ldl -lclangStaticAnalyzerCheckers -lclangStaticAnalyzerCore -lclangCrossTU -lclangIndex -lclangFrontend -lclangDriver -lclangParse -lclangSerialization -lclangSema -lclangEdit -lclangAnalysis -lclangASTMatchers -lclangFormat -lclangToolingInclusions -lclangToolingCore -lclangAST -lclangRewrite -lclangLex -lclangBasic";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1119,18 +1268,19 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)/Dependencies/clang/include",
 					"$(LLVM_INSTALL_DIR)/include",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LLVM_INSTALL_DIR)/lib",
 				);
-				LLVM_CONFIG_CFLAGS = "-D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -Wno-shorten-64-to-32";
+				LLVM_CONFIG_CFLAGS = "-D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS";
 				LLVM_CONFIG_LDFLAGS = "-lLLVMAArch64CodeGen -lLLVMAArch64AsmParser -lLLVMAArch64AsmPrinter -lLLVMAArch64Desc -lLLVMAArch64Disassembler -lLLVMAArch64Info -lLLVMAArch64Utils -lLLVMAMDGPUCodeGen -lLLVMAMDGPUAsmParser -lLLVMAMDGPUAsmPrinter -lLLVMAMDGPUDesc -lLLVMAMDGPUDisassembler -lLLVMAMDGPUInfo -lLLVMAMDGPUUtils -lLLVMARMCodeGen -lLLVMARMAsmParser -lLLVMARMAsmPrinter -lLLVMARMDesc -lLLVMARMDisassembler -lLLVMARMInfo -lLLVMARMUtils -lLLVMBPFCodeGen -lLLVMBPFAsmParser -lLLVMBPFAsmPrinter -lLLVMBPFDesc -lLLVMBPFDisassembler -lLLVMBPFInfo -lLLVMHexagonCodeGen -lLLVMHexagonAsmParser -lLLVMHexagonDesc -lLLVMHexagonDisassembler -lLLVMHexagonInfo -lLLVMLanaiCodeGen -lLLVMLanaiAsmParser -lLLVMLanaiAsmPrinter -lLLVMLanaiDesc -lLLVMLanaiDisassembler -lLLVMLanaiInfo -lLLVMMipsCodeGen -lLLVMMipsAsmParser -lLLVMMipsAsmPrinter -lLLVMMipsDesc -lLLVMMipsDisassembler -lLLVMMipsInfo -lLLVMMSP430CodeGen -lLLVMMSP430AsmParser -lLLVMMSP430AsmPrinter -lLLVMMSP430Desc -lLLVMMSP430Disassembler -lLLVMMSP430Info -lLLVMNVPTXCodeGen -lLLVMNVPTXAsmPrinter -lLLVMNVPTXDesc -lLLVMNVPTXInfo -lLLVMPowerPCCodeGen -lLLVMPowerPCAsmParser -lLLVMPowerPCAsmPrinter -lLLVMPowerPCDesc -lLLVMPowerPCDisassembler -lLLVMPowerPCInfo -lLLVMSparcCodeGen -lLLVMSparcAsmParser -lLLVMSparcAsmPrinter -lLLVMSparcDesc -lLLVMSparcDisassembler -lLLVMSparcInfo -lLLVMSystemZCodeGen -lLLVMSystemZAsmParser -lLLVMSystemZAsmPrinter -lLLVMSystemZDesc -lLLVMSystemZDisassembler -lLLVMSystemZInfo -lLLVMWebAssemblyCodeGen -lLLVMWebAssemblyAsmParser -lLLVMWebAssemblyAsmPrinter -lLLVMWebAssemblyDesc -lLLVMWebAssemblyDisassembler -lLLVMWebAssemblyInfo -lLLVMX86CodeGen -lLLVMX86AsmParser -lLLVMX86AsmPrinter -lLLVMX86Desc -lLLVMX86Disassembler -lLLVMX86Info -lLLVMX86Utils -lLLVMXCoreCodeGen -lLLVMXCoreAsmPrinter -lLLVMXCoreDesc -lLLVMXCoreDisassembler -lLLVMXCoreInfo -lLLVMCore -lLLVMSupport -lLLVMOption -lLLVMAArch64Desc -lLLVMAArch64AsmPrinter -lLLVMAArch64Info -lLLVMAArch64Utils -lLLVMAMDGPUDesc -lLLVMAMDGPUAsmPrinter -lLLVMAMDGPUInfo -lLLVMAMDGPUUtils -lLLVMARMDesc -lLLVMARMAsmPrinter -lLLVMARMInfo -lLLVMARMUtils -lLLVMBPFAsmPrinter -lLLVMHexagonDesc -lLLVMHexagonInfo -lLLVMLanaiDesc -lLLVMLanaiAsmPrinter -lLLVMLanaiInfo -lLLVMMipsAsmPrinter -lLLVMMSP430AsmPrinter -lLLVMNVPTXAsmPrinter -lLLVMipo -lLLVMVectorize -lLLVMIRReader -lLLVMAsmParser -lLLVMInstrumentation -lLLVMLinker -lLLVMPowerPCAsmPrinter -lLLVMSparcAsmPrinter -lLLVMSystemZDesc -lLLVMSystemZAsmPrinter -lLLVMSystemZInfo -lLLVMWebAssemblyAsmPrinter -lLLVMGlobalISel -lLLVMX86AsmPrinter -lLLVMX86Utils -lLLVMXCoreAsmPrinter -lLLVMAsmPrinter -lLLVMSelectionDAG -lLLVMCodeGen -lLLVMScalarOpts -lLLVMAggressiveInstCombine -lLLVMInstCombine -lLLVMBitWriter -lLLVMTarget -lLLVMTransformUtils -lLLVMAnalysis -lLLVMProfileData -lLLVMObject -lLLVMBitReader -lLLVMCore -lLLVMMCParser -lLLVMMCDisassembler -lLLVMMC -lLLVMBinaryFormat -lLLVMDebugInfoCodeView -lLLVMDebugInfoMSF -lLLVMSupport -lz -lcurses -lm -lLLVMDemangle -ltermcap";
-				LLVM_INSTALL_DIR = "${SYMROOT}/clang-install";
+				LLVM_INSTALL_DIR = /usr/local/opt/llvm;
 				LLVM_SRC = "$(SRCROOT)/Dependencies/LLVM/llvm-8.0.0.src.tar.xz";
 				LLVM_VERSION = 8.0.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				SDKROOT = macosx;
 				WARNING_CFLAGS = (
 					"-Wall",
@@ -1138,6 +1288,8 @@
 					"-Wno-unused-parameter",
 					"-Wno-sign-conversion",
 					"-Wno-shadow",
+					"-Wno-shorten-64-to-32",
+					"-Wno-comma",
 				);
 			};
 			name = Release;
@@ -1262,10 +1414,112 @@
 			};
 			name = Release;
 		};
+		32E54B59226DA24900244FE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				EXECUTABLE_PREFIX = lib;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"$(LLVM_CONFIG_CFLAGS)",
+					"-fvisibility=hidden",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"$(CLANG_CONFIG_LDFLAGS)",
+					"$(LLVM_CONFIG_LDFLAGS)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		32E54B5A226DA24900244FE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXECUTABLE_PREFIX = lib;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"$(LLVM_CONFIG_CFLAGS)",
+					"-fvisibility=hidden",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"$(CLANG_CONFIG_LDFLAGS)",
+					"$(LLVM_CONFIG_LDFLAGS)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		05A2157819008A910050A058 /* Build configuration list for PBXAggregateTarget "clang" */ = {
+		05A2157819008A910050A058 /* Build configuration list for PBXAggregateTarget "clang-build" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				05A2157919008A910050A058 /* Debug */,
@@ -1306,6 +1560,15 @@
 			buildConfigurations = (
 				05BE068316B4422C00DF46D5 /* Debug */,
 				05BE068416B4422C00DF46D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32E54B58226DA24900244FE2 /* Build configuration list for PBXNativeTarget "clang" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32E54B59226DA24900244FE2 /* Debug */,
+				32E54B5A226DA24900244FE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

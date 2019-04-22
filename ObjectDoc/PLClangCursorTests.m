@@ -414,20 +414,16 @@
     XCTAssertNotNil(cursor);
     
     cursor = [tu cursorWithSpelling: @"t1"];
-    XCTAssertNotNil(cursor);
-    PLClangIndexDeclaration *declaration = cursor.indexDeclaration;
-    XCTAssertNotNil(declaration);
-    PLClangIndexAttribute *attribute = declaration.attributes.firstObject;
-    XCTAssertNotNil(attribute);
-    XCTAssertEqual(attribute.kind, PLClangIndexAttributeKindIBOutlet);
+    [cursor visitChildrenUsingBlock:^PLClangCursorVisitResult(PLClangCursor *cursor) {
+        XCTAssertEqual(cursor.kind, PLClangCursorKindIBOutletAttribute);
+        return PLClangCursorVisitBreak;
+    }];
     
     cursor = [tu cursorWithSpelling: @"t2:"];
-    XCTAssertNotNil(cursor);
-    declaration = cursor.indexDeclaration;
-    XCTAssertNotNil(declaration);
-    attribute = declaration.attributes.firstObject;
-    XCTAssertNotNil(attribute);
-    XCTAssertEqual(attribute.kind, PLClangIndexAttributeKindIBAction);
+    [cursor visitChildrenUsingBlock:^PLClangCursorVisitResult(PLClangCursor *cursor) {
+        XCTAssertEqual(cursor.kind, PLClangCursorKindIBActionAttribute);
+        return PLClangCursorVisitBreak;
+    }];
 }
 
 /**

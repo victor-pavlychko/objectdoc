@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "32E54B4F226DA24900244FE2"
-               BuildableName = "libclang.a"
-               BlueprintName = "clang"
+               BlueprintIdentifier = "05A2157719008A910050A058"
+               BuildableName = "clang-build"
+               BlueprintName = "clang-build"
                ReferencedContainer = "container:ObjectDoc.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "32E54B4F226DA24900244FE2"
-            BuildableName = "libclang.a"
-            BlueprintName = "clang"
+            BlueprintIdentifier = "05A2157719008A910050A058"
+            BuildableName = "clang-build"
+            BlueprintName = "clang-build"
             ReferencedContainer = "container:ObjectDoc.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "32E54B4F226DA24900244FE2"
-            BuildableName = "libclang.a"
-            BlueprintName = "clang"
+            BlueprintIdentifier = "05A2157719008A910050A058"
+            BuildableName = "clang-build"
+            BlueprintName = "clang-build"
             ReferencedContainer = "container:ObjectDoc.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

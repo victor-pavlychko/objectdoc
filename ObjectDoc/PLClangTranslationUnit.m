@@ -40,7 +40,6 @@
 #import "PLClangTokenSet.h"
 #import "PLClangNSString.h"
 #import "PLClang.h"
-#import "PLCXX.h"
 
 /**
  * A translation unit.
