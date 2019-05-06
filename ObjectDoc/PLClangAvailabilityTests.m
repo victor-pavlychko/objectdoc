@@ -65,6 +65,19 @@
     XCTAssertTrue([cursor.availability.platformAvailabilityEntries count] == 0);
 }
 
+- (void)testDeprecatedWithReplacement {
+    PLClangTranslationUnit *tu = [self translationUnitWithSource: @"void f() __attribute__((deprecated(\"message\", \"replacement\")));"];
+    PLClangCursor *cursor = [tu cursorWithSpelling: @"f"];
+    XCTAssertNotNil(cursor);
+    XCTAssertEqual(cursor.availability.kind, PLClangAvailabilityKindDeprecated);
+    XCTAssertTrue(cursor.availability.isUnconditionallyDeprecated);
+    XCTAssertFalse(cursor.availability.isUnconditionallyUnavailable);
+    XCTAssertEqualObjects(cursor.availability.unconditionalDeprecationMessage, @"message");
+    XCTAssertEqualObjects(cursor.availability.unconditionalUnavailabilityMessage, @"");
+    XCTAssertEqualObjects(cursor.availability.unconditionalDeprecationReplacement, @"replacement");
+    XCTAssertTrue([cursor.availability.platformAvailabilityEntries count] == 0);
+}
+
 - (void) testAvailabilityAttribute {
     PLClangTranslationUnit *tu = [self translationUnitWithSource: @"void f() __attribute__((availability(macos,introduced=10.4.3,deprecated=10.6,obsoleted=10.7,message=\"message\")));"];
     PLClangCursor *cursor = [tu cursorWithSpelling: @"f"];
@@ -88,6 +101,35 @@
     XCTAssertEqual(availability.deprecatedVersion.patch, -1);
     XCTAssertEqualObjects([availability.deprecatedVersion description], @"10.6");
 
+    XCTAssertEqual(availability.obsoletedVersion.major, 10);
+    XCTAssertEqual(availability.obsoletedVersion.minor,  7);
+    XCTAssertEqual(availability.obsoletedVersion.patch, -1);
+    XCTAssertEqualObjects([availability.obsoletedVersion description], @"10.7");
+}
+
+- (void) testAvailabilityAttributeReplacement {
+    PLClangTranslationUnit *tu = [self translationUnitWithSource: @"void f() __attribute__((availability(macos,introduced=10.4.3,deprecated=10.6,obsoleted=10.7,replacement=\"replacement\")));"];
+    PLClangCursor *cursor = [tu cursorWithSpelling: @"f"];
+    XCTAssertNotNil(cursor);
+    XCTAssertEqual(cursor.availability.kind, PLClangAvailabilityKindUnavailable);
+    XCTAssertFalse(cursor.availability.isUnconditionallyDeprecated, @"Cursor should not be unconditionally deprecated");
+    XCTAssertFalse(cursor.availability.isUnconditionallyUnavailable, @"Cursor should not be unconditionally unavailable");
+    XCTAssertTrue([cursor.availability.platformAvailabilityEntries count] == 1);
+    
+    PLClangPlatformAvailability *availability = cursor.availability.platformAvailabilityEntries[0];
+    XCTAssertEqualObjects(availability.platformName, @"macos");
+    XCTAssertEqualObjects(availability.replacement, @"replacement");
+    
+    XCTAssertEqual(availability.introducedVersion.major, 10);
+    XCTAssertEqual(availability.introducedVersion.minor,  4);
+    XCTAssertEqual(availability.introducedVersion.patch,  3);
+    XCTAssertEqualObjects([availability.introducedVersion description], @"10.4.3");
+    
+    XCTAssertEqual(availability.deprecatedVersion.major, 10);
+    XCTAssertEqual(availability.deprecatedVersion.minor,  6);
+    XCTAssertEqual(availability.deprecatedVersion.patch, -1);
+    XCTAssertEqualObjects([availability.deprecatedVersion description], @"10.6");
+    
     XCTAssertEqual(availability.obsoletedVersion.major, 10);
     XCTAssertEqual(availability.obsoletedVersion.minor,  7);
     XCTAssertEqual(availability.obsoletedVersion.patch, -1);

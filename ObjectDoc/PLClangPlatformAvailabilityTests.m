@@ -65,6 +65,7 @@
     PLClangAvailability *availability = cursor.availability;
     XCTAssertTrue(availability.isUnconditionallyDeprecated);
     XCTAssertTrue([availability.unconditionalDeprecationMessage isEqualToString:@"message"]);
+    XCTAssertTrue([availability.unconditionalDeprecationReplacement isEqualToString:@"replacement"]);
 }
 
 - (void)testUnconditionalUnavailableWithMsg {

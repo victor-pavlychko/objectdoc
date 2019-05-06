@@ -28,7 +28,10 @@
         {
             [string appendString: @"deprecated"];
             if ([self.unconditionalDeprecationMessage length] > 0) {
-                [string appendFormat: @": \"%@\"", self.unconditionalDeprecationMessage];
+                [string appendFormat: @" message: \"%@\"", self.unconditionalDeprecationMessage];
+            }
+            if ([self.unconditionalDeprecationReplacement length] > 0) {
+                [string appendFormat: @" replacement: \"%@\"", self.unconditionalDeprecationReplacement];
             }
             break;
         }
@@ -82,13 +85,13 @@
     int always_deprecated = 0;
     int always_unavailable = 0;
     CXString deprecationString = {};
-    CXString replacementString = {};
+    CXString deprecationReplacementString = {};
     CXString unavilableString = {};
     CXPlatformAvailability *platformAvailability = calloc((unsigned int)platformCount, sizeof(CXPlatformAvailability));
     clang_getCursorPlatformAvailability(cursor,
                                          &always_deprecated,
                                          &deprecationString,
-                                         &replacementString,
+                                         &deprecationReplacementString,
                                          &always_unavailable,
                                          &unavilableString,
                                          platformAvailability,
@@ -97,7 +100,7 @@
     _isUnconditionallyDeprecated = always_deprecated;
     _isUnconditionallyUnavailable = always_unavailable;
     _unconditionalDeprecationMessage = plclang_convert_and_dispose_cxstring(deprecationString);
-    _unconditionalDeprecationReplacement = plclang_convert_and_dispose_cxstring(replacementString);
+    _unconditionalDeprecationReplacement = plclang_convert_and_dispose_cxstring(deprecationReplacementString);
     _unconditionalUnavailabilityMessage = plclang_convert_and_dispose_cxstring(unavilableString);
 
     NSMutableArray *entries = [NSMutableArray array];

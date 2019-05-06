@@ -7767,6 +7767,7 @@ static CXVersion convertVersion(VersionTuple In) {
 
 static void getCursorPlatformAvailabilityForDecl(
     const Decl *D, int *always_deprecated, CXString *deprecated_message,
+    CXString *deprecated_replacement,
     int *always_unavailable, CXString *unavailable_message,
     SmallVectorImpl<AvailabilityAttr *> &AvailabilityAttrs) {
   bool HadAvailAttr = false;
@@ -7778,6 +7779,10 @@ static void getCursorPlatformAvailabilityForDecl(
       if (deprecated_message) {
         clang_disposeString(*deprecated_message);
         *deprecated_message = cxstring::createDup(Deprecated->getMessage());
+      }
+      if (deprecated_replacement) {
+        clang_disposeString(*deprecated_replacement);
+        *deprecated_replacement = cxstring::createDup(Deprecated->getReplacement());
       }
       continue;
     }
@@ -7803,7 +7808,7 @@ static void getCursorPlatformAvailabilityForDecl(
     if (const EnumConstantDecl *EnumConst = dyn_cast<EnumConstantDecl>(D))
       return getCursorPlatformAvailabilityForDecl(
           cast<Decl>(EnumConst->getDeclContext()), always_deprecated,
-          deprecated_message, always_unavailable, unavailable_message,
+          deprecated_message, deprecated_replacement, always_unavailable, unavailable_message,
           AvailabilityAttrs);
 
   if (AvailabilityAttrs.empty())
@@ -7883,7 +7888,7 @@ int clang_getCursorPlatformAvailability(CXCursor cursor, int *always_deprecated,
     return 0;
 
   SmallVector<AvailabilityAttr *, 8> AvailabilityAttrs;
-  getCursorPlatformAvailabilityForDecl(D, always_deprecated, deprecated_message,
+  getCursorPlatformAvailabilityForDecl(D, always_deprecated, deprecated_message, deprecated_replacement,
                                        always_unavailable, unavailable_message,
                                        AvailabilityAttrs);
   for (const auto &Avail :
@@ -7900,6 +7905,8 @@ int clang_getCursorPlatformAvailability(CXCursor cursor, int *always_deprecated,
     availability[Avail.index()].Unavailable = Avail.value()->getUnavailable();
     availability[Avail.index()].Message =
         cxstring::createDup(Avail.value()->getMessage());
+    availability[Avail.index()].Replacement =
+        cxstring::createDup(Avail.value()->getReplacement());
   }
 
   return AvailabilityAttrs.size();

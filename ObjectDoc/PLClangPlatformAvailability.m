@@ -30,7 +30,11 @@
     }
 
     if ([self.message length] > 0) {
-        [string appendFormat: @" \"%@\"", self.message];
+        [string appendFormat: @" message: \"%@\"", self.message];
+    }
+    
+    if ([self.replacement length] > 0) {
+        [string appendFormat: @" replacement: \"%@\"", self.replacement];
     }
 
     return string;
