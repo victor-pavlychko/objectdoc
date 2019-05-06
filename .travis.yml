@@ -1,7 +1,13 @@
 language: objective-c
-osx_image: xcode10
+osx_image: xcode10.2
+addons:
+  homebrew:
+    packages:
+    - llvm
+    update: true
+
 script:
-- xcodebuild -project ObjectDoc.xcodeproj -target ObjectDoc
+- xcodebuild -project ObjectDoc.xcodeproj -target ObjectDoc -configuration Release
 - mv build/Release/ObjectDoc.framework .
 - zip -r ObjectDoc.framework.zip ObjectDoc.framework
 notifications:
