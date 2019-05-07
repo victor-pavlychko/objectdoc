@@ -4,10 +4,10 @@ addons:
   homebrew:
     packages:
     - llvm
-    update: true
 
 script:
 - xcodebuild -project ObjectDoc.xcodeproj -target ObjectDoc -configuration Release
+after_success:
 - mv build/Release/ObjectDoc.framework .
 - zip -r ObjectDoc.framework.zip ObjectDoc.framework
 notifications:
