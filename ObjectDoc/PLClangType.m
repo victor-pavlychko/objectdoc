@@ -324,6 +324,8 @@
             return PLClangTypeKindOCLIntelSubgroupAVCImeSingleRefStreamin;
         case CXType_OCLIntelSubgroupAVCImeDualRefStreamin:
             return PLClangTypeKindOCLIntelSubgroupAVCImeDualRefStreamin;
+        case CXType_ExtVector:
+            return PLClangTypeKindExtVector;
     }
 
     // Type is unknown
