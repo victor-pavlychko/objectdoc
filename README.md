@@ -104,8 +104,8 @@ See the [template page](doctool/templates/index.html) for expanded usage informa
 
 ## Dependency
 
-- LLVM 8.0.0
-- clang 8.0.0
+- LLVM 9.0.0
+- clang 9.0.0
 - GRMustache 7.3.2
 
 ## Author
