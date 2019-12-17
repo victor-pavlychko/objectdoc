@@ -1077,7 +1077,14 @@ typedef NS_ENUM(NSUInteger, PLClangCursorKind) {
      * An OpenMP target teams distribute simd directive.
      */
     PLClangCursorKindOMPTargetTeamsDistributeSimdDirective    = 279,
-
+    
+    /**
+     * C++2a std::bit_cast expression.
+     */
+    PLClangCursorKindBuiltinBitCastExpr = 280,
+    
+    PLClangCursorKindLastStmt = PLClangCursorKindBuiltinBitCastExpr,
+    
     /**
      * The translation unit itself.
      *
@@ -1279,7 +1286,12 @@ typedef NS_ENUM(NSUInteger, PLClangCursorKind) {
      */
     PLClangCursorKindFlagEnum = 437,
     
-    PLClangCursorKindLastAttr = PLClangCursorKindFlagEnum,
+    PLClangCursorKindConvergentAttr                = 438,
+    PLClangCursorKindWarnUnusedAttr                = 439,
+    PLClangCursorKindWarnUnusedResultAttr          = 440,
+    PLClangCursorKindAlignedAttr                   = 441,
+    
+    PLClangCursorKindLastAttr = PLClangCursorKindAlignedAttr,
 
     /* Preprocessing */
 

@@ -758,6 +758,16 @@
             return PLClangCursorKindObjCBoxable;
         case CXCursor_FlagEnum:
             return PLClangCursorKindFlagEnum;
+        case CXCursor_BuiltinBitCastExpr:
+            return PLClangCursorKindBuiltinBitCastExpr;
+        case CXCursor_ConvergentAttr:
+            return PLClangCursorKindConvergentAttr;
+        case CXCursor_WarnUnusedAttr:
+            return PLClangCursorKindWarnUnusedAttr;
+        case CXCursor_WarnUnusedResultAttr:
+            return PLClangCursorKindWarnUnusedResultAttr;
+        case CXCursor_AlignedAttr:
+            return PLClangCursorKindAlignedAttr;
     }
 
     // Cursor has an unknown kind

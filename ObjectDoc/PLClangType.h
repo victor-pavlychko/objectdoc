@@ -254,6 +254,7 @@ typedef NS_ENUM(NSUInteger, PLClangTypeKind) {
     PLClangTypeKindOCLIntelSubgroupAVCImeSingleRefStreamin = 174,
     
     PLClangTypeKindOCLIntelSubgroupAVCImeDualRefStreamin = 175,
+    PLClangTypeKindExtVector = 176
 };
 
 /**
