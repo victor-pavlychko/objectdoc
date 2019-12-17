@@ -90,6 +90,7 @@ See the [template page](doctool/templates/index.html) for expanded usage informa
 
 ## Install
 
++ Install llvm via Homebrew: `brew install llvm` (use `llvm@9.0` in the future if Homebrew updated to llvm 10+)
 + Clone the repo
 + Open the `ObjectDoc.xcodeproj`
 + Config the scheme to use `Debug` or `Release` configuration

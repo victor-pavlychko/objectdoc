@@ -35,7 +35,7 @@
     PLClangUnsavedFile *file = [PLClangUnsavedFile unsavedFileWithPath: path data: data];
     PLClangTranslationUnit *tu = [_index addTranslationUnitWithSourcePath: path
                                                              unsavedFiles: @[file]
-                                                        compilerArguments: @[@"-isysroot", STRINGIFY(SDKROOT)]
+                                                        compilerArguments: @[@"-isysroot", STRINGIFY(SDKROOT), @"-I", @"/usr/local/opt/llvm/lib/clang/9.0.0/include/"]
                                                                   options: options
                                                                     error: &error];
     XCTAssertNotNil(tu, @"Failed to parse", nil);
