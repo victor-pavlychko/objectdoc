@@ -86,6 +86,7 @@
 		32E54B7B226DA24F00244FE2 /* Indexing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32E54AFE226D97BD00244FE2 /* Indexing.cpp */; };
 		32E54B7C226DA2C300244FE2 /* libclang.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E54B50226DA24900244FE2 /* libclang.a */; };
 		B6F0873C284EB245005982D8 /* FatalErrorHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6F0873B284EB245005982D8 /* FatalErrorHandler.cpp */; };
+		B6F08743284EB92C005982D8 /* Shims.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6F08742284EB92C005982D8 /* Shims.cpp */; };
 		C930081617C5C31C00FA8AB7 /* PLClangComment.h in Headers */ = {isa = PBXBuildFile; fileRef = C930081417C5C31C00FA8AB7 /* PLClangComment.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C930081717C5C31C00FA8AB7 /* PLClangComment.m in Sources */ = {isa = PBXBuildFile; fileRef = C930081517C5C31C00FA8AB7 /* PLClangComment.m */; };
 		C930081917C5C34600FA8AB7 /* PLClangCommentPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = C930081817C5C34600FA8AB7 /* PLClangCommentPrivate.h */; };
@@ -315,6 +316,7 @@
 		B6F0873E284EB2E2005982D8 /* llvm-13.0.1.src.tar.xz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "llvm-13.0.1.src.tar.xz"; sourceTree = "<group>"; };
 		B6F0873F284EB2E2005982D8 /* clang-13.0.1.src.tar.xz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "clang-13.0.1.src.tar.xz"; sourceTree = "<group>"; };
 		B6F08740284EB2E2005982D8 /* clang-13.0.1.src.tar.xz.sig */ = {isa = PBXFileReference; lastKnownFileType = file; path = "clang-13.0.1.src.tar.xz.sig"; sourceTree = "<group>"; };
+		B6F08742284EB92C005982D8 /* Shims.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shims.cpp; sourceTree = "<group>"; };
 		C930081417C5C31C00FA8AB7 /* PLClangComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLClangComment.h; sourceTree = "<group>"; };
 		C930081517C5C31C00FA8AB7 /* PLClangComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLClangComment.m; sourceTree = "<group>"; };
 		C930081817C5C34600FA8AB7 /* PLClangCommentPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLClangCommentPrivate.h; sourceTree = "<group>"; };
@@ -632,6 +634,7 @@
 				B6F0873B284EB245005982D8 /* FatalErrorHandler.cpp */,
 				32E54AFF226D97BD00244FE2 /* Index_Internal.h */,
 				32E54AFE226D97BD00244FE2 /* Indexing.cpp */,
+				B6F08742284EB92C005982D8 /* Shims.cpp */,
 			);
 			name = clang;
 			path = Dependencies/clang;
@@ -1118,6 +1121,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6F08743284EB92C005982D8 /* Shims.cpp in Sources */,
 				32E54B70226DA24F00244FE2 /* CXLoadedDiagnostic.cpp in Sources */,
 				32E54B6C226DA24F00244FE2 /* CXCursor.cpp in Sources */,
 				32E54B66226DA24F00244FE2 /* CIndexUSRs.cpp in Sources */,

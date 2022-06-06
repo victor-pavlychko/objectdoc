@@ -60,7 +60,8 @@
     // The strings in CXPlatformAvailability are disposed via clang_disposeCXPlatformAvailability(), just convert them
     _platformName = plclang_convert_cxstring(availability.Platform);
     _message = plclang_convert_cxstring(availability.Message);
-    _replacement = plclang_convert_cxstring(availability.Replacement);
+//    _replacement = plclang_convert_cxstring(availability.Replacement);
+    _replacement = @"";
     _introducedVersion = [[PLClangVersion alloc] initWithCXVersion: availability.Introduced];
     _deprecatedVersion = [[PLClangVersion alloc] initWithCXVersion: availability.Deprecated];
     _obsoletedVersion = [[PLClangVersion alloc] initWithCXVersion: availability.Obsoleted];

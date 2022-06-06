@@ -92,6 +92,9 @@ typedef CXString (*PLClangCommentGetArgTextFunction)(CXComment, unsigned);
 
         case CXCommentInlineCommandRenderKind_Emphasized:
             return PLClangCommentRenderKindEmphasized;
+
+        case CXCommentInlineCommandRenderKind_Anchor:
+            return PLClangCommentRenderKindAnchor;
     }
 
     // Comment has an unknown render kind

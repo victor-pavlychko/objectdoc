@@ -9,6 +9,8 @@
 #import "PLClangNSString.h"
 #import "PLAdditions.h"
 
+CXType clang_Type_removeOuterNullability(CXType CT);
+
 /**
  * The type of an element in the abstract syntax tree.
  */
@@ -326,6 +328,10 @@
             return PLClangTypeKindOCLIntelSubgroupAVCImeDualRefStreamin;
         case CXType_ExtVector:
             return PLClangTypeKindExtVector;
+        case CXType_BFloat16:
+            return PLClangTypeKindBFloat16;
+        case CXType_Atomic:
+            return PLClangTypeKindAtomic;
     }
 
     // Type is unknown

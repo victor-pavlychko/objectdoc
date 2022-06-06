@@ -14,6 +14,8 @@
 #import "PLAdditions.h"
 #import "PLClangNSString.h"
 
+unsigned clang_Cursor_isImplicit(CXCursor C);
+
 /**
  * A cursor representing an element in the abstract syntax tree.
  */
@@ -768,6 +770,38 @@
             return PLClangCursorKindWarnUnusedResultAttr;
         case CXCursor_AlignedAttr:
             return PLClangCursorKindAlignedAttr;
+        case CXCursor_CXXAddrspaceCastExpr:
+            return PLClangCursorKindCXXAddrspaceCastExpr;
+        case CXCursor_OMPArrayShapingExpr:
+            return PLClangCursorKindOMPArrayShapingExpr;
+        case CXCursor_OMPIteratorExpr:
+            return PLClangCursorKindOMPIteratorExpr;
+        case CXCursor_OMPMasterTaskLoopDirective:
+            return PLClangCursorKindOMPMasterTaskLoopDirective;
+        case CXCursor_OMPParallelMasterTaskLoopDirective:
+            return PLClangCursorKindOMPParallelMasterTaskLoopDirective;
+        case CXCursor_OMPMasterTaskLoopSimdDirective:
+            return PLClangCursorKindOMPMasterTaskLoopSimdDirective;
+        case CXCursor_OMPParallelMasterTaskLoopSimdDirective:
+            return PLClangCursorKindOMPParallelMasterTaskLoopSimdDirective;
+        case CXCursor_OMPParallelMasterDirective:
+            return PLClangCursorKindOMPParallelMasterDirective;
+        case CXCursor_OMPDepobjDirective:
+            return PLClangCursorKindOMPDepobjDirective;
+        case CXCursor_OMPScanDirective:
+            return PLClangCursorKindOMPScanDirective;
+        case CXCursor_OMPTileDirective:
+            return PLClangCursorKindOMPTileDirective;
+        case CXCursor_OMPCanonicalLoop:
+            return PLClangCursorKindOMPCanonicalLoop;
+        case CXCursor_OMPInteropDirective:
+            return PLClangCursorKindOMPInteropDirective;
+        case CXCursor_OMPDispatchDirective:
+            return PLClangCursorKindOMPDispatchDirective;
+        case CXCursor_OMPMaskedDirective:
+            return PLClangCursorKindOMPMaskedDirective;
+        case CXCursor_OMPUnrollDirective:
+            return PLClangCursorKindOMPUnrollDirective;
     }
 
     // Cursor has an unknown kind

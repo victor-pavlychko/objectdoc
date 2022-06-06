@@ -1347,6 +1347,23 @@ typedef NS_ENUM(NSUInteger, PLClangCursorKind) {
      * A code completion overload candidate.
      */
     PLClangCursorKindOverloadCandidate                        = 700,
+
+    PLClangCursorKindCXXAddrspaceCastExpr = 800,
+    PLClangCursorKindOMPArrayShapingExpr,
+    PLClangCursorKindOMPIteratorExpr,
+    PLClangCursorKindOMPMasterTaskLoopDirective,
+    PLClangCursorKindOMPParallelMasterTaskLoopDirective,
+    PLClangCursorKindOMPMasterTaskLoopSimdDirective,
+    PLClangCursorKindOMPParallelMasterTaskLoopSimdDirective,
+    PLClangCursorKindOMPParallelMasterDirective,
+    PLClangCursorKindOMPDepobjDirective,
+    PLClangCursorKindOMPScanDirective,
+    PLClangCursorKindOMPTileDirective,
+    PLClangCursorKindOMPCanonicalLoop,
+    PLClangCursorKindOMPInteropDirective,
+    PLClangCursorKindOMPDispatchDirective,
+    PLClangCursorKindOMPMaskedDirective,
+    PLClangCursorKindOMPUnrollDirective
 };
 
 /**

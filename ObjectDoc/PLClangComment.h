@@ -71,7 +71,8 @@ typedef NS_ENUM(NSUInteger, PLClangCommentRenderKind) {
     PLClangCommentRenderKindNormal     = 1,
     PLClangCommentRenderKindBold       = 2,
     PLClangCommentRenderKindMonospaced = 3,
-    PLClangCommentRenderKindEmphasized = 4
+    PLClangCommentRenderKindEmphasized = 4,
+    PLClangCommentRenderKindAnchor     = 5
 };
 
 @interface PLClangComment : NSObject

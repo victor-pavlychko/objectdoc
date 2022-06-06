@@ -46,7 +46,7 @@
 @property(nonatomic, readonly) PLClangCursor *cursor;
 
 /** The name of the target platform for this translation unit. */
-@property(nonatomic, readonly) NSString *targetPlatformTriple;
+@property(nonatomic, readonly) NSString *targetPlatformName;
 
 - (PLClangCursor *) cursorForSourceLocation: (PLClangSourceLocation *) sourceLocation;
 - (NSArray *) tokensForSourceRange: (PLClangSourceRange *) range;
