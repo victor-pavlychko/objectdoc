@@ -85,6 +85,7 @@
 		32E54B7A226DA24F00244FE2 /* Index_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 32E54AFF226D97BD00244FE2 /* Index_Internal.h */; };
 		32E54B7B226DA24F00244FE2 /* Indexing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32E54AFE226D97BD00244FE2 /* Indexing.cpp */; };
 		32E54B7C226DA2C300244FE2 /* libclang.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E54B50226DA24900244FE2 /* libclang.a */; };
+		B6F0873C284EB245005982D8 /* FatalErrorHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6F0873B284EB245005982D8 /* FatalErrorHandler.cpp */; };
 		C930081617C5C31C00FA8AB7 /* PLClangComment.h in Headers */ = {isa = PBXBuildFile; fileRef = C930081417C5C31C00FA8AB7 /* PLClangComment.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C930081717C5C31C00FA8AB7 /* PLClangComment.m in Sources */ = {isa = PBXBuildFile; fileRef = C930081517C5C31C00FA8AB7 /* PLClangComment.m */; };
 		C930081917C5C34600FA8AB7 /* PLClangCommentPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = C930081817C5C34600FA8AB7 /* PLClangCommentPrivate.h */; };
@@ -263,10 +264,6 @@
 		323FA973226056E000274FAB /* GRMustacheSafeKeyAccess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRMustacheSafeKeyAccess.h; sourceTree = "<group>"; };
 		323FA974226056E000274FAB /* GRMustacheContentType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GRMustacheContentType.h; sourceTree = "<group>"; };
 		323FA9762260B41600274FAB /* PLClangPlatformAvailabilityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PLClangPlatformAvailabilityTests.m; sourceTree = "<group>"; };
-		3264CFCF225F4623009EBB9A /* llvm-8.0.0.src.tar.xz.sig */ = {isa = PBXFileReference; lastKnownFileType = file; path = "llvm-8.0.0.src.tar.xz.sig"; sourceTree = "<group>"; };
-		3264CFD0225F4623009EBB9A /* llvm-8.0.0.src.tar.xz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "llvm-8.0.0.src.tar.xz"; sourceTree = "<group>"; };
-		3264CFD1225F4623009EBB9A /* cfe-8.0.0.src.tar.xz.sig */ = {isa = PBXFileReference; lastKnownFileType = file; path = "cfe-8.0.0.src.tar.xz.sig"; sourceTree = "<group>"; };
-		3264CFD2225F4623009EBB9A /* cfe-8.0.0.src.tar.xz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "cfe-8.0.0.src.tar.xz"; sourceTree = "<group>"; };
 		3281CDBD2265FDB10002FC9C /* PLClangFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLClangFile.h; sourceTree = "<group>"; };
 		3281CDBE2265FDB10002FC9C /* PLClangFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PLClangFile.m; sourceTree = "<group>"; };
 		3281CDC1226603140002FC9C /* PLClangEntityReference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLClangEntityReference.h; sourceTree = "<group>"; };
@@ -313,6 +310,11 @@
 		32E54B16226D97BD00244FE2 /* CXSourceLocation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CXSourceLocation.cpp; sourceTree = "<group>"; };
 		32E54B17226D97BD00244FE2 /* CIndexUSRs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CIndexUSRs.cpp; sourceTree = "<group>"; };
 		32E54B50226DA24900244FE2 /* libclang.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libclang.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6F0873B284EB245005982D8 /* FatalErrorHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FatalErrorHandler.cpp; sourceTree = "<group>"; };
+		B6F0873D284EB2E2005982D8 /* llvm-13.0.1.src.tar.xz.sig */ = {isa = PBXFileReference; lastKnownFileType = file; path = "llvm-13.0.1.src.tar.xz.sig"; sourceTree = "<group>"; };
+		B6F0873E284EB2E2005982D8 /* llvm-13.0.1.src.tar.xz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "llvm-13.0.1.src.tar.xz"; sourceTree = "<group>"; };
+		B6F0873F284EB2E2005982D8 /* clang-13.0.1.src.tar.xz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "clang-13.0.1.src.tar.xz"; sourceTree = "<group>"; };
+		B6F08740284EB2E2005982D8 /* clang-13.0.1.src.tar.xz.sig */ = {isa = PBXFileReference; lastKnownFileType = file; path = "clang-13.0.1.src.tar.xz.sig"; sourceTree = "<group>"; };
 		C930081417C5C31C00FA8AB7 /* PLClangComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLClangComment.h; sourceTree = "<group>"; };
 		C930081517C5C31C00FA8AB7 /* PLClangComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLClangComment.m; sourceTree = "<group>"; };
 		C930081817C5C34600FA8AB7 /* PLClangCommentPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLClangCommentPrivate.h; sourceTree = "<group>"; };
@@ -399,7 +401,6 @@
 		C9F243C017C11090005E01BF /* PLClangCursorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLClangCursorTests.m; sourceTree = "<group>"; };
 		C9F243C217C11196005E01BF /* PLClangTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLClangTestCase.h; sourceTree = "<group>"; };
 		C9F243C317C11196005E01BF /* PLClangTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLClangTestCase.m; sourceTree = "<group>"; };
-		C9F6C030194405F300D3011F /* clang */ = {isa = PBXFileReference; lastKnownFileType = text; name = clang; path = "../clang-install/lib/clang"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE4500562CD408DEE335EAC /* PLClangSourceIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PLClangSourceIndex.h; path = ObjectDoc/PLClangSourceIndex.h; sourceTree = SOURCE_ROOT; };
 		FCE4502439DC9B6948831382 /* PLAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLAdditions.h; sourceTree = "<group>"; };
 		FCE4509877E08051C0B7C274 /* PLClangTranslationUnitPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PLClangTranslationUnitPrivate.h; path = ObjectDoc/PLClangTranslationUnitPrivate.h; sourceTree = SOURCE_ROOT; };
@@ -460,11 +461,10 @@
 		05A2157C19008B310050A058 /* LLVM */ = {
 			isa = PBXGroup;
 			children = (
-				3264CFD2225F4623009EBB9A /* cfe-8.0.0.src.tar.xz */,
-				3264CFD1225F4623009EBB9A /* cfe-8.0.0.src.tar.xz.sig */,
-				3264CFD0225F4623009EBB9A /* llvm-8.0.0.src.tar.xz */,
-				3264CFCF225F4623009EBB9A /* llvm-8.0.0.src.tar.xz.sig */,
-				C9F6C030194405F300D3011F /* clang */,
+				B6F0873F284EB2E2005982D8 /* clang-13.0.1.src.tar.xz */,
+				B6F08740284EB2E2005982D8 /* clang-13.0.1.src.tar.xz.sig */,
+				B6F0873E284EB2E2005982D8 /* llvm-13.0.1.src.tar.xz */,
+				B6F0873D284EB2E2005982D8 /* llvm-13.0.1.src.tar.xz.sig */,
 			);
 			name = LLVM;
 			path = Dependencies/LLVM;
@@ -629,6 +629,7 @@
 				32E54B07226D97BD00244FE2 /* CXTranslationUnit.h */,
 				32E54B0C226D97BD00244FE2 /* CXType.cpp */,
 				32E54B03226D97BD00244FE2 /* CXType.h */,
+				B6F0873B284EB245005982D8 /* FatalErrorHandler.cpp */,
 				32E54AFF226D97BD00244FE2 /* Index_Internal.h */,
 				32E54AFE226D97BD00244FE2 /* Indexing.cpp */,
 			);
@@ -1120,6 +1121,7 @@
 				32E54B70226DA24F00244FE2 /* CXLoadedDiagnostic.cpp in Sources */,
 				32E54B6C226DA24F00244FE2 /* CXCursor.cpp in Sources */,
 				32E54B66226DA24F00244FE2 /* CIndexUSRs.cpp in Sources */,
+				B6F0873C284EB245005982D8 /* FatalErrorHandler.cpp in Sources */,
 				32E54B72226DA24F00244FE2 /* CXSourceLocation.cpp in Sources */,
 				32E54B5E226DA24F00244FE2 /* CIndexCodeCompletion.cpp in Sources */,
 				32E54B75226DA24F00244FE2 /* CXString.cpp in Sources */,
@@ -1198,9 +1200,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_CONFIG_LDFLAGS = "-lclang -lclangAST -lclangBasic -lclangFrontend -lclangIndex -lclangLex -lclangSema -lclangSerialization -lclangTooling -lclangARCMigrate -ldl -lclangStaticAnalyzerCheckers -lclangStaticAnalyzerCore -lclangCrossTU -lclangIndex -lclangFrontend -lclangDriver -lclangParse -lclangSerialization -lclangSema -lclangEdit -lclangAnalysis -lclangASTMatchers -lclangFormat -lclangToolingInclusions -lclangToolingCore -lclangAST -lclangRewrite -lclangLex -lclangBasic";
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				ARCHS = x86_64;
+				CLANG_CONFIG_LDFLAGS = "-lclangAPINotes -lclangARCMigrate -lclangAST -lclangASTMatchers -lclangAnalysis -lclangApplyReplacements -lclangBasic -lclangChangeNamespace -lclangCodeGen -lclangCrossTU -lclangDaemon -lclangDaemonTweaks -lclangDependencyScanning -lclangDirectoryWatcher -lclangDoc -lclangDriver -lclangDynamicASTMatchers -lclangEdit -lclangFormat -lclangFrontend -lclangFrontendTool -lclangHandleCXX -lclangHandleLLVM -lclangIncludeFixer -lclangIncludeFixerPlugin -lclangIndex -lclangIndexSerialization -lclangInterpreter -lclangLex -lclangMove -lclangParse -lclangQuery -lclangReorderFields -lclangRewrite -lclangRewriteFrontend -lclangSema -lclangSerialization -lclangStaticAnalyzerCheckers -lclangStaticAnalyzerCore -lclangStaticAnalyzerFrontend -lclangTesting -lclangTidy -lclangTidyAbseilModule -lclangTidyAlteraModule -lclangTidyAndroidModule -lclangTidyBoostModule -lclangTidyBugproneModule -lclangTidyCERTModule -lclangTidyConcurrencyModule -lclangTidyCppCoreGuidelinesModule -lclangTidyDarwinModule -lclangTidyFuchsiaModule -lclangTidyGoogleModule -lclangTidyHICPPModule -lclangTidyLLVMLibcModule -lclangTidyLLVMModule -lclangTidyLinuxKernelModule -lclangTidyMPIModule -lclangTidyMain -lclangTidyMiscModule -lclangTidyModernizeModule -lclangTidyObjCModule -lclangTidyOpenMPModule -lclangTidyPerformanceModule -lclangTidyPlugin -lclangTidyPortabilityModule -lclangTidyReadabilityModule -lclangTidyUtils -lclangTidyZirconModule -lclangTooling -lclangToolingASTDiff -lclangToolingCore -lclangToolingInclusions -lclangToolingRefactoring -lclangToolingSyntax -lclangTransformer -lclangdRemoteIndex -lclangdSupport -lclangdXpcJsonConversions -lclangdXpcTransport";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1210,6 +1212,7 @@
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_CPP_RTTI = NO;
@@ -1235,11 +1238,11 @@
 					"$(LLVM_INSTALL_DIR)/lib",
 				);
 				LLVM_CONFIG_CFLAGS = "-D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS";
-				LLVM_CONFIG_LDFLAGS = "-lLLVMAArch64AsmParser -lLLVMAArch64CodeGen -lLLVMAArch64Desc -lLLVMAArch64Disassembler -lLLVMAArch64Info -lLLVMAArch64Utils -lLLVMAMDGPUAsmParser -lLLVMAMDGPUCodeGen -lLLVMAMDGPUDesc -lLLVMAMDGPUDisassembler -lLLVMAMDGPUInfo -lLLVMAMDGPUUtils -lLLVMARMAsmParser -lLLVMARMCodeGen -lLLVMARMDesc -lLLVMARMDisassembler -lLLVMARMInfo -lLLVMARMUtils -lLLVMAggressiveInstCombine -lLLVMAnalysis -lLLVMAsmParser -lLLVMAsmPrinter -lLLVMBPFAsmParser -lLLVMBPFCodeGen -lLLVMBPFDesc -lLLVMBPFDisassembler -lLLVMBPFInfo -lLLVMBinaryFormat -lLLVMBitReader -lLLVMBitWriter -lLLVMBitstreamReader -lLLVMCodeGen -lLLVMCore -lLLVMCoroutines -lLLVMCoverage -lLLVMDebugInfoCodeView -lLLVMDebugInfoDWARF -lLLVMDebugInfoGSYM -lLLVMDebugInfoMSF -lLLVMDebugInfoPDB -lLLVMDemangle -lLLVMDlltoolDriver -lLLVMExecutionEngine -lLLVMFuzzMutate -lLLVMGlobalISel -lLLVMHexagonAsmParser -lLLVMHexagonCodeGen -lLLVMHexagonDesc -lLLVMHexagonDisassembler -lLLVMHexagonInfo -lLLVMIRReader -lLLVMInstCombine -lLLVMInstrumentation -lLLVMInterpreter -lLLVMJITLink -lLLVMLTO -lLLVMLanaiAsmParser -lLLVMLanaiCodeGen -lLLVMLanaiDesc -lLLVMLanaiDisassembler -lLLVMLanaiInfo -lLLVMLibDriver -lLLVMLineEditor -lLLVMLinker -lLLVMMC -lLLVMMCA -lLLVMMCDisassembler -lLLVMMCJIT -lLLVMMCParser -lLLVMMIRParser -lLLVMMSP430AsmParser -lLLVMMSP430CodeGen -lLLVMMSP430Desc -lLLVMMSP430Disassembler -lLLVMMSP430Info -lLLVMMipsAsmParser -lLLVMMipsCodeGen -lLLVMMipsDesc -lLLVMMipsDisassembler -lLLVMMipsInfo -lLLVMNVPTXCodeGen -lLLVMNVPTXDesc -lLLVMNVPTXInfo -lLLVMObjCARCOpts -lLLVMObject -lLLVMObjectYAML -lLLVMOption -lLLVMOrcJIT -lLLVMPasses -lLLVMPowerPCAsmParser -lLLVMPowerPCCodeGen -lLLVMPowerPCDesc -lLLVMPowerPCDisassembler -lLLVMPowerPCInfo -lLLVMProfileData -lLLVMRISCVAsmParser -lLLVMRISCVCodeGen -lLLVMRISCVDesc -lLLVMRISCVDisassembler -lLLVMRISCVInfo -lLLVMRISCVUtils -lLLVMRemarks -lLLVMRuntimeDyld -lLLVMScalarOpts -lLLVMSelectionDAG -lLLVMSparcAsmParser -lLLVMSparcCodeGen -lLLVMSparcDesc -lLLVMSparcDisassembler -lLLVMSparcInfo -lLLVMSupport -lLLVMSymbolize -lLLVMSystemZAsmParser -lLLVMSystemZCodeGen -lLLVMSystemZDesc -lLLVMSystemZDisassembler -lLLVMSystemZInfo -lLLVMTableGen -lLLVMTarget -lLLVMTextAPI -lLLVMTransformUtils -lLLVMVectorize -lLLVMWebAssemblyAsmParser -lLLVMWebAssemblyCodeGen -lLLVMWebAssemblyDesc -lLLVMWebAssemblyDisassembler -lLLVMWebAssemblyInfo -lLLVMWindowsManifest -lLLVMX86AsmParser -lLLVMX86CodeGen -lLLVMX86Desc -lLLVMX86Disassembler -lLLVMX86Info -lLLVMX86Utils -lLLVMXCoreCodeGen -lLLVMXCoreDesc -lLLVMXCoreDisassembler -lLLVMXCoreInfo -lLLVMXRay -lLLVMipo -lz -lcurses -lm -ltermcap";
+				LLVM_CONFIG_LDFLAGS = "-lLLVMAArch64AsmParser -lLLVMAArch64CodeGen -lLLVMAArch64Desc -lLLVMAArch64Disassembler -lLLVMAArch64Info -lLLVMAArch64Utils -lLLVMAMDGPUAsmParser -lLLVMAMDGPUCodeGen -lLLVMAMDGPUDesc -lLLVMAMDGPUDisassembler -lLLVMAMDGPUInfo -lLLVMAMDGPUUtils -lLLVMARMAsmParser -lLLVMARMCodeGen -lLLVMARMDesc -lLLVMARMDisassembler -lLLVMARMInfo -lLLVMARMUtils -lLLVMAVRAsmParser -lLLVMAVRCodeGen -lLLVMAVRDesc -lLLVMAVRDisassembler -lLLVMAVRInfo -lLLVMAggressiveInstCombine -lLLVMAnalysis -lLLVMAsmParser -lLLVMAsmPrinter -lLLVMBPFAsmParser -lLLVMBPFCodeGen -lLLVMBPFDesc -lLLVMBPFDisassembler -lLLVMBPFInfo -lLLVMBinaryFormat -lLLVMBitReader -lLLVMBitWriter -lLLVMBitstreamReader -lLLVMCFGuard -lLLVMCFIVerify -lLLVMCodeGen -lLLVMCore -lLLVMCoroutines -lLLVMCoverage -lLLVMDWARFLinker -lLLVMDWP -lLLVMDebugInfoCodeView -lLLVMDebugInfoDWARF -lLLVMDebugInfoGSYM -lLLVMDebugInfoMSF -lLLVMDebugInfoPDB -lLLVMDemangle -lLLVMDlltoolDriver -lLLVMExecutionEngine -lLLVMExegesis -lLLVMExegesisAArch64 -lLLVMExegesisMips -lLLVMExegesisPowerPC -lLLVMExegesisX86 -lLLVMExtensions -lLLVMFileCheck -lLLVMFrontendOpenACC -lLLVMFrontendOpenMP -lLLVMFuzzMutate -lLLVMGlobalISel -lLLVMHexagonAsmParser -lLLVMHexagonCodeGen -lLLVMHexagonDesc -lLLVMHexagonDisassembler -lLLVMHexagonInfo -lLLVMIRReader -lLLVMInstCombine -lLLVMInstrumentation -lLLVMInterfaceStub -lLLVMInterpreter -lLLVMJITLink -lLLVMLTO -lLLVMLanaiAsmParser -lLLVMLanaiCodeGen -lLLVMLanaiDesc -lLLVMLanaiDisassembler -lLLVMLanaiInfo -lLLVMLibDriver -lLLVMLineEditor -lLLVMLinker -lLLVMMC -lLLVMMCA -lLLVMMCACustomBehaviourAMDGPU -lLLVMMCDisassembler -lLLVMMCJIT -lLLVMMCParser -lLLVMMIRParser -lLLVMMSP430AsmParser -lLLVMMSP430CodeGen -lLLVMMSP430Desc -lLLVMMSP430Disassembler -lLLVMMSP430Info -lLLVMMipsAsmParser -lLLVMMipsCodeGen -lLLVMMipsDesc -lLLVMMipsDisassembler -lLLVMMipsInfo -lLLVMNVPTXCodeGen -lLLVMNVPTXDesc -lLLVMNVPTXInfo -lLLVMObjCARCOpts -lLLVMObject -lLLVMObjectYAML -lLLVMOption -lLLVMOrcJIT -lLLVMOrcShared -lLLVMOrcTargetProcess -lLLVMPasses -lLLVMPowerPCAsmParser -lLLVMPowerPCCodeGen -lLLVMPowerPCDesc -lLLVMPowerPCDisassembler -lLLVMPowerPCInfo -lLLVMProfileData -lLLVMRISCVAsmParser -lLLVMRISCVCodeGen -lLLVMRISCVDesc -lLLVMRISCVDisassembler -lLLVMRISCVInfo -lLLVMRemarks -lLLVMRuntimeDyld -lLLVMScalarOpts -lLLVMSelectionDAG -lLLVMSparcAsmParser -lLLVMSparcCodeGen -lLLVMSparcDesc -lLLVMSparcDisassembler -lLLVMSparcInfo -lLLVMSupport -lLLVMSymbolize -lLLVMSystemZAsmParser -lLLVMSystemZCodeGen -lLLVMSystemZDesc -lLLVMSystemZDisassembler -lLLVMSystemZInfo -lLLVMTableGen -lLLVMTableGenGlobalISel -lLLVMTarget -lLLVMTextAPI -lLLVMTransformUtils -lLLVMVectorize -lLLVMWebAssemblyAsmParser -lLLVMWebAssemblyCodeGen -lLLVMWebAssemblyDesc -lLLVMWebAssemblyDisassembler -lLLVMWebAssemblyInfo -lLLVMWebAssemblyUtils -lLLVMWindowsManifest -lLLVMX86AsmParser -lLLVMX86CodeGen -lLLVMX86Desc -lLLVMX86Disassembler -lLLVMX86Info -lLLVMXCoreCodeGen -lLLVMXCoreDesc -lLLVMXCoreDisassembler -lLLVMXCoreInfo -lLLVMXRay -lLLVMipo -lz -lcurses -lm -ltermcap";
 				LLVM_INSTALL_DIR = /usr/local/opt/llvm;
-				LLVM_SRC = "$(SRCROOT)/Dependencies/LLVM/llvm-8.0.0.src.tar.xz";
-				LLVM_VERSION = 8.0.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				LLVM_SRC = "$(SRCROOT)/Dependencies/LLVM/llvm-13.0.1.src.tar.xz";
+				LLVM_VERSION = 13.0.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				WARNING_CFLAGS = (
@@ -1258,9 +1261,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_CONFIG_LDFLAGS = "-lclang -lclangAST -lclangBasic -lclangFrontend -lclangIndex -lclangLex -lclangSema -lclangSerialization -lclangTooling -lclangARCMigrate -ldl -lclangStaticAnalyzerCheckers -lclangStaticAnalyzerCore -lclangCrossTU -lclangIndex -lclangFrontend -lclangDriver -lclangParse -lclangSerialization -lclangSema -lclangEdit -lclangAnalysis -lclangASTMatchers -lclangFormat -lclangToolingInclusions -lclangToolingCore -lclangAST -lclangRewrite -lclangLex -lclangBasic";
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				ARCHS = x86_64;
+				CLANG_CONFIG_LDFLAGS = "-lclangAPINotes -lclangARCMigrate -lclangAST -lclangASTMatchers -lclangAnalysis -lclangApplyReplacements -lclangBasic -lclangChangeNamespace -lclangCodeGen -lclangCrossTU -lclangDaemon -lclangDaemonTweaks -lclangDependencyScanning -lclangDirectoryWatcher -lclangDoc -lclangDriver -lclangDynamicASTMatchers -lclangEdit -lclangFormat -lclangFrontend -lclangFrontendTool -lclangHandleCXX -lclangHandleLLVM -lclangIncludeFixer -lclangIncludeFixerPlugin -lclangIndex -lclangIndexSerialization -lclangInterpreter -lclangLex -lclangMove -lclangParse -lclangQuery -lclangReorderFields -lclangRewrite -lclangRewriteFrontend -lclangSema -lclangSerialization -lclangStaticAnalyzerCheckers -lclangStaticAnalyzerCore -lclangStaticAnalyzerFrontend -lclangTesting -lclangTidy -lclangTidyAbseilModule -lclangTidyAlteraModule -lclangTidyAndroidModule -lclangTidyBoostModule -lclangTidyBugproneModule -lclangTidyCERTModule -lclangTidyConcurrencyModule -lclangTidyCppCoreGuidelinesModule -lclangTidyDarwinModule -lclangTidyFuchsiaModule -lclangTidyGoogleModule -lclangTidyHICPPModule -lclangTidyLLVMLibcModule -lclangTidyLLVMModule -lclangTidyLinuxKernelModule -lclangTidyMPIModule -lclangTidyMain -lclangTidyMiscModule -lclangTidyModernizeModule -lclangTidyObjCModule -lclangTidyOpenMPModule -lclangTidyPerformanceModule -lclangTidyPlugin -lclangTidyPortabilityModule -lclangTidyReadabilityModule -lclangTidyUtils -lclangTidyZirconModule -lclangTooling -lclangToolingASTDiff -lclangToolingCore -lclangToolingInclusions -lclangToolingRefactoring -lclangToolingSyntax -lclangTransformer -lclangdRemoteIndex -lclangdSupport -lclangdXpcJsonConversions -lclangdXpcTransport";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1271,6 +1274,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -1289,11 +1293,11 @@
 					"$(LLVM_INSTALL_DIR)/lib",
 				);
 				LLVM_CONFIG_CFLAGS = "-D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS";
-				LLVM_CONFIG_LDFLAGS = "-lLLVMAArch64AsmParser -lLLVMAArch64CodeGen -lLLVMAArch64Desc -lLLVMAArch64Disassembler -lLLVMAArch64Info -lLLVMAArch64Utils -lLLVMAMDGPUAsmParser -lLLVMAMDGPUCodeGen -lLLVMAMDGPUDesc -lLLVMAMDGPUDisassembler -lLLVMAMDGPUInfo -lLLVMAMDGPUUtils -lLLVMARMAsmParser -lLLVMARMCodeGen -lLLVMARMDesc -lLLVMARMDisassembler -lLLVMARMInfo -lLLVMARMUtils -lLLVMAggressiveInstCombine -lLLVMAnalysis -lLLVMAsmParser -lLLVMAsmPrinter -lLLVMBPFAsmParser -lLLVMBPFCodeGen -lLLVMBPFDesc -lLLVMBPFDisassembler -lLLVMBPFInfo -lLLVMBinaryFormat -lLLVMBitReader -lLLVMBitWriter -lLLVMBitstreamReader -lLLVMCodeGen -lLLVMCore -lLLVMCoroutines -lLLVMCoverage -lLLVMDebugInfoCodeView -lLLVMDebugInfoDWARF -lLLVMDebugInfoGSYM -lLLVMDebugInfoMSF -lLLVMDebugInfoPDB -lLLVMDemangle -lLLVMDlltoolDriver -lLLVMExecutionEngine -lLLVMFuzzMutate -lLLVMGlobalISel -lLLVMHexagonAsmParser -lLLVMHexagonCodeGen -lLLVMHexagonDesc -lLLVMHexagonDisassembler -lLLVMHexagonInfo -lLLVMIRReader -lLLVMInstCombine -lLLVMInstrumentation -lLLVMInterpreter -lLLVMJITLink -lLLVMLTO -lLLVMLanaiAsmParser -lLLVMLanaiCodeGen -lLLVMLanaiDesc -lLLVMLanaiDisassembler -lLLVMLanaiInfo -lLLVMLibDriver -lLLVMLineEditor -lLLVMLinker -lLLVMMC -lLLVMMCA -lLLVMMCDisassembler -lLLVMMCJIT -lLLVMMCParser -lLLVMMIRParser -lLLVMMSP430AsmParser -lLLVMMSP430CodeGen -lLLVMMSP430Desc -lLLVMMSP430Disassembler -lLLVMMSP430Info -lLLVMMipsAsmParser -lLLVMMipsCodeGen -lLLVMMipsDesc -lLLVMMipsDisassembler -lLLVMMipsInfo -lLLVMNVPTXCodeGen -lLLVMNVPTXDesc -lLLVMNVPTXInfo -lLLVMObjCARCOpts -lLLVMObject -lLLVMObjectYAML -lLLVMOption -lLLVMOrcJIT -lLLVMPasses -lLLVMPowerPCAsmParser -lLLVMPowerPCCodeGen -lLLVMPowerPCDesc -lLLVMPowerPCDisassembler -lLLVMPowerPCInfo -lLLVMProfileData -lLLVMRISCVAsmParser -lLLVMRISCVCodeGen -lLLVMRISCVDesc -lLLVMRISCVDisassembler -lLLVMRISCVInfo -lLLVMRISCVUtils -lLLVMRemarks -lLLVMRuntimeDyld -lLLVMScalarOpts -lLLVMSelectionDAG -lLLVMSparcAsmParser -lLLVMSparcCodeGen -lLLVMSparcDesc -lLLVMSparcDisassembler -lLLVMSparcInfo -lLLVMSupport -lLLVMSymbolize -lLLVMSystemZAsmParser -lLLVMSystemZCodeGen -lLLVMSystemZDesc -lLLVMSystemZDisassembler -lLLVMSystemZInfo -lLLVMTableGen -lLLVMTarget -lLLVMTextAPI -lLLVMTransformUtils -lLLVMVectorize -lLLVMWebAssemblyAsmParser -lLLVMWebAssemblyCodeGen -lLLVMWebAssemblyDesc -lLLVMWebAssemblyDisassembler -lLLVMWebAssemblyInfo -lLLVMWindowsManifest -lLLVMX86AsmParser -lLLVMX86CodeGen -lLLVMX86Desc -lLLVMX86Disassembler -lLLVMX86Info -lLLVMX86Utils -lLLVMXCoreCodeGen -lLLVMXCoreDesc -lLLVMXCoreDisassembler -lLLVMXCoreInfo -lLLVMXRay -lLLVMipo -lz -lcurses -lm -ltermcap";
+				LLVM_CONFIG_LDFLAGS = "-lLLVMAArch64AsmParser -lLLVMAArch64CodeGen -lLLVMAArch64Desc -lLLVMAArch64Disassembler -lLLVMAArch64Info -lLLVMAArch64Utils -lLLVMAMDGPUAsmParser -lLLVMAMDGPUCodeGen -lLLVMAMDGPUDesc -lLLVMAMDGPUDisassembler -lLLVMAMDGPUInfo -lLLVMAMDGPUUtils -lLLVMARMAsmParser -lLLVMARMCodeGen -lLLVMARMDesc -lLLVMARMDisassembler -lLLVMARMInfo -lLLVMARMUtils -lLLVMAVRAsmParser -lLLVMAVRCodeGen -lLLVMAVRDesc -lLLVMAVRDisassembler -lLLVMAVRInfo -lLLVMAggressiveInstCombine -lLLVMAnalysis -lLLVMAsmParser -lLLVMAsmPrinter -lLLVMBPFAsmParser -lLLVMBPFCodeGen -lLLVMBPFDesc -lLLVMBPFDisassembler -lLLVMBPFInfo -lLLVMBinaryFormat -lLLVMBitReader -lLLVMBitWriter -lLLVMBitstreamReader -lLLVMCFGuard -lLLVMCFIVerify -lLLVMCodeGen -lLLVMCore -lLLVMCoroutines -lLLVMCoverage -lLLVMDWARFLinker -lLLVMDWP -lLLVMDebugInfoCodeView -lLLVMDebugInfoDWARF -lLLVMDebugInfoGSYM -lLLVMDebugInfoMSF -lLLVMDebugInfoPDB -lLLVMDemangle -lLLVMDlltoolDriver -lLLVMExecutionEngine -lLLVMExegesis -lLLVMExegesisAArch64 -lLLVMExegesisMips -lLLVMExegesisPowerPC -lLLVMExegesisX86 -lLLVMExtensions -lLLVMFileCheck -lLLVMFrontendOpenACC -lLLVMFrontendOpenMP -lLLVMFuzzMutate -lLLVMGlobalISel -lLLVMHexagonAsmParser -lLLVMHexagonCodeGen -lLLVMHexagonDesc -lLLVMHexagonDisassembler -lLLVMHexagonInfo -lLLVMIRReader -lLLVMInstCombine -lLLVMInstrumentation -lLLVMInterfaceStub -lLLVMInterpreter -lLLVMJITLink -lLLVMLTO -lLLVMLanaiAsmParser -lLLVMLanaiCodeGen -lLLVMLanaiDesc -lLLVMLanaiDisassembler -lLLVMLanaiInfo -lLLVMLibDriver -lLLVMLineEditor -lLLVMLinker -lLLVMMC -lLLVMMCA -lLLVMMCACustomBehaviourAMDGPU -lLLVMMCDisassembler -lLLVMMCJIT -lLLVMMCParser -lLLVMMIRParser -lLLVMMSP430AsmParser -lLLVMMSP430CodeGen -lLLVMMSP430Desc -lLLVMMSP430Disassembler -lLLVMMSP430Info -lLLVMMipsAsmParser -lLLVMMipsCodeGen -lLLVMMipsDesc -lLLVMMipsDisassembler -lLLVMMipsInfo -lLLVMNVPTXCodeGen -lLLVMNVPTXDesc -lLLVMNVPTXInfo -lLLVMObjCARCOpts -lLLVMObject -lLLVMObjectYAML -lLLVMOption -lLLVMOrcJIT -lLLVMOrcShared -lLLVMOrcTargetProcess -lLLVMPasses -lLLVMPowerPCAsmParser -lLLVMPowerPCCodeGen -lLLVMPowerPCDesc -lLLVMPowerPCDisassembler -lLLVMPowerPCInfo -lLLVMProfileData -lLLVMRISCVAsmParser -lLLVMRISCVCodeGen -lLLVMRISCVDesc -lLLVMRISCVDisassembler -lLLVMRISCVInfo -lLLVMRemarks -lLLVMRuntimeDyld -lLLVMScalarOpts -lLLVMSelectionDAG -lLLVMSparcAsmParser -lLLVMSparcCodeGen -lLLVMSparcDesc -lLLVMSparcDisassembler -lLLVMSparcInfo -lLLVMSupport -lLLVMSymbolize -lLLVMSystemZAsmParser -lLLVMSystemZCodeGen -lLLVMSystemZDesc -lLLVMSystemZDisassembler -lLLVMSystemZInfo -lLLVMTableGen -lLLVMTableGenGlobalISel -lLLVMTarget -lLLVMTextAPI -lLLVMTransformUtils -lLLVMVectorize -lLLVMWebAssemblyAsmParser -lLLVMWebAssemblyCodeGen -lLLVMWebAssemblyDesc -lLLVMWebAssemblyDisassembler -lLLVMWebAssemblyInfo -lLLVMWebAssemblyUtils -lLLVMWindowsManifest -lLLVMX86AsmParser -lLLVMX86CodeGen -lLLVMX86Desc -lLLVMX86Disassembler -lLLVMX86Info -lLLVMXCoreCodeGen -lLLVMXCoreDesc -lLLVMXCoreDisassembler -lLLVMXCoreInfo -lLLVMXRay -lLLVMipo -lz -lcurses -lm -ltermcap";
 				LLVM_INSTALL_DIR = /usr/local/opt/llvm;
-				LLVM_SRC = "$(SRCROOT)/Dependencies/LLVM/llvm-8.0.0.src.tar.xz";
-				LLVM_VERSION = 8.0.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				LLVM_SRC = "$(SRCROOT)/Dependencies/LLVM/llvm-13.0.1.src.tar.xz";
+				LLVM_VERSION = 13.0.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				SDKROOT = macosx;
 				WARNING_CFLAGS = (
 					"-Wall",

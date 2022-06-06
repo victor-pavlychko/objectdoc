@@ -79,7 +79,7 @@
     _kind = [self availabilityKindForCXAvailabilityKind: clang_getCursorAvailability(cursor)];
 
     // Get the number of platform availability entries
-    int platformCount = clang_getCursorPlatformAvailability(cursor, NULL, NULL, NULL, NULL, NULL, NULL, 0);
+    int platformCount = clang_getCursorPlatformAvailability(cursor, NULL, NULL, NULL, NULL, NULL, 0);
     NSAssert(platformCount >= 0, @"clang_getCursorPlatformAvailability() returned a negative number of platforms");
 
     int always_deprecated = 0;
@@ -91,7 +91,6 @@
     clang_getCursorPlatformAvailability(cursor,
                                          &always_deprecated,
                                          &deprecationString,
-                                         &deprecationReplacementString,
                                          &always_unavailable,
                                          &unavilableString,
                                          platformAvailability,

@@ -431,6 +431,9 @@
         case CXTypeNullability_Nullable:
             return PLClangNullabilityNullable;
 
+        case CXTypeNullability_NullableResult:
+            return PLClangNullabilityNullableResult;
+
         case CXTypeNullability_Unspecified:
             return PLClangNullabilityExplicitlyUnspecified;
         

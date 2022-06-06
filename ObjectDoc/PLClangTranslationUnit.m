@@ -212,7 +212,7 @@
     _owner = owner;
     _tu = tu;
     _spelling = plclang_convert_and_dispose_cxstring(clang_getTranslationUnitSpelling(_tu));
-    _targetPlatformName = plclang_convert_and_dispose_cxstring(clang_getTargetPlatformName(_tu));
+    _targetPlatformTriple = plclang_convert_and_dispose_cxstring(clang_TargetInfo_getTriple(clang_getTranslationUnitTargetInfo(_tu)));
 
     /* Extract all diagnostics */
     CXDiagnosticSet diagnosticSet = clang_getDiagnosticSetFromTU(tu);
